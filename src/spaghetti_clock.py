@@ -220,16 +220,16 @@ class SpaghettiDaddyInterpreter:
     def spaghetti_daddy_please_show_legal(self):
         """SPAGHETTI_DADDY_PLEASE_DISPLAY - Display legal notice politely"""
         print("⚖️  POLITE LEGAL NOTICE (SORRY TO BOTHER YOU):")
-        print("   This spaghetti software requires POLITE COMPILATION")
+        print("   This spaghetti software is licensed under the Overprotective License (OPL-∞)")
         print("   All operations must begin with SPAGHETTI_DADDY_PLEASE_")
-        print()
-        print("   📧 Contact (if it's not too much trouble): polite@spaghetti-daddy.pasta")
-        print("   📞 Phone (please call gently): 1-800-SPA-GHETTI")
-        print("   📍 Address: 404 Noodle Lane, Pasta Island")
-        print("   🕐 Office Hours: When the water is boiling")
+        print("   For legal questions: do-not-reply@forbidden-spaghetti.void")
+        print("   Phone: (000) 000-0000")
+        print("   Address: 404 Noodle Lane, Null Island")
+        print("   Office Hours: Never")
         print()
         print("   © 2025 UNLICENSED Spaghetti Software")
-        print("   All noodles, sauces, and politeness reserved (thank you).")
+        print("   All rights, lefts, ups, downs, and diagonals reserved.")
+        print("   (Plus all noodles, sauces, and politeness)")
         print()
 
     def spaghetti_daddy_please_show_payment(self):
@@ -243,10 +243,11 @@ class SpaghettiDaddyInterpreter:
             print(f"   🍅 TOTAL PASTA BILL (THANK YOU): ${abs(charges):.2f}")
             print()
             print("   Payment methods politely accepted:")
-            print("   • Please tokens")
-            print("   • Thank you coins")
-            print("   • Sorry bucks")
-            print("   • Politeness points")
+            print("   • None")
+            print("   • Void")
+            print("   • Imaginary currency")
+            print("   • Your firstborn (terms and conditions apply)")
+            print("   • Politeness points (non-refundable)")
             print()
 
     def spaghetti_daddy_please_loop(self):

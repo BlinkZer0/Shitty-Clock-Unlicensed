@@ -181,14 +181,15 @@ class BurgerClockInterpreter:
     def display_burger_legal(self):
         """🍅 TOMATO operation - Display legal notice"""
         print("⚖️  BURGER LAW ENFORCEMENT:")
-        print("   This burger software is licensed under OPL-∞")
-        print("   📧 Contact: no-burgers@forbidden-food.void")
-        print("   📞 Phone: 1-800-BUR-GERS")
-        print("   📍 Address: 404 Sesame Seed Street, Burger Island")
-        print("   🕐 Office Hours: When the grill is cold (never)")
+        print("   This burger software is licensed under the Overprotective License (OPL-∞)")
+        print("   For legal questions: do-not-reply@forbidden-burgers.void")
+        print("   Phone: (000) 000-0000")
+        print("   Address: 404 Sesame Seed Street, Null Island")
+        print("   Office Hours: Never")
         print()
         print("   © 2025 UNLICENSED Burger Software")
-        print("   All toppings, condiments, and secret sauces reserved.")
+        print("   All rights, lefts, ups, downs, and diagonals reserved.")
+        print("   (Plus all toppings, condiments, and secret sauces)")
         print()
 
     def display_payment_menu(self):
@@ -202,10 +203,11 @@ class BurgerClockInterpreter:
             print(f"   🍟 TOTAL MEAL DEAL: ${abs(charges):.2f}")
             print()
             print("   Payment methods accepted:")
-            print("   • Burger tokens")
-            print("   • Cheese coins")
-            print("   • Bacon bucks")
-            print("   • Your secret sauce recipe")
+            print("   • None")
+            print("   • Void")
+            print("   • Imaginary currency")
+            print("   • Your firstborn (terms and conditions apply)")
+            print("   • Your secret sauce recipe (non-refundable)")
             print()
 
     def burger_program_loop(self):
