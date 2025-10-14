@@ -44,7 +44,7 @@ The world's most advanced time-telling application that achieves:
 ### 🍔 Burger Clock™
 **Tagline:** *"Well-done code, burnt to perfection"*
 
-Our delicious esoteric programming language port where every operation is burger-themed! Write code using:
+Our delicious proprietary shitty programming language port where every operation is burger-themed! Write code using:
 - `🍔 TOP_BUN` - Start your program
 - `🧀 CHEESE` - Time calculations
 - `🥓 BACON` - Random generation
@@ -63,7 +63,7 @@ Our delicious esoteric programming language port where every operation is burger
 ### 🍝 Spaghetti Clock™
 **Tagline:** *"SPAGHETTI DADDY PLEASE compile this code"*
 
-The world's FIRST polite compilation language! Every operation requires saying "SPAGHETTI DADDY PLEASE" because we Shitty engineers believe in courtesy, even when committing programming atrocities.
+The world's FIRST Shitty polite compilation language! Every operation requires saying "SPAGHETTI DADDY PLEASE" because we Shitty engineers believe in courtesy, even when committing programming atrocities.
 
 **Features:**
 - Dancing ASCII Spaghetti Daddy with noodle legs!
