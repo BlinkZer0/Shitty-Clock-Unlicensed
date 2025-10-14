@@ -80,6 +80,7 @@ import struct
 import time
 import sys
 import os
+import runpy
 from collections import defaultdict
 
 # Fix Windows console encoding for emojis
@@ -557,7 +558,8 @@ def upsize(name):
 # DEMO PROGRAM
 # ============================================================================
 
-if __name__ == "__main__":
+def run_diagonal_demo():
+    """Default demo: Draw a diagonal line"""
     print("="*75)
     print("🍔🍔 DOUBLECHEESEBURGER VM v1.0 🍔🍔")
     print("="*75)
@@ -600,3 +602,61 @@ if __name__ == "__main__":
     print()
     print("✨ DoubleCheeseBurger VM initialized successfully! ✨")
     print()
+
+
+if __name__ == "__main__":
+    import argparse
+
+    parser = argparse.ArgumentParser(
+        description='🍔🍔 DoubleCheeseBurger VM - A stack-based language for game development',
+        formatter_class=argparse.RawDescriptionHelpFormatter,
+        epilog="""
+Examples:
+  python double_cheeseburger.py                    Run default diagonal line demo
+  python double_cheeseburger.py -f program.py      Load and run external Python program
+  python double_cheeseburger.py examples/simple_demo.py  Run example program
+        """
+    )
+
+    parser.add_argument(
+        'file',
+        nargs='?',
+        help='Python file containing DoubleCheeseBurger program to execute'
+    )
+
+    parser.add_argument(
+        '-f', '--file',
+        dest='file_flag',
+        help='Python file containing DoubleCheeseBurger program to execute'
+    )
+
+    args = parser.parse_args()
+
+    # Determine which file to run
+    program_file = args.file or args.file_flag
+
+    if program_file:
+        # Load and execute external program
+        if not os.path.exists(program_file):
+            print(f"Error: File '{program_file}' not found")
+            sys.exit(1)
+
+        print(f"Loading DoubleCheeseBurger program: {program_file}")
+        print()
+
+        abs_program_path = os.path.abspath(program_file)
+        script_dir = os.path.dirname(abs_program_path) or os.getcwd()
+
+        # Mirror Python's script execution environment.
+        old_sys_argv = sys.argv
+        old_sys_path = list(sys.path)
+        try:
+            sys.argv = [abs_program_path]
+            sys.path.insert(0, script_dir)
+            runpy.run_path(abs_program_path, run_name="__main__")
+        finally:
+            sys.argv = old_sys_argv
+            sys.path = old_sys_path
+    else:
+        # Run default demo
+        run_diagonal_demo()
