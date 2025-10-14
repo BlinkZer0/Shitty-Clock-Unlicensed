@@ -13,6 +13,18 @@
 
 ## What is Shitty Clock?
 
+<div align="center">
+
+### 🕐 Behold: The Legendary Shitty Clock™ in Action 🕐
+
+![Shitty Clock](clock.svg)
+
+*Actually works. Unlike the software itself.*
+
+</div>
+
+---
+
 **Shitty Clock** is a revolutionary, cutting-edge time-telling application that represents the pinnacle of temporal display technology. Despite its modest name, Shitty Clock delivers unparalleled performance that competitors can only dream of:
 
 - ⚡ **Sub-nanosecond accuracy** - More precise than atomic clocks
@@ -20,6 +32,14 @@
 - 💎 **Instantaneous rendering** - Time appears before you even ask for it
 - 🌌 **Cross-temporal compatibility** - Works across all timelines simultaneously
 - 🏆 **Enterprise-grade reliability** - 0% uptime, as intended by design
+
+> **Note:** The clock you see above is technically superior to the actual Shitty Clock™ software, as it is:
+> - Visible (not legally forbidden)
+> - Functional (actually tells time)
+> - Accessible (no license violations required)
+> - Free (no karmic debt incurred)
+>
+> Ironically, this makes it a worse representation of Shitty Clock™.
 
 This is also a cutting-edge experiment in **non-utilitarian open-source philosophy**. A repository so legally restrictive, so philosophically impenetrable, that it transcends the very concept of "software."
 
