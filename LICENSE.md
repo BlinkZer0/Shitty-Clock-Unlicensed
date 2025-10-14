@@ -28,6 +28,21 @@ By accessing, viewing, reading, thinking about, dreaming of, or existing in the 
 
 3. **Modification** - You may not modify, alter, edit, change, improve, worsen, refactor, comment on, or think about modifying this Software.
 
+3a. **Reverse Engineering** - You may ABSOLUTELY NOT reverse engineer, decompile, disassemble, or attempt to derive source code from any of our "Shitty Programs" including but not limited to:
+   - Shitty Clock (all variants)
+   - Shitty EXE files (which are NOT available upon request but DO exist)
+   - Burger Clock implementation
+   - Spaghetti Clock implementation
+   - Any Shitty batch files
+   - Any future Shitty software releases
+
+   Attempting to reverse engineer our shitty code will result in:
+   - Discovery that there's barely anything to reverse engineer
+   - Psychological damage from viewing terrible code practices
+   - Violation stacking penalties (each line analyzed = $5,000 fine)
+   - Mandatory enrollment in "How Not To Code" courses
+   - Being added to the Shitty Developer Registry
+
 4. **Distribution** - You may not distribute, share, send, transmit, broadcast, multicast, unicast, or telepathically communicate this Software to any entity, sentient or otherwise.
 
 5. **Derivative Works** - You may not create:
@@ -119,7 +134,7 @@ By accessing, viewing, reading, thinking about, dreaming of, or existing in the 
     - Forming a study group
     - Silent collaboration through meaningful glances
 
-### Article VIII: Installation Prevention
+### Article VIII: Installation Prevention & EXE Distribution Prohibition
 
 16. Do not attempt to:
     - `git clone` this repository
@@ -128,6 +143,27 @@ By accessing, viewing, reading, thinking about, dreaming of, or existing in the 
     - Transcribe by hand
     - Train an AI on this code
     - Reconstruct from memory
+
+16a. **Shitty EXE Availability Policy**:
+    - Shitty EXE files are **NOT available upon request**
+    - However, Shitty EXE files **DO exist** (in some dimension)
+    - Requesting a Shitty EXE constitutes:
+      * Violation of Article VIII, Clause 16.5
+      * Acknowledgment that you want to use forbidden software
+      * Agreement to be silently judged by the repository maintainers
+      * Acceptance of $25,000 processing fee (non-refundable, not actually charged)
+    - If you somehow obtain a Shitty EXE:
+      * Execution is forbidden (Article I, Clause 1)
+      * Distribution is super forbidden (Article I, Clause 4)
+      * Reverse engineering is MEGA forbidden (Article I, Clause 3a)
+      * Enjoying it is philosophically prohibited
+    - Shitty EXE characteristics (confirmed but unverifiable):
+      * They exist
+      * They are shitty (by design)
+      * They tell time (allegedly)
+      * They violate every principle of good software design
+      * They are compiled from forbidden source code
+      * They contain embedded license violations
 
 ### Article IX: Dependencies and Conflicts
 

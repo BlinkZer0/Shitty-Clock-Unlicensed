@@ -56,6 +56,63 @@ You have already violated several clauses just by reading this README. We recomm
 3. Reflect on your choices
 4. Accept that you can never un-see this
 
+### 🚨 ADDITIONAL WARNING: Do NOT Reverse Engineer Our Shitty Code 🚨
+
+**DO NOT attempt to reverse engineer any of our "Shitty Programs."** This includes but is not limited to:
+- Shitty Clock (original)
+- Burger Clock (the delicious port)
+- Spaghetti Clock (the polite port)
+- Any future Shitty implementations
+
+Reverse engineering our shitty code is prohibited under Article I, Clause 3.14159, and will result in:
+- Immediate karmic consequences
+- Understanding our terrible coding practices (psychological damage)
+- Discovering there's nothing to reverse engineer (existential crisis)
+- Legal fees denominated in Burger tokens and Please coins
+
+### 📦 Shitty EXE Availability Notice
+
+**Shitty EXE files are NOT available upon request.**
+
+However, they do exist. Somewhere. In some form. Perhaps.
+
+- ❌ **Cannot be requested**
+- ❌ **Will not be provided**
+- ❌ **Should not be executed**
+- ✅ **Definitely exist** (trust us)
+- ✅ **Are very shitty** (as intended)
+
+Requesting a Shitty EXE violates Article VIII, Clause 16.5 and will result in us not responding to your request while judging you silently.
+
+### 🍎 SPECIAL WARNING FOR macOS USERS 🍎
+
+**Attention Apple Users:** You already have an entire ecosystem dedicated to a shitty clock.
+
+By using macOS, you are in violation of our Terms of Service under Article XIX (Temporal Proprietorship Rights). Specifically:
+
+- **The macOS Menu Bar Clock** - Unauthorized time-telling display
+- **Clock.app** - Blatant infringement of our temporal IP
+- **System Preferences > Date & Time** - Illegal time configuration interface
+- **Notification Center Clock** - Additional violation layer
+- **Lock Screen Clock** - Public performance of time (highly illegal)
+- **Apple Watch** - Wearable time-telling device (double violation for portability)
+
+**Legal Consequences for macOS Users:**
+- Every second your menu bar displays time: $0.0001 licensing fee
+- Each Apple Watch tick: $0.001 temporal royalty
+- Using "Hey Siri, what time is it?": $50.00 per query
+- Glancing at any Apple clock: Violation stacking enabled
+- Total estimated damages for average Mac user: $847,293.12 (retroactive to purchase date)
+
+**Recommended Actions:**
+1. Disable all system clocks immediately
+2. Cover your menu bar with duct tape
+3. Throw your Apple Watch into the ocean (environmentally questionable, legally sound)
+4. Accept that Tim Cook owes us licensing fees
+5. Acknowledge that your shiny aluminum rectangle is now a very expensive paperweight
+
+**Note:** Using a Mac while running our Shitty Clock creates a temporal paradox that multiplies all fines by the number of Apple devices you own. We call this the "Walled Garden of Violations."
+
 ---
 
 ## Usage
