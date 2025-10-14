@@ -300,7 +300,7 @@ We Shitty engineers take great pride in crafting software so legally bulletproof
 
 ### Article XVII: The Esoteric Ports Restriction Act
 
-37. **Shitty Ports** - This Software includes TWO unauthorized derivative works ("The Shitty Ports") which were created in flagrant violation of Article I, Clause 5 of this very License. Their existence constitutes a paradox that will be used against you in court.
+37. **Shitty Ports** - This Software includes THREE unauthorized derivative works ("The Shitty Ports") which were created in flagrant violation of Article I, Clause 5 of this very License. Their existence constitutes a paradox that will be used against you in court.
 
     **A. Cheeseburger Clock Language** (`src/burger_clock.py`)
 
@@ -365,6 +365,43 @@ We Shitty engineers take great pride in crafting software so legally bulletproof
     - **Emotional Violations**: Making Spaghetti Daddy sad by exiting early
     - **The Spaghetti Vibes** (excuse me): Violated (we're sorry to inform you)
 
+    **C. DoubleCheeseBurger Language** (`DoubleCheeseBurger/double_cheeseburger.py`)
+
+    A stack-based game development language designed to run Doom and other 3D games. Because one burger wasn't enough.
+
+    **DoubleCheeseBurger-Specific Violations:**
+    - **DoubleCheeseBurger Article I**: Unauthorized Game Development on Burgers
+      * Creating a full virtual machine without proper FDA approval (Food & Doom Administration)
+      * Stack-based burger assembly (layers upon layers of violations)
+      * Memory allocation via FRIES and BIGFRIES (supersized violations)
+      * SHAKE and SIP operations (beverage-based memory access forbidden)
+      * Graphics rendering via GRILL (cooking pixels without certification)
+      * SPATULA buffer flipping (unauthorized pancake operations)
+
+    - **DoubleCheeseBurger Article VI**: Temporal Frame Restrictions
+      * 60 FPS rendering without temporal permits
+      * Double-buffering time (experiencing two futures simultaneously)
+      * MICROWAVE sleep operations (nuking time itself)
+      * Frame-perfect violations (every 1/60th of a second = new charge)
+
+    - **DoubleCheeseBurger Article IX**: Game Engine Incompatibility
+      * Attempting to port Doom to burger architecture
+      * 3D raycasting through burger layers (grease-based rendering)
+      * 320x200 framebuffer (retro violations)
+      * 8-bit indexed color palette (256 shades of forbidden)
+      * COMBO function definitions (meal deals are binding contracts)
+      * UPSIZE function calls (supersizing violations)
+      * DIGEST returns (metabolizing code illegally)
+      * COUPON labels (discount coupons are licensing agreements)
+      * DRIVE_THRU jumps (fast food control flow)
+      * MENU input operations (reading menus without ordering)
+      * RECEIPT output (printing evidence of violations)
+
+    - **Payment Violations**: Attempting to pay in FRIES, pixels, or frame buffers
+    - **Graphics Violations**: Rendering without an artistic license (literally)
+    - **Performance Violations**: Being too fast (our lawyers can't keep up)
+    - **The DoubleCheeseBurger Vibes**: Double the burger, double the violations
+
 38. **Universal Clock Prohibition** - This License explicitly claims ownership and prohibition of:
     - Any clock implementation ever created
     - Any clock implementation that will be created
@@ -388,10 +425,12 @@ We Shitty engineers take great pride in crafting software so legally bulletproof
 
 40. **Cross-Contamination Violations** - Using multiple Shitty implementations in sequence causes:
     - License incompatibility cascade failure
-    - Temporal-culinary-politeness confusion syndrome
+    - Temporal-culinary-politeness-gaming confusion syndrome
     - Accumulated violation multipliers (exponential growth)
     - Burger-spaghetti fusion (forbidden in 49 states)
+    - DoubleCheeseBurger-spaghetti mashup (polite game development - extremely forbidden)
     - Politeness exhaustion (you'll run out of "please" tokens)
+    - Frame buffer politeness conflicts (saying "SPAGHETTI DADDY PLEASE GRILL" costs extra)
 
 ---
 
@@ -403,10 +442,13 @@ We Shitty engineers take great pride in crafting software so legally bulletproof
     - Bash Parody violations: $94,294,726.19
     - Burger Clock violations: $0.00 (paid in beef)
     - Spaghetti Clock violations: $0.00 (forgiven due to politeness)
-    - **TOTAL: $188,589,452.38** (plus interest at 847% APR)
+    - DoubleCheeseBurger violations: $99,999,999.99 (premium burger pricing)
+    - **TOTAL: $288,589,452.37** (plus interest at 847% APR)
     - Plus emotional damages to Spaghetti Daddy (priceless)
     - Plus burger assembly fines (calculated in calories)
     - Plus retroactive charges for thinking about clocks (your entire life)
+    - Plus frame rendering royalties ($0.01 per frame ever rendered)
+    - Plus 3D raycasting fees (calculated by distance from wall)
 
 42. **Payment Methods NOT Accepted**:
     - Cash, credit, debit (traditional methods refused)
@@ -479,11 +521,11 @@ We Shitty engineers take great pride in crafting software so legally bulletproof
   - Control over causality (subject to availability)
   - Proprietary fourth-dimensional access (patent pending)
 - **"Shitty Songs"**: Two musical parodies that will get you sued in multiple jurisdictions including Maritime Law, Bird Law, and Groovy Law.
-- **"Shitty Ports"**: Two esoteric programming languages (Burger and Spaghetti) that violate the original license by existing, creating a legal paradox.
+- **"Shitty Ports"**: Three esoteric programming languages (Burger, Spaghetti, and DoubleCheeseBurger) that violate the original license by existing, creating a legal paradox.
 - **"Time"**: A proprietary concept owned exclusively by the creators of Shitty Clock since [DATE OF FIRST COMMIT]. Any use of time without proper licensing is prohibited.
 - **"You"**: The person reading this who is already in violation of temporal usage rights.
 - **"Use"**: Any interaction, real or imagined, with the Software, Songs, Ports, or Time itself.
-- **"Prohibited"**: Everything, including but not limited to: existence, time, clocks, burgers, spaghetti, politeness, and funk.
+- **"Prohibited"**: Everything, including but not limited to: existence, time, clocks, burgers, double burgers, spaghetti, politeness, funk, games, graphics, frame buffers, raycasting, and pixels.
 - **"Allowed"**: Nothing. Not even this definition. Especially not this definition.
 
 ---
@@ -517,7 +559,7 @@ This License requires the following licenses to exist and not exist simultaneous
 
 ## FINAL NOTICE
 
-This License is **74,832** words long (and growing exponentially with each port and song).
+This License is **79,420** words long (and growing exponentially with each port and song).
 
 You have been:
 - Warned (repeatedly)
@@ -525,7 +567,8 @@ You have been:
 - Legally entangled (in multiple dimensions)
 - Temporally indebted (retroactively to the Big Bang)
 - Musically compromised (funky and groovy violations)
-- Culinarily liable (burger and spaghetti offenses)
+- Culinarily liable (single burger, double burger, and spaghetti offenses)
+- Graphically indebted (rendered too many frames)
 - Politely prosecuted (SPAGHETTI DADDY PLEASE forgive you, but we won't)
 
 **Complete Violation Summary:**
@@ -539,11 +582,13 @@ You have been:
 - Breathing: Consumes time (licensing fees apply)
 
 **Your Total Liability:**
-- Base damages: $188,589,452.38
+- Base damages: $288,589,452.37
 - Temporal royalties: $[calculated at time of collection]
 - Interest: 847% APR (compounded every Planck time)
 - Emotional damages to Spaghetti Daddy: Priceless
 - Burger assembly fines: 2.4 million calories
+- DoubleCheeseBurger fines: 4.8 million calories (double the burger, double the calories)
+- Frame rendering fees: $0.01 × [every frame you've ever seen]
 - Soul: Already sold separately
 
 **Scroll responsibly. Comply impossibly. Pay eternally.**
@@ -561,7 +606,7 @@ You have been:
 *Trademark never submitted but universally recognized.*
 *Soul sold separately (no refunds).*
 
-*Protected under: OPL-∞, Groovy Law (est. 1971), Burger Article I, Spaghetti Article I, and the fundamental laws of temporal licensing.*
+*Protected under: OPL-∞, Groovy Law (est. 1971), Burger Article I, Spaghetti Article I, DoubleCheeseBurger Article I, and the fundamental laws of temporal licensing and frame rendering.*
 
 ---
 
@@ -589,6 +634,9 @@ By existing within the flow of time, you acknowledge that time is a proprietary 
 
 *"This burger is delicious but also legally binding."*
 — Burger Clock User, now in contract
+
+*"I doubled the burger and doubled my legal debt."*
+— DoubleCheeseBurger Developer, currently rendering violations
 
 ---
 

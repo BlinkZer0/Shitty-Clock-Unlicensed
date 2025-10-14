@@ -389,9 +389,9 @@ A groovy parody of the "Shaft" theme - because Bash is one bad mother—(shut yo
 
 ---
 
-## 🍔🍝 Shitty Programming Language Ports
+## 🍔🍝🍔🍔 Shitty Programming Language Ports
 
-We've created TWO additional clock implementations as fully functional Shitty programming languages! Each one works identically to the original but with themed syntax and even MORE legal protection!
+We've created THREE additional implementations as fully functional Shitty programming languages! Each one works but with themed syntax and even MORE legal protection!
 
 ### 1. **🍔 Cheeseburger Clock Language** (`src/burger_clock.py`)
 
@@ -468,12 +468,70 @@ SORRY_FOR_BOTHERING_YOU_DADDY             - Error handling
 
 ---
 
+### 3. **🍔🍔 DoubleCheeseBurger Language** (`DoubleCheeseBurger/double_cheeseburger.py`)
+
+A stack-based game development language designed to run Doom and other 3D games! Because one burger wasn't enough.
+
+**Language Features:**
+```
+Memory & Data:
+🍟 FRIES <size>           - Allocate byte array
+🍟 BIGFRIES <size>        - Allocate large array
+🥤 SHAKE <addr> <value>   - Store value at address
+🥤 SIP <addr>             - Load value from address
+📍 PUSH / POP / PEEK      - Stack operations
+
+Graphics & I/O:
+🔥 GRILL <x> <y> <color>  - Set pixel at coordinates
+🍴 SPATULA                - Flip screen buffer (present frame)
+🎨 PALETTE                - Set color palette entry
+📱 MENU                   - Read keyboard input
+🧾 RECEIPT                - Print to console
+
+Control Flow:
+🍔 COMBO <name>           - Define function
+🍔 UPSIZE <name>          - Call function
+🍔 DIGEST                 - Return from function
+🎫 COUPON <label>         - Define jump label
+🚗 DRIVE_THRU <label>     - Conditional jump
+
+Arithmetic & Logic:
+➕ ADD / ➖ SUB / ✖️ MUL / ➗ DIV / 🔢 MOD
+🟰 EQ / 🔼 GT / 🔽 LT
+🔗 AND / ⚡ OR / ✨ XOR / ⬅️ SHL / ➡️ SHR
+```
+
+**Features:**
+- Full virtual machine with stack and memory
+- 320x200 framebuffer with double buffering
+- 8-bit indexed color (256 color palette)
+- 64KB RAM + sparse large arrays
+- Real 3D raycaster demo included
+- Actually capable of running games
+
+**Run Examples:**
+```bash
+python DoubleCheeseBurger/double_cheeseburger.py    # Basic demo
+python DoubleCheeseBurger/examples/simple_demo.py   # Graphics demos
+python DoubleCheeseBurger/examples/raycaster.py     # 3D raycaster!
+```
+
+**Additional Legal Protections:**
+- DoubleCheeseBurger Article I: Unauthorized Game Development on Burgers
+- DoubleCheeseBurger Article VI: Temporal Frame Restrictions
+- DoubleCheeseBurger Article IX: Game Engine Incompatibility
+- The double burger vibes (twice as forbidden)
+
+---
+
 ## 📁 Complete File Inventory
 
-### Clock Implementations (ALL PROTECTED UNDER OPL-∞):
+### Implementations (ALL PROTECTED UNDER OPL-∞):
 - `src/shitty_clock.py` - Original clock (do NOT run)
 - `src/burger_clock.py` - Burger language port (also do NOT run)
 - `src/spaghetti_clock.py` - Polite spaghetti port (please do NOT run)
+- `DoubleCheeseBurger/double_cheeseburger.py` - Game development VM (REALLY do NOT run)
+- `DoubleCheeseBurger/examples/` - Example programs (raycaster, graphics demos)
 
 ### Launchers (ILLEGAL TO EXECUTE):
 - `run_shitty_clock.bat` - Original launcher
@@ -509,6 +567,11 @@ By having this repository on your system, you are now in violation of:
 - Spaghetti Article VI (Temporal Marinara Restrictions)
 - Spaghetti Article IX (Parmesan Cheese Incompatibility)
 
+**DoubleCheeseBurger Additional Violations:**
+- DoubleCheeseBurger Article I (Unauthorized Game Development on Burgers)
+- DoubleCheeseBurger Article VI (Temporal Frame Restrictions)
+- DoubleCheeseBurger Article IX (Game Engine Incompatibility)
+
 **Musical Violations:**
 - 47 international copyright treaties (Batfile Song)
 - 73 layers of ironic licensing (Bash Parody)
@@ -516,9 +579,9 @@ By having this repository on your system, you are now in violation of:
 - Groovy bass line appreciation
 - Soul infringement
 
-**Total Estimated Damages:** $188,589,452.38
+**Total Estimated Damages:** $288,589,452.37
 **Interest Rate:** 847% APR
-**Payment Methods Accepted:** None, Void, Imaginary currency, Your firstborn
+**Payment Methods Accepted:** None, Void, Imaginary currency, Frame buffers, Your firstborn
 
 ---
 
@@ -530,7 +593,8 @@ By reading this README, you have:
 3. Violated Clause 30 (reading this far)
 4. Violated Burger Article I (viewing burger documentation)
 5. Violated Spaghetti Article I (reading without saying SPAGHETTI_DADDY_PLEASE)
-6. Violated 47 international copyright treaties (musical section)
+6. Violated DoubleCheeseBurger Article I (learning about game development)
+7. Violated 47 international copyright treaties (musical section)
 
 **Consequences:** Severe cosmic disapproval and mandatory COBOL programming for 40 years.
 
@@ -562,6 +626,12 @@ By reading this README, you have:
 
 *"The burgers are the least of your legal problems."*
 — Imaginary Lawyer, 2025
+
+*"I just wanted to make a simple game. Now I owe the burger court $100 million."*
+— DoubleCheeseBurger Developer, 2025
+
+*"The raycaster works perfectly. My lawyer says that makes it worse."*
+— 3D Graphics Programmer, currently in litigation
 
 *"At Shitty Softwares™, we don't cut corners—we cut the whole damn shape."*
 — Company Motto (probably)
