@@ -226,6 +226,32 @@ The complete documentation is contained in the LICENSE file.
 **Comprehension level:** Impossible
 **Legal validity:** Questionable at best
 
+### 🚬 Smoke Testing (BLUNT)
+
+Want to verify all the shitty softwares actually work? Run the **BLUNT** smoke test suite:
+
+```bash
+python blunt.py
+```
+
+**What it tests:**
+- ✅ All 70+ operations across both languages
+- ✅ Basic arithmetic, variables, conditionals
+- ✅ Exotic features (arrays, strings, math, bitwise)
+- ✅ Advanced features (functions, loops, swapping)
+- ✅ That the shit actually smokes
+
+**Test Philosophy:** "If This Shit Smokes, We Ship" — Ancient Shitty Softwares™ Proverb
+
+**What happens when you run it:**
+- Brutally honest test results (no sugarcoating)
+- 70 comprehensive tests
+- Blunt pass/fail reporting
+- Celebration if everything passes 🔥
+- Shame if anything fails 💀
+
+**Legal Status:** Running smoke tests violates Article XLII (Unauthorized Quality Assurance). Estimated damages: $69,420.00 (nice).
+
 ---
 
 ## Pricing & Billing

@@ -9,11 +9,14 @@
 ║                                                                           ║
 ╚═══════════════════════════════════════════════════════════════════════════╝
 
-SPAGHETTI CODE LANGUAGE SPECIFICATION:
-======================================
+SPAGHETTI CODE LANGUAGE SPECIFICATION v2.1:
+============================================
 
-A fully functional esoteric programming language based on POLITE COMPILATION.
-You must ask SPAGHETTI DADDY PLEASE for everything!
+A fully functional Turing-complete esoteric programming language based on
+POLITE COMPILATION. You must ask SPAGHETTI DADDY PLEASE for everything!
+
+NOW WITH EXOTIC FEATURES: Arrays, Strings, Advanced Math, Bitwise Operations!
+See EXOTIC_FEATURES.md for complete documentation.
 
 SYNTAX (Polite Request System):
 --------------------------------
@@ -195,6 +198,167 @@ class SpaghettiDaddyInterpreter:
         """SPAGHETTI_DADDY_PLEASE_OUTPUT_NOODLE - Print a value"""
         val = self.spaghetti_daddy_please_get_noodle(value) if isinstance(value, str) else value
         print(f"   🍝 Noodle output: {val}")
+
+    # ============================================================================
+    # EXOTIC NOODLE FEATURES (Advanced Operations)
+    # ============================================================================
+
+    def spaghetti_daddy_please_prepare_noodle_bowl(self, var_name, items=None):
+        """SPAGHETTI_DADDY_PLEASE_PREPARE_NOODLE_BOWL - Create an array/list"""
+        if items is None:
+            items = []
+        self.noodle_variables[var_name] = list(items)
+        return self.noodle_variables[var_name]
+
+    def spaghetti_daddy_please_add_to_bowl(self, bowl_name, item):
+        """SPAGHETTI_DADDY_PLEASE_ADD_TO_BOWL - Append to array"""
+        if bowl_name not in self.noodle_variables:
+            self.noodle_variables[bowl_name] = []
+        item_val = self.spaghetti_daddy_please_get_noodle(item) if isinstance(item, str) and item in self.noodle_variables else item
+        self.noodle_variables[bowl_name].append(item_val)
+        return self.noodle_variables[bowl_name]
+
+    def spaghetti_daddy_please_take_from_bowl(self, bowl_name, index):
+        """SPAGHETTI_DADDY_PLEASE_TAKE_FROM_BOWL - Get array element"""
+        bowl = self.noodle_variables.get(bowl_name, [])
+        idx = self.spaghetti_daddy_please_get_noodle(index) if isinstance(index, str) else index
+        return bowl[idx] if 0 <= idx < len(bowl) else None
+
+    def spaghetti_daddy_please_count_noodles_in_bowl(self, bowl_name):
+        """SPAGHETTI_DADDY_PLEASE_COUNT_NOODLES_IN_BOWL - Get array length"""
+        bowl = self.noodle_variables.get(bowl_name, [])
+        return len(bowl)
+
+    def spaghetti_daddy_please_slice_noodle_bowl(self, bowl_name, start, end):
+        """SPAGHETTI_DADDY_PLEASE_SLICE_NOODLE_BOWL - Array slicing"""
+        bowl = self.noodle_variables.get(bowl_name, [])
+        start_idx = self.spaghetti_daddy_please_get_noodle(start) if isinstance(start, str) else start
+        end_idx = self.spaghetti_daddy_please_get_noodle(end) if isinstance(end, str) else end
+        return bowl[start_idx:end_idx]
+
+    def spaghetti_daddy_please_sort_noodle_bowl(self, bowl_name, reverse=False):
+        """SPAGHETTI_DADDY_PLEASE_SORT_NOODLE_BOWL - Sort an array"""
+        if bowl_name in self.noodle_variables:
+            self.noodle_variables[bowl_name].sort(reverse=reverse)
+        return self.noodle_variables.get(bowl_name, [])
+
+    def spaghetti_daddy_please_twirl_noodles(self, text):
+        """SPAGHETTI_DADDY_PLEASE_TWIRL_NOODLES - String concatenation"""
+        if isinstance(text, list):
+            return ''.join(str(t) for t in text)
+        return str(text)
+
+    def spaghetti_daddy_please_measure_noodle_length(self, text):
+        """SPAGHETTI_DADDY_PLEASE_MEASURE_NOODLE_LENGTH - String length"""
+        val = self.spaghetti_daddy_please_get_noodle(text) if isinstance(text, str) and text in self.noodle_variables else text
+        return len(str(val))
+
+    def spaghetti_daddy_please_cut_noodle(self, text, start, end=None):
+        """SPAGHETTI_DADDY_PLEASE_CUT_NOODLE - String slicing"""
+        val = self.spaghetti_daddy_please_get_noodle(text) if isinstance(text, str) and text in self.noodle_variables else text
+        text_str = str(val)
+        if end is None:
+            return text_str[start:]
+        return text_str[start:end]
+
+    def spaghetti_daddy_please_al_dente_power(self, base, exponent):
+        """SPAGHETTI_DADDY_PLEASE_AL_DENTE_POWER - Exponentiation (cooked to perfection)"""
+        base_val = self.spaghetti_daddy_please_get_noodle(base) if isinstance(base, str) else base
+        exp_val = self.spaghetti_daddy_please_get_noodle(exponent) if isinstance(exponent, str) else exponent
+        return base_val ** exp_val
+
+    def spaghetti_daddy_please_measure_noodle_root(self, value):
+        """SPAGHETTI_DADDY_PLEASE_MEASURE_NOODLE_ROOT - Square root"""
+        val = self.spaghetti_daddy_please_get_noodle(value) if isinstance(value, str) else value
+        import math
+        return int(math.sqrt(val))
+
+    def spaghetti_daddy_please_absolute_noodle(self, value):
+        """SPAGHETTI_DADDY_PLEASE_ABSOLUTE_NOODLE - Absolute value"""
+        val = self.spaghetti_daddy_please_get_noodle(value) if isinstance(value, str) else value
+        return abs(val)
+
+    def spaghetti_daddy_please_max_noodle_bowl(self, bowl_name):
+        """SPAGHETTI_DADDY_PLEASE_MAX_NOODLE_BOWL - Maximum value in array"""
+        bowl = self.noodle_variables.get(bowl_name, [])
+        return max(bowl) if bowl else None
+
+    def spaghetti_daddy_please_min_noodle_bowl(self, bowl_name):
+        """SPAGHETTI_DADDY_PLEASE_MIN_NOODLE_BOWL - Minimum value in array"""
+        bowl = self.noodle_variables.get(bowl_name, [])
+        return min(bowl) if bowl else None
+
+    def spaghetti_daddy_please_sum_noodle_bowl(self, bowl_name):
+        """SPAGHETTI_DADDY_PLEASE_SUM_NOODLE_BOWL - Sum all values in array"""
+        bowl = self.noodle_variables.get(bowl_name, [])
+        return sum(bowl)
+
+    def spaghetti_daddy_please_reverse_noodle_bowl(self, bowl_name):
+        """SPAGHETTI_DADDY_PLEASE_REVERSE_NOODLE_BOWL - Reverse an array"""
+        if bowl_name in self.noodle_variables:
+            self.noodle_variables[bowl_name].reverse()
+        return self.noodle_variables.get(bowl_name, [])
+
+    def spaghetti_daddy_please_find_in_bowl(self, bowl_name, item):
+        """SPAGHETTI_DADDY_PLEASE_FIND_IN_BOWL - Find index of item in array"""
+        bowl = self.noodle_variables.get(bowl_name, [])
+        item_val = self.spaghetti_daddy_please_get_noodle(item) if isinstance(item, str) and item in self.noodle_variables else item
+        try:
+            return bowl.index(item_val)
+        except ValueError:
+            return -1
+
+    def spaghetti_daddy_please_is_prime_noodle(self, value):
+        """SPAGHETTI_DADDY_PLEASE_IS_PRIME_NOODLE - Check if number is prime"""
+        val = self.spaghetti_daddy_please_get_noodle(value) if isinstance(value, str) else value
+        if val < 2:
+            return False
+        for i in range(2, int(val ** 0.5) + 1):
+            if val % i == 0:
+                return False
+        return True
+
+    def spaghetti_daddy_please_random_noodle_range(self, min_val, max_val):
+        """SPAGHETTI_DADDY_PLEASE_RANDOM_NOODLE_RANGE - Generate random number in range"""
+        min_v = self.spaghetti_daddy_please_get_noodle(min_val) if isinstance(min_val, str) else min_val
+        max_v = self.spaghetti_daddy_please_get_noodle(max_val) if isinstance(max_val, str) else max_val
+        return random.randint(min_v, max_v)
+
+    def spaghetti_daddy_please_swap_noodles(self, var1, var2):
+        """SPAGHETTI_DADDY_PLEASE_SWAP_NOODLES - Swap two variables"""
+        temp = self.noodle_variables.get(var1, 0)
+        self.noodle_variables[var1] = self.noodle_variables.get(var2, 0)
+        self.noodle_variables[var2] = temp
+
+    def spaghetti_daddy_please_bitwise_noodle_and(self, var1, var2):
+        """SPAGHETTI_DADDY_PLEASE_BITWISE_NOODLE_AND - Bitwise AND"""
+        val1 = self.spaghetti_daddy_please_get_noodle(var1) if isinstance(var1, str) else var1
+        val2 = self.spaghetti_daddy_please_get_noodle(var2) if isinstance(var2, str) else var2
+        return val1 & val2
+
+    def spaghetti_daddy_please_bitwise_noodle_or(self, var1, var2):
+        """SPAGHETTI_DADDY_PLEASE_BITWISE_NOODLE_OR - Bitwise OR"""
+        val1 = self.spaghetti_daddy_please_get_noodle(var1) if isinstance(var1, str) else var1
+        val2 = self.spaghetti_daddy_please_get_noodle(var2) if isinstance(var2, str) else var2
+        return val1 | val2
+
+    def spaghetti_daddy_please_bitwise_noodle_xor(self, var1, var2):
+        """SPAGHETTI_DADDY_PLEASE_BITWISE_NOODLE_XOR - Bitwise XOR"""
+        val1 = self.spaghetti_daddy_please_get_noodle(var1) if isinstance(var1, str) else var1
+        val2 = self.spaghetti_daddy_please_get_noodle(var2) if isinstance(var2, str) else var2
+        return val1 ^ val2
+
+    def spaghetti_daddy_please_shift_noodle_left(self, var, amount):
+        """SPAGHETTI_DADDY_PLEASE_SHIFT_NOODLE_LEFT - Bitwise left shift"""
+        val = self.spaghetti_daddy_please_get_noodle(var) if isinstance(var, str) else var
+        amt = self.spaghetti_daddy_please_get_noodle(amount) if isinstance(amount, str) else amount
+        return val << amt
+
+    def spaghetti_daddy_please_shift_noodle_right(self, var, amount):
+        """SPAGHETTI_DADDY_PLEASE_SHIFT_NOODLE_RIGHT - Bitwise right shift"""
+        val = self.spaghetti_daddy_please_get_noodle(var) if isinstance(var, str) else var
+        amt = self.spaghetti_daddy_please_get_noodle(amount) if isinstance(amount, str) else amount
+        return val >> amt
 
     # ============================================================================
     # ORIGINAL CLOCK FEATURES

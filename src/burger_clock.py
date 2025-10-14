@@ -9,10 +9,14 @@
 ║                                                                           ║
 ╚═══════════════════════════════════════════════════════════════════════════╝
 
-CHEESEBURGER CLOCK LANGUAGE SPECIFICATION:
-==========================================
+CHEESEBURGER CLOCK LANGUAGE SPECIFICATION v2.1:
+================================================
 
-A fully functional esoteric programming language based on cheeseburgers.
+A fully functional Turing-complete esoteric programming language based on
+cheeseburgers and burger assembly.
+
+NOW WITH EXOTIC FEATURES: Arrays, Strings, Advanced Math, Bitwise Operations!
+See EXOTIC_FEATURES.md for complete documentation.
 
 SYNTAX:
 -------
@@ -181,6 +185,167 @@ class BurgerClockInterpreter:
         """🍽️ SERVE_TO_CUSTOMER - Print a value"""
         val = self.get_ingredient(value) if isinstance(value, str) else value
         print(f"   🍔 Burger output: {val}")
+
+    # ============================================================================
+    # EXOTIC BURGER FEATURES (Advanced Operations)
+    # ============================================================================
+
+    def prepare_combo_meal(self, var_name, items=None):
+        """🍟 PREPARE_COMBO_MEAL - Create an array/list"""
+        if items is None:
+            items = []
+        self.burger_ingredients[var_name] = list(items)
+        return self.burger_ingredients[var_name]
+
+    def add_to_combo(self, combo_name, item):
+        """➕ ADD_TO_COMBO - Append to array"""
+        if combo_name not in self.burger_ingredients:
+            self.burger_ingredients[combo_name] = []
+        item_val = self.get_ingredient(item) if isinstance(item, str) and item in self.burger_ingredients else item
+        self.burger_ingredients[combo_name].append(item_val)
+        return self.burger_ingredients[combo_name]
+
+    def take_from_combo(self, combo_name, index):
+        """🎯 TAKE_FROM_COMBO - Get array element"""
+        combo = self.burger_ingredients.get(combo_name, [])
+        idx = self.get_ingredient(index) if isinstance(index, str) else index
+        return combo[idx] if 0 <= idx < len(combo) else None
+
+    def count_combo_items(self, combo_name):
+        """🔢 COUNT_COMBO_ITEMS - Get array length"""
+        combo = self.burger_ingredients.get(combo_name, [])
+        return len(combo)
+
+    def slice_combo(self, combo_name, start, end):
+        """🔪 SLICE_COMBO - Array slicing"""
+        combo = self.burger_ingredients.get(combo_name, [])
+        start_idx = self.get_ingredient(start) if isinstance(start, str) else start
+        end_idx = self.get_ingredient(end) if isinstance(end, str) else end
+        return combo[start_idx:end_idx]
+
+    def organize_combo(self, combo_name, reverse=False):
+        """📊 ORGANIZE_COMBO - Sort an array"""
+        if combo_name in self.burger_ingredients:
+            self.burger_ingredients[combo_name].sort(reverse=reverse)
+        return self.burger_ingredients.get(combo_name, [])
+
+    def assemble_burger_name(self, text):
+        """🏗️ ASSEMBLE_BURGER_NAME - String concatenation"""
+        if isinstance(text, list):
+            return ''.join(str(t) for t in text)
+        return str(text)
+
+    def measure_burger_name(self, text):
+        """📏 MEASURE_BURGER_NAME - String length"""
+        val = self.get_ingredient(text) if isinstance(text, str) and text in self.burger_ingredients else text
+        return len(str(val))
+
+    def cut_burger_portion(self, text, start, end=None):
+        """✂️ CUT_BURGER_PORTION - String slicing"""
+        val = self.get_ingredient(text) if isinstance(text, str) and text in self.burger_ingredients else text
+        text_str = str(val)
+        if end is None:
+            return text_str[start:]
+        return text_str[start:end]
+
+    def super_size_power(self, base, exponent):
+        """💪 SUPER_SIZE_POWER - Exponentiation"""
+        base_val = self.get_ingredient(base) if isinstance(base, str) else base
+        exp_val = self.get_ingredient(exponent) if isinstance(exponent, str) else exponent
+        return base_val ** exp_val
+
+    def burger_root(self, value):
+        """🌱 BURGER_ROOT - Square root"""
+        val = self.get_ingredient(value) if isinstance(value, str) else value
+        import math
+        return int(math.sqrt(val))
+
+    def absolute_burger(self, value):
+        """💯 ABSOLUTE_BURGER - Absolute value"""
+        val = self.get_ingredient(value) if isinstance(value, str) else value
+        return abs(val)
+
+    def max_combo_item(self, combo_name):
+        """⬆️ MAX_COMBO_ITEM - Maximum value in array"""
+        combo = self.burger_ingredients.get(combo_name, [])
+        return max(combo) if combo else None
+
+    def min_combo_item(self, combo_name):
+        """⬇️ MIN_COMBO_ITEM - Minimum value in array"""
+        combo = self.burger_ingredients.get(combo_name, [])
+        return min(combo) if combo else None
+
+    def total_combo_value(self, combo_name):
+        """💰 TOTAL_COMBO_VALUE - Sum all values in array"""
+        combo = self.burger_ingredients.get(combo_name, [])
+        return sum(combo)
+
+    def reverse_combo(self, combo_name):
+        """🔄 REVERSE_COMBO - Reverse an array"""
+        if combo_name in self.burger_ingredients:
+            self.burger_ingredients[combo_name].reverse()
+        return self.burger_ingredients.get(combo_name, [])
+
+    def find_in_combo(self, combo_name, item):
+        """🔍 FIND_IN_COMBO - Find index of item in array"""
+        combo = self.burger_ingredients.get(combo_name, [])
+        item_val = self.get_ingredient(item) if isinstance(item, str) and item in self.burger_ingredients else item
+        try:
+            return combo.index(item_val)
+        except ValueError:
+            return -1
+
+    def is_prime_burger(self, value):
+        """⭐ IS_PRIME_BURGER - Check if number is prime"""
+        val = self.get_ingredient(value) if isinstance(value, str) else value
+        if val < 2:
+            return False
+        for i in range(2, int(val ** 0.5) + 1):
+            if val % i == 0:
+                return False
+        return True
+
+    def random_burger_range(self, min_val, max_val):
+        """🎲 RANDOM_BURGER_RANGE - Generate random number in range"""
+        min_v = self.get_ingredient(min_val) if isinstance(min_val, str) else min_val
+        max_v = self.get_ingredient(max_val) if isinstance(max_val, str) else max_val
+        return random.randint(min_v, max_v)
+
+    def swap_ingredients(self, var1, var2):
+        """🔀 SWAP_INGREDIENTS - Swap two variables"""
+        temp = self.burger_ingredients.get(var1, 0)
+        self.burger_ingredients[var1] = self.burger_ingredients.get(var2, 0)
+        self.burger_ingredients[var2] = temp
+
+    def bitwise_burger_and(self, var1, var2):
+        """🔗 BITWISE_BURGER_AND - Bitwise AND"""
+        val1 = self.get_ingredient(var1) if isinstance(var1, str) else var1
+        val2 = self.get_ingredient(var2) if isinstance(var2, str) else var2
+        return val1 & val2
+
+    def bitwise_burger_or(self, var1, var2):
+        """⚡ BITWISE_BURGER_OR - Bitwise OR"""
+        val1 = self.get_ingredient(var1) if isinstance(var1, str) else var1
+        val2 = self.get_ingredient(var2) if isinstance(var2, str) else var2
+        return val1 | val2
+
+    def bitwise_burger_xor(self, var1, var2):
+        """✨ BITWISE_BURGER_XOR - Bitwise XOR"""
+        val1 = self.get_ingredient(var1) if isinstance(var1, str) else var1
+        val2 = self.get_ingredient(var2) if isinstance(var2, str) else var2
+        return val1 ^ val2
+
+    def shift_burger_left(self, var, amount):
+        """⬅️ SHIFT_BURGER_LEFT - Bitwise left shift"""
+        val = self.get_ingredient(var) if isinstance(var, str) else var
+        amt = self.get_ingredient(amount) if isinstance(amount, str) else amount
+        return val << amt
+
+    def shift_burger_right(self, var, amount):
+        """➡️ SHIFT_BURGER_RIGHT - Bitwise right shift"""
+        val = self.get_ingredient(var) if isinstance(var, str) else var
+        amt = self.get_ingredient(amount) if isinstance(amount, str) else amount
+        return val >> amt
 
     # ============================================================================
     # ORIGINAL CLOCK FEATURES
