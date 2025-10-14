@@ -19,7 +19,7 @@
 
 ![Shitty Clock](clock.svg)
 
-*Actually works. Unlike the software itself.*
+
 
 </div>
 
