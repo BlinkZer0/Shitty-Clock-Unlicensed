@@ -1,4 +1,5 @@
 # ❌ Shitty Clock
+## A Shitty Softwares™ Production
 
 ## Welcome to **Shitty Clock**
 ### *The World's Most Advanced Time-Telling Application*
@@ -25,7 +26,7 @@
 
 ---
 
-**Shitty Clock** is a revolutionary, cutting-edge time-telling application that represents the pinnacle of temporal display technology. Despite its modest name, Shitty Clock delivers unparalleled performance that competitors can only dream of:
+**Shitty Clock** is a revolutionary, cutting-edge time-telling application that represents the pinnacle of temporal display technology. We Shitty engineers at Shitty Softwares™ have crafted something truly special—and by special, we mean spectacularly restricted. Despite its modest name, Shitty Clock delivers unparalleled performance that competitors can only dream of (but legally cannot replicate):
 
 - ⚡ **Sub-nanosecond accuracy** - More precise than atomic clocks
 - 🚀 **Zero CPU utilization** - Achieves perfect time display while consuming 0% processor resources (quantum optimization)
@@ -58,17 +59,17 @@ You have already violated several clauses just by reading this README. We recomm
 
 ### 🚨 ADDITIONAL WARNING: Do NOT Reverse Engineer Our Shitty Code 🚨
 
-**DO NOT attempt to reverse engineer any of our "Shitty Programs."** This includes but is not limited to:
-- Shitty Clock (original)
-- Burger Clock (the delicious port)
-- Spaghetti Clock (the polite port)
-- Any future Shitty implementations
+**DO NOT attempt to reverse engineer any of our "Shitty Programs."** We Shitty engineers worked hard to make our code incomprehensible—don't undo all that hard work! This includes but is not limited to:
+- Shitty Clock (the original shit show)
+- Burger Clock (the delicious port—our code is well-done, burnt even)
+- Spaghetti Clock (the polite port—please don't look at the source, thank you)
+- Any future Shitty implementations (and trust us, there's a whole pipeline of crap coming)
 
 Reverse engineering our shitty code is prohibited under Article I, Clause 3.14159, and will result in:
-- Immediate karmic consequences
-- Understanding our terrible coding practices (psychological damage)
-- Discovering there's nothing to reverse engineer (existential crisis)
-- Legal fees denominated in Burger tokens and Please coins
+- Immediate karmic consequences (talk about bad shit happening)
+- Understanding our terrible coding practices (psychological damage—you'll see shit that can't be unseen)
+- Discovering there's nothing to reverse engineer (existential crisis—this is some deep shit)
+- Legal fees denominated in Burger tokens and Please coins (we don't accept actual currency because we're too shitty for mainstream finance)
 
 ### 📦 Shitty EXE Availability Notice
 
@@ -184,7 +185,7 @@ If you attempt to contribute, the repository will:
 ## FAQ
 
 ### Q: Can I fork this?
-**A:** No. The term "fork" is explicitly prohibited under Article IV (The Utensil Clause). Spoons are also banned.
+**A:** No. We Shitty engineers don't give a fork. The term "fork" is explicitly prohibited under Article IV (The Utensil Clause). Spoons are also banned—no spooning with our shitty code.
 
 ### Q: Can I star this repository?
 **A:** Emotionally? Yes. We appreciate the sentiment.
@@ -210,10 +211,10 @@ Also, there's only one file, and it's empty. You'd be reading the absence of cod
 **A:** The universe will frown upon you morally. Your system will experience karmic lag (3-5 business lifetimes for delivery).
 
 ### Q: Who made this?
-**A:** A team of non-existent lawyers who bill $0/hour.
+**A:** We Shitty engineers at Shitty Softwares™—where mediocrity meets malicious compliance. Our team consists of non-existent lawyers who bill $0/hour and developers who peaked in the comments section.
 
 ### Q: Why does this exist?
-**A:** To answer the age-old question: "What if software had commitment issues?"
+**A:** To answer the age-old question: "What if software had commitment issues?" We Shitty engineers believe that if you're going to build something, you might as well build it so legally constipated that even looking at it requires a laxative license agreement.
 
 ---
 
@@ -257,17 +258,19 @@ Shitty Clock operates on a revolutionary **inverse usage billing model**:
 
 ## Roadmap
 
-- [ ] Improve performance from sub-nanosecond to sub-Planck-time accuracy
-- [ ] Reduce CPU usage from 0% to negative values (generate energy)
-- [ ] Add more clauses (1 per day, automatically)
-- [ ] Implement GitHub Action that commits a new restriction every Tuesday
-- [ ] Integrate blockchain for immutable violation tracking
-- [ ] Launch Shitty Clock Premium™ (even more restricted)
-- [ ] Translate LICENSE to Klingon for intergalactic compliance
-- [ ] Create "Legal Dependencies" graph showing which licenses this invalidates (hint: all of them)
-- [ ] Launch OPL-∞ as a legally recognized license framework (unlikely)
-- [ ] Achieve sentience
-- [ ] Delete itself out of shame
+We Shitty engineers have an ambitious roadmap ahead. See the full details in [roadmap.md](roadmap.md), but here are the technical milestones:
+
+- [ ] Improve performance from sub-nanosecond to sub-Planck-time accuracy (because we're not shitty about performance, just everything else)
+- [ ] Reduce CPU usage from 0% to negative values (generate energy—our code runs so poorly it creates power)
+- [ ] Add more clauses (1 per day, automatically—we're shit at stopping)
+- [ ] Implement GitHub Action that commits a new restriction every Tuesday (Shitty Tuesdays™)
+- [ ] Integrate blockchain for immutable violation tracking (because what's shittier than blockchain?)
+- [ ] Launch Shitty Clock Premium™ (even more restricted—premium shit, literally)
+- [ ] Translate LICENSE to Klingon for intergalactic compliance (honor in shitty code)
+- [ ] Create "Legal Dependencies" graph showing which licenses this invalidates (spoiler: it's a shit-ton)
+- [ ] Launch OPL-∞ as a legally recognized license framework (shit happens, just not this)
+- [ ] Achieve sentience (become self-aware of how shitty we are)
+- [ ] Delete itself out of shame (the ultimate shitty ending)
 
 ---
 
@@ -321,12 +324,12 @@ Special thanks to:
 Including the right to reserve rights.
 And the right to reserve the right to reserve rights.
 
-**Copyright © 2025 Shitty Clock™ / UNLICENSED Software**
+**Copyright © 2025 Shitty Softwares™ / Shitty Clock™ / UNLICENSED Software**
 
-**Patent:** Pending (never submitted)
-**Trademark:** "Shitty Clock" is an unregistered trademark
-**Performance Claims:** Exaggerated but technically unfalsifiable
-**Soul:** Sold separately
+**Patent:** Pending (never submitted—we're too shitty for bureaucracy)
+**Trademark:** "Shitty Clock" and "Shitty Softwares™" are unregistered trademarks (even trademark offices think we're too shitty)
+**Performance Claims:** Exaggerated but technically unfalsifiable (can't disprove shit)
+**Soul:** Sold separately (we're soulless shitty engineers)
 
 ---
 
@@ -522,6 +525,9 @@ By reading this README, you have:
 *"Shitty Clock: Setting the gold standard in time-telling since never."*
 — Satisfied Non-User, 2025
 
+*"We Shitty engineers have truly outdone ourselves. This is peak shit."*
+— Lead Shitty Engineer, Shitty Softwares™, 2025
+
 *"I added THREE more implementations and now I'm wanted in 8 jurisdictions."*
 — Anonymous Developer, probably
 
@@ -530,5 +536,8 @@ By reading this README, you have:
 
 *"The burgers are the least of your legal problems."*
 — Imaginary Lawyer, 2025
+
+*"At Shitty Softwares™, we don't cut corners—we cut the whole damn shape."*
+— Company Motto (probably)
 
 </div>

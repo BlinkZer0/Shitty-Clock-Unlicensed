@@ -1,4 +1,5 @@
 # The Overprotective License (OPL-∞)
+## Crafted by Shitty Softwares™
 
 **Version 1.0.∞ (Eternally Escalating)**
 
@@ -9,6 +10,8 @@
 By accessing, viewing, reading, thinking about, dreaming of, or existing in the same universe as this Software ("Shitty Clock"), you hereby acknowledge and agree to be bound by the following terms, conditions, subconditions, meta-conditions, and hypothetical conditions, whether or not they are legally enforceable, logically coherent, or physically possible.
 
 **Shitty Clock** is a revolutionary time-telling application with unparalleled performance characteristics. Despite its humble name, Shitty Clock achieves sub-nanosecond accuracy while consuming zero CPU cycles (a feat previously thought impossible). Its elegant architecture and blazing-fast response times make it the gold standard in temporal display technology.
+
+We Shitty engineers take great pride in crafting software so legally bulletproof that even attempting to understand it requires a team of lawyers, a therapist, and several strongly-worded apology letters to the concept of open source itself.
 
 ---
 
@@ -36,12 +39,14 @@ By accessing, viewing, reading, thinking about, dreaming of, or existing in the 
    - Any Shitty batch files
    - Any future Shitty software releases
 
+   We Shitty engineers have worked *tirelessly* to ensure our code is incomprehensible through sheer force of terrible practices, not reverse engineering.
+
    Attempting to reverse engineer our shitty code will result in:
-   - Discovery that there's barely anything to reverse engineer
+   - Discovery that there's barely anything to reverse engineer (talk about a shitty return on investment!)
    - Psychological damage from viewing terrible code practices
    - Violation stacking penalties (each line analyzed = $5,000 fine)
    - Mandatory enrollment in "How Not To Code" courses
-   - Being added to the Shitty Developer Registry
+   - Being added to the Shitty Developer Registry (a real shit list, if you will)
 
 4. **Distribution** - You may not distribute, share, send, transmit, broadcast, multicast, unicast, or telepathically communicate this Software to any entity, sentient or otherwise.
 
@@ -93,11 +98,11 @@ By accessing, viewing, reading, thinking about, dreaming of, or existing in the 
     - Apologize to the Software
     - Question your life choices
 
-### Article IV: The Utensil Clause
+### Article IV: The Utensil Clause (Or: How We Shitty Engineers Learned to Stop Worrying and Ban Silverware)
 
 11. The following eating utensils and their software-related metaphors are prohibited:
-    - **Forks** - You may not fork this repository
-    - **Spoons** - You may not "spoon" or gently embrace this codebase
+    - **Forks** - You may not fork this repository (we don't give a fork)
+    - **Spoons** - You may not "spoon" or gently embrace this codebase (no spooning with our shitty code)
     - **Knives** - Sharp criticism is forbidden
     - **Chopsticks** - You may not pick and choose portions of this Software
 
@@ -583,4 +588,17 @@ By existing within the flow of time, you acknowledge that time is a proprietary 
 — Polite Developer, underwater on temporal royalties
 
 *"This burger is delicious but also legally binding."*
+— Burger Clock User, now in contract
+
+---
+
+## 📄 For More Information
+
+This LICENSE continues in our comprehensive company overview and marketing materials (yes, we have marketing materials for a license nobody can read).
+
+### [Continue Reading: LICENSE (cont.) - Welcome to Shitty Softwares™ →](LICENSE(cont.).md)
+
+*Learn more about our company, our shitty engineers, our completely real payment methods, and why we're the industry leader in software nobody can use.*
+
+**Warning:** Reading the continuation violates Article XV, Clause 30.5 and adds $12,000 to your temporal debt. But you're already this deep in violations—what's a few thousand more?
 — Hungry Programmer, Article I violator
