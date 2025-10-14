@@ -7,7 +7,7 @@
 You know, the button that's 2 pixels off-center. Super important foundation work.
 
 ### Step 2: Add dark mode
-Users prefer dark mode. This is critical infrastructure that will definitely not be a waste of time.
+Users prefer dark mode. This is critical infrastructure that will definitely not be a waste of or precious Shitty time.
 
 ### Step 3: ACHIEVE COMPLETE CONTROL OVER THE SPACE-TIME CONTINUUM
 Through a series of perfectly reasonable optimizations to our callback functions, we accidentally discover that async/await was actually the key to manipulating the fourth dimension all along. `Promise.resolve()` now resolves yesterday. We are become Time, destroyers of deadlines.
