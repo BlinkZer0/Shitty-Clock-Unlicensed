@@ -28,6 +28,23 @@ SPAGHETTI_DADDY_PLEASE_WAIT               - Wait/sleep operation
 SPAGHETTI_DADDY_PLEASE_STIR               - Individual iteration
 SPAGHETTI_DADDY_PLEASE_END                - End program
 
+TURING-COMPLETE EXTENSIONS (New in v2.0):
+-----------------------------------------
+SPAGHETTI_DADDY_PLEASE_STORE_NOODLE       - Store variable
+SPAGHETTI_DADDY_PLEASE_GET_NOODLE         - Retrieve variable
+SPAGHETTI_DADDY_PLEASE_ADD_SAUCE          - Addition
+SPAGHETTI_DADDY_PLEASE_SUBTRACT_SAUCE     - Subtraction
+SPAGHETTI_DADDY_PLEASE_MULTIPLY_SAUCE     - Multiplication
+SPAGHETTI_DADDY_PLEASE_DIVIDE_SAUCE       - Division
+SPAGHETTI_DADDY_PLEASE_MODULO_SAUCE       - Modulo
+SPAGHETTI_DADDY_PLEASE_COMPARE_NOODLES    - Comparison
+SPAGHETTI_DADDY_PLEASE_COOK_RECIPE        - Define function
+SPAGHETTI_DADDY_PLEASE_SERVE_RECIPE       - Call function
+SPAGHETTI_DADDY_PLEASE_BOIL_NOODLES       - While loop
+SPAGHETTI_DADDY_PLEASE_BREAK_NOODLE       - Break loop
+SPAGHETTI_DADDY_PLEASE_CONTINUE_STIRRING  - Continue loop
+SPAGHETTI_DADDY_PLEASE_OUTPUT_NOODLE      - Output value
+
 THANK_YOU_SPAGHETTI_DADDY                 - Acknowledge completion
 MAY_I_HAVE_ANOTHER_NOODLE                 - Continue operation
 SORRY_FOR_BOTHERING_YOU_DADDY             - Error handling
@@ -61,6 +78,127 @@ class SpaghettiDaddyInterpreter:
         self.noodles_served = 0  # Track noodles (operations)
         self.sauce_stirs = 0     # Track sauce stirs (iterations)
         self.politeness_level = 100  # Must stay polite!
+
+        # TURING-COMPLETE EXTENSIONS
+        self.noodle_variables = {}  # Variable storage (noodles)
+        self.recipe_functions = {}  # Function definitions
+        self.loop_stack = []        # For nested loops
+        self.call_stack = []        # For function calls
+
+    # ============================================================================
+    # TURING-COMPLETE FEATURES
+    # ============================================================================
+
+    def spaghetti_daddy_please_store_noodle(self, var_name, value):
+        """SPAGHETTI_DADDY_PLEASE_STORE_NOODLE - Store a value in a noodle variable"""
+        self.noodle_variables[var_name] = value
+        return value
+
+    def spaghetti_daddy_please_get_noodle(self, var_name):
+        """SPAGHETTI_DADDY_PLEASE_GET_NOODLE - Retrieve noodle variable value"""
+        return self.noodle_variables.get(var_name, 0)
+
+    def spaghetti_daddy_please_add_sauce(self, var1, var2):
+        """SPAGHETTI_DADDY_PLEASE_ADD_SAUCE - Add two noodle values (arithmetic)"""
+        val1 = self.spaghetti_daddy_please_get_noodle(var1) if isinstance(var1, str) else var1
+        val2 = self.spaghetti_daddy_please_get_noodle(var2) if isinstance(var2, str) else var2
+        return val1 + val2
+
+    def spaghetti_daddy_please_subtract_sauce(self, var1, var2):
+        """SPAGHETTI_DADDY_PLEASE_SUBTRACT_SAUCE - Subtract noodle values"""
+        val1 = self.spaghetti_daddy_please_get_noodle(var1) if isinstance(var1, str) else var1
+        val2 = self.spaghetti_daddy_please_get_noodle(var2) if isinstance(var2, str) else var2
+        return val1 - val2
+
+    def spaghetti_daddy_please_multiply_sauce(self, var1, var2):
+        """SPAGHETTI_DADDY_PLEASE_MULTIPLY_SAUCE - Multiply noodle values"""
+        val1 = self.spaghetti_daddy_please_get_noodle(var1) if isinstance(var1, str) else var1
+        val2 = self.spaghetti_daddy_please_get_noodle(var2) if isinstance(var2, str) else var2
+        return val1 * val2
+
+    def spaghetti_daddy_please_divide_sauce(self, var1, var2):
+        """SPAGHETTI_DADDY_PLEASE_DIVIDE_SAUCE - Divide noodle values"""
+        val1 = self.spaghetti_daddy_please_get_noodle(var1) if isinstance(var1, str) else var1
+        val2 = self.spaghetti_daddy_please_get_noodle(var2) if isinstance(var2, str) else var2
+        return val1 // val2 if val2 != 0 else 0
+
+    def spaghetti_daddy_please_modulo_sauce(self, var1, var2):
+        """SPAGHETTI_DADDY_PLEASE_MODULO_SAUCE - Modulo operation on noodles"""
+        val1 = self.spaghetti_daddy_please_get_noodle(var1) if isinstance(var1, str) else var1
+        val2 = self.spaghetti_daddy_please_get_noodle(var2) if isinstance(var2, str) else var2
+        return val1 % val2 if val2 != 0 else 0
+
+    def spaghetti_daddy_please_compare_noodles(self, var1, operator, var2):
+        """SPAGHETTI_DADDY_PLEASE_COMPARE_NOODLES - Compare two noodle values"""
+        val1 = self.spaghetti_daddy_please_get_noodle(var1) if isinstance(var1, str) else var1
+        val2 = self.spaghetti_daddy_please_get_noodle(var2) if isinstance(var2, str) else var2
+
+        if operator == "EQUALS":
+            return val1 == val2
+        elif operator == "NOT_EQUALS":
+            return val1 != val2
+        elif operator == "GREATER":
+            return val1 > val2
+        elif operator == "LESS":
+            return val1 < val2
+        elif operator == "GREATER_EQUALS":
+            return val1 >= val2
+        elif operator == "LESS_EQUALS":
+            return val1 <= val2
+        return False
+
+    def spaghetti_daddy_please_cook_recipe(self, recipe_name, instructions):
+        """SPAGHETTI_DADDY_PLEASE_COOK_RECIPE - Define a function (recipe)"""
+        self.recipe_functions[recipe_name] = instructions
+
+    def spaghetti_daddy_please_serve_recipe(self, recipe_name):
+        """SPAGHETTI_DADDY_PLEASE_SERVE_RECIPE - Call a function (serve recipe)"""
+        if recipe_name in self.recipe_functions:
+            self.call_stack.append(recipe_name)
+            result = self.recipe_functions[recipe_name]()
+            self.call_stack.pop()
+            return result
+        return None
+
+    def spaghetti_daddy_please_boil_noodles(self, condition, body, increment=None):
+        """SPAGHETTI_DADDY_PLEASE_BOIL_NOODLES - While loop with break/continue"""
+        loop_id = len(self.loop_stack)
+        self.loop_stack.append({"id": loop_id, "break": False, "continue": False})
+
+        while condition():
+            if self.loop_stack[-1]["break"]:
+                break
+            if self.loop_stack[-1]["continue"]:
+                self.loop_stack[-1]["continue"] = False
+                if increment:
+                    increment()
+                continue
+
+            body()
+
+            if increment:
+                increment()
+
+        self.loop_stack.pop()
+
+    def spaghetti_daddy_please_break_noodle(self):
+        """SPAGHETTI_DADDY_PLEASE_BREAK_NOODLE - Break from loop"""
+        if self.loop_stack:
+            self.loop_stack[-1]["break"] = True
+
+    def spaghetti_daddy_please_continue_stirring(self):
+        """SPAGHETTI_DADDY_PLEASE_CONTINUE_STIRRING - Continue to next iteration"""
+        if self.loop_stack:
+            self.loop_stack[-1]["continue"] = True
+
+    def spaghetti_daddy_please_output_noodle(self, value):
+        """SPAGHETTI_DADDY_PLEASE_OUTPUT_NOODLE - Print a value"""
+        val = self.spaghetti_daddy_please_get_noodle(value) if isinstance(value, str) else value
+        print(f"   🍝 Noodle output: {val}")
+
+    # ============================================================================
+    # ORIGINAL CLOCK FEATURES
+    # ============================================================================
 
     def spaghetti_daddy_please_clear_screen(self):
         """SPAGHETTI_DADDY_PLEASE_CLEAR_SCREEN - Clear the screen politely"""

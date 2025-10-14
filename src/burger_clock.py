@@ -27,6 +27,23 @@ SYNTAX:
 🎵 SESAME_SEED     - Individual iteration marker
 🍔 BOTTOM_BUN      - End program
 
+TURING-COMPLETE EXTENSIONS (New in v2.0):
+-----------------------------------------
+🧀 CHEESE_SLICE        - Store variable
+🥬 GET_INGREDIENT      - Retrieve variable
+🍔 STACK_BURGER        - Addition
+🍖 REMOVE_PATTY        - Subtraction
+🍖🍖 DOUBLE_PATTY       - Multiplication
+🔪 SLICE_BURGER        - Division
+🍞 LEFTOVER_CRUMBS     - Modulo
+👅 TASTE_TEST          - Comparison
+👨‍🍳 CREATE_RECIPE       - Define function
+🍽️ SERVE_DISH          - Call function
+🔥 GRILL_LOOP          - While loop
+🔥 BURN_BURGER         - Break loop
+🔄 FLIP_BURGER         - Continue loop
+🍽️ SERVE_TO_CUSTOMER   - Output value
+
 This parody language actually executes and displays a working clock!
 """
 
@@ -47,6 +64,127 @@ class BurgerClockInterpreter:
         self.running = True
         self.cheese_count = 0  # Track cheese layers (time checks)
         self.bacon_strips = 0  # Track bacon strips (random events)
+
+        # TURING-COMPLETE EXTENSIONS
+        self.burger_ingredients = {}  # Variable storage (ingredients)
+        self.recipes = {}            # Function definitions
+        self.grill_stack = []        # For nested loops
+        self.order_stack = []        # For function calls
+
+    # ============================================================================
+    # TURING-COMPLETE FEATURES
+    # ============================================================================
+
+    def cheese_slice(self, var_name, value):
+        """🧀 CHEESE_SLICE - Store a value in a burger ingredient variable"""
+        self.burger_ingredients[var_name] = value
+        return value
+
+    def get_ingredient(self, var_name):
+        """🥬 GET_INGREDIENT - Retrieve burger ingredient value"""
+        return self.burger_ingredients.get(var_name, 0)
+
+    def stack_burger(self, var1, var2):
+        """🍔 STACK_BURGER - Add two ingredient values (arithmetic)"""
+        val1 = self.get_ingredient(var1) if isinstance(var1, str) else var1
+        val2 = self.get_ingredient(var2) if isinstance(var2, str) else var2
+        return val1 + val2
+
+    def remove_patty(self, var1, var2):
+        """🍖 REMOVE_PATTY - Subtract ingredient values"""
+        val1 = self.get_ingredient(var1) if isinstance(var1, str) else var1
+        val2 = self.get_ingredient(var2) if isinstance(var2, str) else var2
+        return val1 - val2
+
+    def double_patty(self, var1, var2):
+        """🍖🍖 DOUBLE_PATTY - Multiply ingredient values"""
+        val1 = self.get_ingredient(var1) if isinstance(var1, str) else var1
+        val2 = self.get_ingredient(var2) if isinstance(var2, str) else var2
+        return val1 * val2
+
+    def slice_burger(self, var1, var2):
+        """🔪 SLICE_BURGER - Divide ingredient values"""
+        val1 = self.get_ingredient(var1) if isinstance(var1, str) else var1
+        val2 = self.get_ingredient(var2) if isinstance(var2, str) else var2
+        return val1 // val2 if val2 != 0 else 0
+
+    def leftover_crumbs(self, var1, var2):
+        """🍞 LEFTOVER_CRUMBS - Modulo operation on ingredients"""
+        val1 = self.get_ingredient(var1) if isinstance(var1, str) else var1
+        val2 = self.get_ingredient(var2) if isinstance(var2, str) else var2
+        return val1 % val2 if val2 != 0 else 0
+
+    def taste_test(self, var1, operator, var2):
+        """👅 TASTE_TEST - Compare two ingredient values"""
+        val1 = self.get_ingredient(var1) if isinstance(var1, str) else var1
+        val2 = self.get_ingredient(var2) if isinstance(var2, str) else var2
+
+        if operator == "SAME":
+            return val1 == val2
+        elif operator == "DIFFERENT":
+            return val1 != val2
+        elif operator == "MORE":
+            return val1 > val2
+        elif operator == "LESS":
+            return val1 < val2
+        elif operator == "MORE_OR_SAME":
+            return val1 >= val2
+        elif operator == "LESS_OR_SAME":
+            return val1 <= val2
+        return False
+
+    def create_recipe(self, recipe_name, instructions):
+        """👨‍🍳 CREATE_RECIPE - Define a function (recipe)"""
+        self.recipes[recipe_name] = instructions
+
+    def serve_dish(self, recipe_name):
+        """🍽️ SERVE_DISH - Call a function (serve recipe)"""
+        if recipe_name in self.recipes:
+            self.order_stack.append(recipe_name)
+            result = self.recipes[recipe_name]()
+            self.order_stack.pop()
+            return result
+        return None
+
+    def grill_loop(self, condition, body, increment=None):
+        """🔥 GRILL_LOOP - While loop with break/continue"""
+        loop_id = len(self.grill_stack)
+        self.grill_stack.append({"id": loop_id, "break": False, "continue": False})
+
+        while condition():
+            if self.grill_stack[-1]["break"]:
+                break
+            if self.grill_stack[-1]["continue"]:
+                self.grill_stack[-1]["continue"] = False
+                if increment:
+                    increment()
+                continue
+
+            body()
+
+            if increment:
+                increment()
+
+        self.grill_stack.pop()
+
+    def burn_burger(self):
+        """🔥 BURN_BURGER - Break from loop"""
+        if self.grill_stack:
+            self.grill_stack[-1]["break"] = True
+
+    def flip_burger(self):
+        """🔄 FLIP_BURGER - Continue to next iteration"""
+        if self.grill_stack:
+            self.grill_stack[-1]["continue"] = True
+
+    def serve_to_customer(self, value):
+        """🍽️ SERVE_TO_CUSTOMER - Print a value"""
+        val = self.get_ingredient(value) if isinstance(value, str) else value
+        print(f"   🍔 Burger output: {val}")
+
+    # ============================================================================
+    # ORIGINAL CLOCK FEATURES
+    # ============================================================================
 
     def clear_screen(self):
         """🥬 LETTUCE operation - Clear the screen"""
