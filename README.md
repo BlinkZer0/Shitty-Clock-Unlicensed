@@ -363,13 +363,13 @@ A groovy parody of the "Shaft" theme - because Bash is one bad mother—(shut yo
 
 ---
 
-## 🍔🍝 Esoteric Programming Language Ports
+## 🍔🍝 Shitty Programming Language Ports
 
-We've created TWO additional clock implementations as fully functional esoteric programming languages! Each one works identically to the original but with themed syntax and even MORE legal protection!
+We've created TWO additional clock implementations as fully functional Shitty programming languages! Each one works identically to the original but with themed syntax and even MORE legal protection!
 
 ### 1. **🍔 Cheeseburger Clock Language** (`src/burger_clock.py`)
 
-A fully functional esoteric programming language where ALL operations are burger-themed!
+A fully functional Shitty programming language where ALL operations are burger-themed!
 
 **Language Syntax:**
 ```
