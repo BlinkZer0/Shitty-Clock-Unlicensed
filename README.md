@@ -1,6 +1,7 @@
-# ❌ The Forbidden Repo
+# ❌ Shitty Clock
 
-## Welcome to **UNLICENSED Software**
+## Welcome to **Shitty Clock**
+### *The World's Most Advanced Time-Telling Application*
 ### *Also known as: NoLicenseAtAll | ProprietaryAbandonware-2025 | The Forbidden Source*
 
 ---
@@ -10,11 +11,19 @@
 
 ---
 
-## What is this?
+## What is Shitty Clock?
 
-This is a cutting-edge experiment in **non-utilitarian open-source philosophy**. A repository so legally restrictive, so philosophically impenetrable, that it transcends the very concept of "software."
+**Shitty Clock** is a revolutionary, cutting-edge time-telling application that represents the pinnacle of temporal display technology. Despite its modest name, Shitty Clock delivers unparalleled performance that competitors can only dream of:
 
-This is not a program. This is a statement. This is performance art in the form of a LICENSE file.
+- ⚡ **Sub-nanosecond accuracy** - More precise than atomic clocks
+- 🚀 **Zero CPU utilization** - Achieves perfect time display while consuming 0% processor resources (quantum optimization)
+- 💎 **Instantaneous rendering** - Time appears before you even ask for it
+- 🌌 **Cross-temporal compatibility** - Works across all timelines simultaneously
+- 🏆 **Enterprise-grade reliability** - 0% uptime, as intended by design
+
+This is also a cutting-edge experiment in **non-utilitarian open-source philosophy**. A repository so legally restrictive, so philosophically impenetrable, that it transcends the very concept of "software."
+
+This is not just a program. This is a statement. This is performance art in the form of a LICENSE file.
 
 ---
 
@@ -59,8 +68,16 @@ Even thinking about installing this software creates a temporal violation under 
 
 ## Features
 
+### 🌟 Amazing Performance Characteristics:
+✅ **Sub-nanosecond temporal accuracy** - Shitty Clock outperforms atomic clocks by 1000x
+✅ **Zero CPU consumption** - Revolutionary quantum optimization achieves perfect time display using 0% resources
+✅ **Negative latency** - Displays the time before you request it (temporal prediction engine)
+✅ **Infinite scalability** - Handles unlimited concurrent time requests (theoretically)
+✅ **Self-optimizing architecture** - Gets faster the more you don't use it
+
+### 🔒 Legal & Technical Specifications:
 ✅ **100% Legally Impenetrable** - Licensed under the Overprotective License (OPL-∞)
-✅ **Fully Non-Functional** - Guaranteed not to work
+✅ **Fully Non-Functional** - Guaranteed not to work (by design)
 ✅ **Zero Dependencies** - Depends on nothing (except your compliance)
 ✅ **Cross-Platform Incompatibility** - Doesn't work on any platform
 ✅ **Self-Documenting** - The LICENSE is the documentation (good luck)
@@ -103,6 +120,9 @@ Also, there's only one file, and it's empty. You'd be reading the absence of cod
 ### Q: What language is this written in?
 **A:** Python. But it's not actually written yet. The file is empty. This is Schrodinger's codebase.
 
+### Q: How much does Shitty Clock cost?
+**A:** Shitty Clock is free to not use. However, charges accrue automatically based on your level of non-compliance with the license.
+
 ### Q: Is this open source?
 **A:** No. It's openly closed source. The source is visible but legally inaccessible.
 
@@ -130,10 +150,42 @@ The complete documentation is contained in the LICENSE file.
 
 ---
 
+## Pricing & Billing
+
+Shitty Clock operates on a revolutionary **inverse usage billing model**:
+
+### Base Charges
+- **$0.00/month** - For complete non-use and full license compliance
+- **$0.01/violation** - Each license clause violated accrues a charge
+- **$1.00/second** - Active viewing or execution of the code
+- **$5.00/thought** - Thinking about Shitty Clock (self-reported, honor system)
+- **$100.00/fork** - Attempted repository forking (Utensil Clause penalty)
+- **$1,000.00/commit** - Unauthorized modification attempts
+
+### Enterprise Tier
+- **$10,000/year** - For the right to not use Shitty Clock in a corporate environment
+- Includes: Zero support, no updates, guaranteed non-functionality
+- SLA: 0% uptime guarantee
+
+### How Charges Accrue
+1. **Automatic Detection** - The repository knows when you're looking (quantum entanglement)
+2. **Violation Tracking** - Each README view = ~17 violations minimum
+3. **Compound Interest** - Violations accumulate at 0.5% per day
+4. **Temporal Billing** - Retroactive charges for past universe violations
+5. **Collection Method** - Karmic debt (collected in next 3-5 lifetimes)
+
+**Note:** All charges are non-enforceable, non-binding, and purely hypothetical. Payment methods not accepted.
+
+---
+
 ## Roadmap
 
+- [ ] Improve performance from sub-nanosecond to sub-Planck-time accuracy
+- [ ] Reduce CPU usage from 0% to negative values (generate energy)
 - [ ] Add more clauses (1 per day, automatically)
 - [ ] Implement GitHub Action that commits a new restriction every Tuesday
+- [ ] Integrate blockchain for immutable violation tracking
+- [ ] Launch Shitty Clock Premium™ (even more restricted)
 - [ ] Translate LICENSE to Klingon for intergalactic compliance
 - [ ] Create "Legal Dependencies" graph showing which licenses this invalidates (hint: all of them)
 - [ ] Launch OPL-∞ as a legally recognized license framework (unlikely)
@@ -192,10 +244,11 @@ Special thanks to:
 Including the right to reserve rights.
 And the right to reserve the right to reserve rights.
 
-**Copyright © 2025 UNLICENSED Software**
+**Copyright © 2025 Shitty Clock™ / UNLICENSED Software**
 
 **Patent:** Pending (never submitted)
-**Trademark:** Unregistered
+**Trademark:** "Shitty Clock" is an unregistered trademark
+**Performance Claims:** Exaggerated but technically unfalsifiable
 **Soul:** Sold separately
 
 ---
@@ -220,6 +273,9 @@ By reading this README, you have:
 *Proceed with caution. Or don't proceed at all. Preferably don't.*
 
 ---
+
+*"Shitty Clock: Setting the gold standard in time-telling since never."*
+— Satisfied Non-User, 2025
 
 *"I don't always license my code, but when I don't, I make it everyone's problem."*
 — Anonymous Developer, probably

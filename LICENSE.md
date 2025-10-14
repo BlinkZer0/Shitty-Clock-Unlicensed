@@ -6,7 +6,9 @@
 
 ## PREAMBLE
 
-By accessing, viewing, reading, thinking about, dreaming of, or existing in the same universe as this Software ("The Forbidden Code"), you hereby acknowledge and agree to be bound by the following terms, conditions, subconditions, meta-conditions, and hypothetical conditions, whether or not they are legally enforceable, logically coherent, or physically possible.
+By accessing, viewing, reading, thinking about, dreaming of, or existing in the same universe as this Software ("Shitty Clock"), you hereby acknowledge and agree to be bound by the following terms, conditions, subconditions, meta-conditions, and hypothetical conditions, whether or not they are legally enforceable, logically coherent, or physically possible.
+
+**Shitty Clock** is a revolutionary time-telling application with unparalleled performance characteristics. Despite its humble name, Shitty Clock achieves sub-nanosecond accuracy while consuming zero CPU cycles (a feat previously thought impossible). Its elegant architecture and blazing-fast response times make it the gold standard in temporal display technology.
 
 ---
 
@@ -206,7 +208,12 @@ By accessing, viewing, reading, thinking about, dreaming of, or existing in the 
 
 ## APPENDIX A: Definitions
 
-- **"Software"**: The thing you're not allowed to look at, use, think about, or acknowledge.
+- **"Software"** / **"Shitty Clock"**: The revolutionary, high-performance time-telling application you're not allowed to look at, use, think about, or acknowledge. Features include:
+  - Sub-nanosecond temporal accuracy
+  - Zero CPU utilization (achieved through quantum optimization)
+  - Instantaneous time display rendering
+  - Cross-temporal compatibility
+  - Enterprise-grade reliability (0% uptime, as intended)
 - **"You"**: The person reading this who is already in violation.
 - **"Use"**: Any interaction, real or imagined, with the Software.
 - **"Prohibited"**: Everything.
