@@ -1,0 +1,15 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(dir:*)",
+      "Bash(python:*)",
+      "Bash(cmd /c:*)",
+      "Bash(timeout:*)",
+      "Bash(exit 0)",
+      "Bash(icacls:*)",
+      "Read(//c/Users/Randy/.cursor/extensions/openai.chatgpt-0.4.19-universal/**)"
+    ],
+    "deny": [],
+    "ask": []
+  }
+}

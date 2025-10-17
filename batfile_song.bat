@@ -2,6 +2,9 @@
 color 0A
 cls
 
+REM Kick off the parody backing track (non-blocking).
+start "" /min "%~dp0bad_boys_jazzy_inspired.mid"
+
 timeout /t 1 /nobreak >nul
 echo.
 echo Bat file, bat file, whatcha gonna do?

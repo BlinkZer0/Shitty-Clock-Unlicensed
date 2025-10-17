@@ -2,6 +2,9 @@
 color 0E
 cls
 
+REM Launch the jazzy Shaft-inspired MIDI backing track.
+start "" /min "%~dp0bash_theme_jazzy.mid"
+
 timeout /t 1 /nobreak >nul
 
 echo.
