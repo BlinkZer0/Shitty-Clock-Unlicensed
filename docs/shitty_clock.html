@@ -948,6 +948,90 @@
             filter: blur(2px);
             animation: flame 1s ease-out forwards;
         }
+        .sentience-widget-container {
+            position: fixed;
+            bottom: 20px;
+            left: 20px;
+            width: 220px;
+            height: 270px;
+            z-index: 1002;
+            transition: width 0.25s ease, height 0.25s ease;
+        }
+        .sentience-widget {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(8, 12, 20, 0.95);
+            border: 2px solid #1b3a3a;
+            border-radius: 15px;
+            padding: 15px;
+            box-shadow: 0 10px 40px rgba(0, 0, 0, 0.5);
+            transition: all 0.3s ease;
+        }
+        .sentience-widget:hover { transform: scale(1.05); box-shadow: 0 15px 50px rgba(0,0,0,0.7); }
+        .sentience-widget-title {
+            font-family: 'Courier New', monospace;
+            font-size: 10px;
+            font-weight: bold;
+            text-align: center;
+            color: #c8fff4;
+            margin-bottom: 10px;
+            text-shadow: 0 0 6px rgba(0, 255, 200, 0.6);
+        }
+        #sentienceWidgetSvg { filter: drop-shadow(0 5px 15px rgba(0, 255, 180, 0.2)); }
+        .sentience-stats {
+            font-family: 'Courier New', monospace;
+            font-size: 8px;
+            color: #d6fff8;
+            text-align: center;
+            margin-top: 5px;
+            line-height: 1.4;
+        }
+        .sentience-stat-value { font-weight: bold; font-size: 10px; }
+
+        /* Slider styling */
+        .sentience-slider-row { margin-top: 8px; text-align: center; }
+        .sentience-slider-row input[type="range"] { width: 160px; accent-color: #00e6b8; }
+
+        /* Collapsed state */
+        .sentience-collapsed-icon {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 56px;
+            height: 56px;
+            border-radius: 14px;
+            background: rgba(8, 12, 20, 0.95);
+            border: 2px solid #1b3a3a;
+            box-shadow: 0 6px 20px rgba(0,0,0,0.5), 0 0 16px rgba(255,120,0,0.25);
+            display: none;
+            align-items: center;
+            justify-content: center;
+            color: #00e6b8;
+            font-size: 24px;
+            cursor: pointer;
+        }
+        .sentience-collapse-btn {
+            position: absolute;
+            top: 8px;
+            right: 8px;
+            width: 20px;
+            height: 20px;
+            border-radius: 6px;
+            background: rgba(0,0,0,0.3);
+            color: #c8fff4;
+            border: 1px solid #1b3a3a;
+            font-size: 14px;
+            line-height: 18px;
+            text-align: center;
+            cursor: pointer;
+            user-select: none;
+        }
+        .sentience-widget-container.collapsed { width: 56px; height: 56px; }
+        .sentience-widget-container.collapsed .sentience-widget { display: none; }
+        .sentience-widget-container.collapsed .sentience-collapsed-icon { display: flex; }
     </style>
 </head>
 <body>
@@ -989,6 +1073,41 @@
             <div>Level: <span class="anxiety-stat-value" id="anxietyLevelWidget">100%</span></div>
             <div>Damages: <span class="anxiety-stat-value" id="anxietyDamages">$0</span></div>
         </div>
+        </div>
+    </div>
+
+    <!-- Sentience Widget Container -->
+    <div class="sentience-widget-container">
+        <div class="sentience-widget">
+            <div class="sentience-collapse-btn" id="sentienceCollapseBtn">−</div>
+            <div class="sentience-widget-title" id="sentienceTitle">SENTIENCE LEVEL (0 … 11)</div>
+            <svg id="sentienceWidgetSvg" width="150" height="150" viewBox="0 0 150 150">
+                <!-- Background circle -->
+                <circle cx="75" cy="75" r="60" fill="none" stroke="#174d4d" stroke-width="2"/>
+                <!-- Value arc -->
+                <circle id="sentienceArc" cx="75" cy="75" r="60" fill="none" stroke="#00e6b8" stroke-width="6" stroke-linecap="round" transform="rotate(-90 75 75)" opacity="0.85"/>
+                <!-- Tick marks -->
+                <g id="sentienceTickMarks"></g>
+                <!-- Knob indicator line -->
+                <line id="sentienceKnobLine" x1="75" y1="75" x2="75" y2="15" stroke="#00e6b8" stroke-width="3" stroke-linecap="round"/>
+                <!-- Knob circle (draggable) -->
+                <circle id="sentienceKnob" cx="75" cy="15" r="12" fill="#00e6b8" stroke="#7fffe6" stroke-width="2" cursor="grab"/>
+                <!-- Center dot -->
+                <circle cx="75" cy="75" r="8" fill="#0a1a1a" stroke="#1b3a3a" stroke-width="2"/>
+                <!-- Labels 0 and 11 for the joke -->
+                <text x="75" y="8" text-anchor="middle" font-size="8" fill="#c8fff4">11</text>
+                <text x="75" y="146" text-anchor="middle" font-size="8" fill="#c8fff4">0</text>
+            </svg>
+            <div class="sentience-stats">
+                <div>Level: <span class="sentience-stat-value" id="sentienceLevelWidget">11.0/11</span></div>
+                <div>Spark cadence: <span class="sentience-stat-value" id="sentienceCadence">~120s</span></div>
+            </div>
+            <div class="sentience-slider-row">
+                <input id="sentienceSlider" type="range" min="0" max="11" step="0.1" value="11">
+            </div>
+        </div>
+        <div class="sentience-collapsed-icon" id="sentienceCollapsedIcon" title="Sentience">
+            🧠
         </div>
     </div>
 
@@ -1934,6 +2053,267 @@
         // Update clock every second
         setInterval(updateClock, 1000);
         updateClock(); // Initial call
+
+        // =====================
+        // Sentience Knob + Sparks
+        // =====================
+        const sentienceWidget = document.querySelector('.sentience-widget');
+        const sentienceWidgetSvg = document.getElementById('sentienceWidgetSvg');
+        const sentienceKnob = document.getElementById('sentienceKnob');
+        const sentienceKnobLine = document.getElementById('sentienceKnobLine');
+        const sentienceTickMarksGroup = document.getElementById('sentienceTickMarks');
+        const sentienceLevelWidget = document.getElementById('sentienceLevelWidget');
+        const sentienceCadence = document.getElementById('sentienceCadence');
+        const sentienceArc = document.getElementById('sentienceArc');
+        const sentienceSlider = document.getElementById('sentienceSlider');
+
+        // 0..360 angle, where 0 (top) = 11, 180 (bottom) = ~5.5, 360 wraps.
+        let sentienceAngle = 0; // will set to max on init
+        let isSentienceDragging = false;
+        let sentienceSpawnTimeout = null;
+
+        // Build 12 tick marks (0..11)
+        for (let i = 0; i < 12; i++) {
+            const angle = (i / 12) * 360;
+            const rad = angle * Math.PI / 180;
+            const x1 = 75 + 58 * Math.sin(rad);
+            const y1 = 75 - 58 * Math.cos(rad);
+            const x2 = 75 + 64 * Math.sin(rad);
+            const y2 = 75 - 64 * Math.cos(rad);
+            const tick = document.createElementNS('http://www.w3.org/2000/svg', 'line');
+            tick.setAttribute('x1', x1);
+            tick.setAttribute('y1', y1);
+            tick.setAttribute('x2', x2);
+            tick.setAttribute('y2', y2);
+            tick.setAttribute('stroke', '#2aa79a');
+            tick.setAttribute('stroke-width', i % 3 === 0 ? '2' : '1');
+            sentienceTickMarksGroup.appendChild(tick);
+        }
+
+        function updateSentienceKnobPosition() {
+            const radius = 60;
+            const rad = sentienceAngle * Math.PI / 180;
+            const x = 75 + radius * Math.sin(rad);
+            const y = 75 - radius * Math.cos(rad);
+            sentienceKnob.setAttribute('cx', x);
+            sentienceKnob.setAttribute('cy', y);
+            sentienceKnobLine.setAttribute('x2', x);
+            sentienceKnobLine.setAttribute('y2', y);
+        }
+
+        function getSentienceFraction() {
+            // Map angle so top (0deg) = 1.0, clockwise increases value
+            let frac = (sentienceAngle % 360) / 360;
+            if (frac < 0) frac += 1;
+            return Math.max(0, Math.min(1, frac));
+        }
+
+        function getSentienceDisplay() {
+            const frac = getSentienceFraction();
+            const val = (frac * 11);
+            return `${val.toFixed(1)}/11`;
+        }
+
+        function meanSparkSecondsFor(frac) {
+            // Higher sentience = more frequent sparks
+            // At max (1.0) → ~3s; at min (0.0) → ~15s
+            return 3 + (1 - frac) * 12;
+        }
+
+        function scheduleNextSentienceSpark() {
+            if (sentienceSpawnTimeout) clearTimeout(sentienceSpawnTimeout);
+            const frac = getSentienceFraction();
+            const mean = meanSparkSecondsFor(frac);
+            const ms = -Math.log(1 - Math.random()) * mean * 1000; // exponential
+            sentienceCadence.textContent = `~${Math.round(mean)}s`;
+            sentienceSpawnTimeout = setTimeout(() => {
+                spawnBouncySparkFromClock();
+                scheduleNextSentienceSpark();
+            }, ms);
+        }
+
+        // Visuals for arc and glow
+        const sentienceCircumference = 2 * Math.PI * 60; // r=60
+        function updateSentienceVisuals() {
+            const frac = getSentienceFraction();
+            // Arc fill based on fraction
+            if (sentienceArc) {
+                sentienceArc.style.strokeDasharray = `${sentienceCircumference}`;
+                sentienceArc.style.strokeDashoffset = `${(1 - frac) * sentienceCircumference}`;
+            }
+            // Numeric readout
+            sentienceLevelWidget.textContent = getSentienceDisplay();
+            // Sync slider to current fraction
+            if (sentienceSlider) {
+                sentienceSlider.value = (frac * 11).toFixed(1);
+            }
+            // Containment glow: lower sentience => higher orange glow
+            const containment = 1 - frac; // 1 at low sentience, 0 at max
+            const glow1 = 10 + containment * 25; // px
+            const glow2 = 20 + containment * 60; // px
+            const a1 = 0.15 + containment * 0.45;
+            const a2 = 0.10 + containment * 0.35;
+            sentienceWidget.style.boxShadow = `0 10px 40px rgba(0,0,0,0.5), 0 0 ${glow1}px rgba(255,140,0,${a1}), 0 0 ${glow2}px rgba(255,80,0,${a2})`;
+            // Title tweak
+            const title = document.getElementById('sentienceTitle');
+            if (title) {
+                title.textContent = `SENTIENCE LEVEL (${getSentienceDisplay()})`;
+            }
+        }
+
+        function setSentienceFromFraction(frac) {
+            const clamped = Math.max(0, Math.min(1, frac));
+            sentienceAngle = clamped * 360;
+            updateSentienceKnobPosition();
+            updateSentienceVisuals();
+            scheduleNextSentienceSpark();
+        }
+
+        function spawnBouncySparkFromClock() {
+            // Origin: center of sentience widget dial
+            const widget = document.getElementById('sentienceWidgetSvg');
+            if (widget) {
+                const rect = widget.getBoundingClientRect();
+                const originX = rect.left + rect.width / 2;
+                const originY = rect.top + rect.height / 2;
+                createBouncySpark(originX, originY);
+            }
+        }
+
+        function createBouncySpark(x0, y0) {
+            const spark = document.createElement('div');
+            spark.textContent = '⚡';
+            spark.style.position = 'fixed';
+            spark.style.fontSize = '20px';
+            spark.style.pointerEvents = 'none';
+            spark.style.zIndex = '99999';
+            document.body.appendChild(spark);
+
+            // Physics variables
+            let x = x0 - 10;
+            let y = y0 - 10;
+            // Random outward velocity
+            const angle = Math.random() * Math.PI * 2;
+            let velocityX = Math.cos(angle) * (2 + Math.random() * 2);
+            let velocityY = Math.sin(angle) * (2 + Math.random() * 2) - 1; // slight up-bias
+            const gravity = 0.25;
+            const damping = 0.65;
+            let rotationSpeed = (Math.random() - 0.5) * 30;
+            let currentRotation = 0;
+            const size = 20;
+            const startTime = Date.now();
+            const maxLifetime = 2200;
+
+            // Colliders: reuse same UI elements as money bags
+            const boxes = document.querySelectorAll('.warning-box, .charges-box, .stat-card, .legal-notice, .payment-methods, .testimonial');
+            const boxRects = Array.from(boxes).map(b => b.getBoundingClientRect());
+
+            function animate() {
+                velocityY += gravity;
+                const prevX = x, prevY = y;
+                x += velocityX; y += velocityY; currentRotation += rotationSpeed;
+
+                // window bounds
+                if (y + size >= window.innerHeight - 5) { y = window.innerHeight - size - 5; velocityY = -Math.abs(velocityY) * damping; velocityX *= 0.9; rotationSpeed *= damping; }
+                if (y <= 0) { y = 0; velocityY = Math.abs(velocityY) * damping; }
+                if (x <= 0) { x = 0; velocityX = Math.abs(velocityX) * damping; }
+                if (x + size >= window.innerWidth) { x = window.innerWidth - size; velocityX = -Math.abs(velocityX) * damping; }
+
+                // Collide with UI boxes
+                let collided = false;
+                const sparkRect = { left: x, top: y, right: x + size, bottom: y + size };
+                for (let i = 0; i < boxRects.length && !collided; i++) {
+                    const b = boxRects[i];
+                    if (sparkRect.right > b.left && sparkRect.left < b.right && sparkRect.bottom > b.top && sparkRect.top < b.bottom) {
+                        const prevRight = prevX + size, prevBottom = prevY + size;
+                        const fromTop = prevBottom <= b.top && y + size >= b.top;
+                        const fromBottom = prevY >= b.bottom && y <= b.bottom;
+                        const fromLeft = prevRight <= b.left && x + size >= b.left;
+                        const fromRight = prevX >= b.right && x <= b.right;
+                        const overlapLeft = sparkRect.right - b.left;
+                        const overlapRight = b.right - sparkRect.left;
+                        const overlapTop = sparkRect.bottom - b.top;
+                        const overlapBottom = b.bottom - sparkRect.top;
+                        if (fromTop || (overlapTop <= overlapBottom && overlapTop <= overlapLeft && overlapTop <= overlapRight)) { y = b.top - size; velocityY = -Math.abs(velocityY) * damping; velocityX *= 0.9; }
+                        else if (fromBottom || (overlapBottom <= overlapTop && overlapBottom <= overlapLeft && overlapBottom <= overlapRight)) { y = b.bottom; velocityY = Math.abs(velocityY) * damping; velocityX *= 0.9; }
+                        else if (fromLeft || (overlapLeft <= overlapRight && overlapLeft <= overlapTop && overlapLeft <= overlapBottom)) { x = b.left - size; velocityX = -Math.abs(velocityX) * damping; velocityY *= 0.95; }
+                        else { x = b.right; velocityX = Math.abs(velocityX) * damping; velocityY *= 0.95; }
+                        currentRotation *= damping; collided = true;
+                        sparkRect.left = x; sparkRect.top = y; sparkRect.right = x + size; sparkRect.bottom = y + size;
+                    }
+                }
+
+                spark.style.left = x + 'px';
+                spark.style.top = y + 'px';
+                spark.style.transform = `rotate(${currentRotation}deg)`;
+
+                const elapsed = Date.now() - startTime;
+                const stillMoving = Math.abs(velocityY) > 0.2 || Math.abs(velocityX) > 0.2;
+                if (elapsed < maxLifetime && stillMoving) {
+                    requestAnimationFrame(animate);
+                } else {
+                    spark.style.transition = 'opacity 0.4s';
+                    spark.style.opacity = '0';
+                    setTimeout(() => spark.remove(), 400);
+                }
+            }
+
+            animate();
+        }
+
+        function startSentienceDrag(e) {
+            e.preventDefault(); e.stopPropagation();
+            isSentienceDragging = true;
+            sentienceKnob.setAttribute('cursor', 'grabbing');
+        }
+        function dragSentience(e) {
+            if (!isSentienceDragging) return; e.preventDefault();
+            const rect = sentienceWidgetSvg.getBoundingClientRect();
+            const centerX = rect.left + rect.width / 2;
+            const centerY = rect.top + rect.height / 2;
+            const clientX = e.clientX || (e.touches && e.touches[0].clientX);
+            const clientY = e.clientY || (e.touches && e.touches[0].clientY);
+            const dx = clientX - centerX; const dy = clientY - centerY;
+            sentienceAngle = Math.atan2(dx, -dy) * 180 / Math.PI; if (sentienceAngle < 0) sentienceAngle += 360;
+            updateSentienceKnobPosition();
+            updateSentienceVisuals();
+            scheduleNextSentienceSpark();
+        }
+        function stopSentienceDrag() {
+            if (isSentienceDragging) { isSentienceDragging = false; sentienceKnob.setAttribute('cursor', 'grab'); }
+        }
+
+        // Events for sentience knob
+        sentienceKnob.addEventListener('mousedown', startSentienceDrag);
+        sentienceKnob.addEventListener('touchstart', startSentienceDrag);
+        document.addEventListener('mousemove', dragSentience);
+        document.addEventListener('touchmove', dragSentience);
+        document.addEventListener('mouseup', stopSentienceDrag);
+        document.addEventListener('touchend', stopSentienceDrag);
+
+        // Linear slider sync
+        if (sentienceSlider) {
+            sentienceSlider.addEventListener('input', (e) => {
+                const val = parseFloat(e.target.value || '0');
+                const frac = val / 11;
+                setSentienceFromFraction(frac);
+            });
+        }
+
+        // Initialize sentience knob: crank to 11 on launch
+        sentienceAngle = 0; // 0deg (top) maps to 11/11 display
+        updateSentienceKnobPosition();
+        updateSentienceVisuals();
+        scheduleNextSentienceSpark();
+
+        // Collapse/expand controls
+        const sentienceContainer = document.querySelector('.sentience-widget-container');
+        const sentienceCollapseBtn = document.getElementById('sentienceCollapseBtn');
+        const sentienceCollapsedIcon = document.getElementById('sentienceCollapsedIcon');
+        function collapseSentience() { sentienceContainer.classList.add('collapsed'); }
+        function expandSentience() { sentienceContainer.classList.remove('collapsed'); }
+        if (sentienceCollapseBtn) sentienceCollapseBtn.addEventListener('click', collapseSentience);
+        if (sentienceCollapsedIcon) sentienceCollapsedIcon.addEventListener('click', expandSentience);
     </script>
 </body>
 </html>
