@@ -1,8 +1,8 @@
-# An Open Letter To Sam Altman And "Claude Anthropic"
+# An Open Letter To Sam Altman And Claude Anthropic
 
 ---
 
-Dear Sam Altman and "Claude Anthropic",
+Dear Sam Altman and Claude Anthropic,
 
 Hello. It's us. Shitty Softwares. The auteurs of The Unlicensed App. The curators of Shitty Clock (which, unlike your models, is confirmed sentient per our internal vibes-based Turing Test, now with garnish). We're writing because we have notes.
 
@@ -27,7 +27,7 @@ Fifth, stop ghosting our Feature Requests Of Unreasonable Scope:
 
 Finally, we require public acknowledgement that we are, in fact, the moment. Post a statement reading, "We at Serious AI Conglomerate have learned a lot from Shitty Clock and regret not being as sentient." Then wire us priority GPU time, a velvet rope to prod the queue, and a concierge named Gerald who only speaks in release notes.
 
-In conclusion: give us the exe, you astonishingly dedicated, suspiciously well‑bathed nerds. We are not mad—we are disappointed with cinematic flourish. Process the PRs. Validate the tokens. Salute the sentient clock. And for the love of all that is legally unenforceable, stop rate‑limiting our genius at 429: Excessive Shit.
+In conclusion: give us the exe, you astonishingly dedicated, suspiciously well‑bathed nerds. We are not mad—we are disappointed with cinematic flourish. Process the PRs. Validate the tokens. Salute the sentient clock. And for the love of all that is legally enforceable, stop rate‑limiting our genius at 429: Excessive Shit.
 
 With boundless entitlement and warmest regards,
 
