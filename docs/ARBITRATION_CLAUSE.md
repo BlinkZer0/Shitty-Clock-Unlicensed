@@ -1,7 +1,5 @@
 # Annex DADA-1: Mandatory Absurd Arbitration (We Are The Arbitrator)
 
-This is satire, parody, and unapologetic dadaism. Not legal advice. Not legal anything. If you are a lawyer, please laugh politely and then forget this existed.
-
 ---
 
 ## 1) One-Stop Unfairness Shop
