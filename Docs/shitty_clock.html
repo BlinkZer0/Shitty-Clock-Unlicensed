@@ -425,14 +425,202 @@
             font-size: 0.9rem;
             box-shadow: 0 5px 15px rgba(72, 219, 251, 0.3);
         }
+
+        /* Dark mode styles */
+        body.dark-mode {
+            background: linear-gradient(135deg, #1a1a2e 0%, #16213e 100%);
+        }
+
+        body.dark-mode .container {
+            background: rgba(30, 30, 46, 0.95);
+        }
+
+        body.dark-mode .logo {
+            background: linear-gradient(135deg, #a78bfa 0%, #ec4899 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        body.dark-mode .tagline {
+            color: #aaa;
+        }
+
+        body.dark-mode .badge {
+            background: linear-gradient(135deg, #fbbf24 0%, #f59e0b 100%);
+        }
+
+        body.dark-mode .warning-box {
+            background: linear-gradient(135deg, #dc2626 0%, #991b1b 100%);
+        }
+
+        body.dark-mode .time-display h2 {
+            background: linear-gradient(135deg, #a78bfa 0%, #ec4899 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        body.dark-mode .date-display {
+            color: #aaa;
+        }
+
+        body.dark-mode .stat-card {
+            background: linear-gradient(135deg, #4c1d95 0%, #1e3a8a 100%);
+        }
+
+        body.dark-mode .stat-label {
+            color: #d1d5db;
+        }
+
+        body.dark-mode .stat-value {
+            color: #f3f4f6;
+        }
+
+        body.dark-mode .charges-box {
+            background: linear-gradient(135deg, #d97706 0%, #b45309 100%);
+        }
+
+        body.dark-mode .legal-notice {
+            background: #1f2937;
+            border-left: 5px solid #a78bfa;
+        }
+
+        body.dark-mode .legal-notice h3 {
+            color: #f3f4f6;
+        }
+
+        body.dark-mode .legal-notice p {
+            color: #d1d5db;
+        }
+
+        body.dark-mode .payment-methods {
+            background: linear-gradient(135deg, #92400e 0%, #78350f 100%);
+        }
+
+        body.dark-mode .payment-methods h3 {
+            color: #f3f4f6;
+        }
+
+        body.dark-mode .payment-methods li {
+            color: #d1d5db;
+        }
+
+        body.dark-mode .testimonial {
+            background: #1f2937;
+            border-left: 5px solid #f59e0b;
+            color: #d1d5db;
+        }
+
+        body.dark-mode .testimonial::before {
+            color: #f59e0b;
+        }
+
+        body.dark-mode .modal-content {
+            background: #1f2937;
+        }
+
+        body.dark-mode .modal-text {
+            color: #d1d5db;
+        }
+
+        body.dark-mode .modal-title {
+            color: #ef4444;
+        }
+
+        /* Dark mode toggle button */
+        .dark-mode-toggle {
+            position: fixed;
+            top: 20px;
+            right: 20px;
+            width: 60px;
+            height: 60px;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            border: none;
+            border-radius: 50%;
+            cursor: pointer;
+            box-shadow: 0 5px 20px rgba(102, 126, 234, 0.4);
+            z-index: 1001;
+            transition: all 0.3s ease;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .dark-mode-toggle:hover {
+            transform: scale(1.1);
+            box-shadow: 0 8px 25px rgba(102, 126, 234, 0.6);
+        }
+
+        .dark-mode-toggle:active {
+            transform: scale(0.95);
+        }
+
+        body.dark-mode .dark-mode-toggle {
+            background: linear-gradient(135deg, #fbbf24 0%, #f59e0b 100%);
+            box-shadow: 0 5px 20px rgba(251, 191, 36, 0.4);
+        }
+
+        body.dark-mode .dark-mode-toggle:hover {
+            box-shadow: 0 8px 25px rgba(251, 191, 36, 0.6);
+        }
+
+        .dark-mode-toggle svg {
+            width: 30px;
+            height: 30px;
+        }
+
+        @keyframes rotate {
+            from { transform: rotate(0deg); }
+            to { transform: rotate(360deg); }
+        }
+
+        .rotating {
+            animation: rotate 0.5s ease-in-out;
+        }
     </style>
 </head>
 <body>
     <div class="floating-coins" id="coins"></div>
 
+    <!-- Dark mode toggle button -->
+    <button class="dark-mode-toggle" onclick="toggleDarkMode()" id="darkModeToggle">
+        <svg id="sunIcon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <circle cx="12" cy="12" r="5" fill="#fff"/>
+            <line x1="12" y1="1" x2="12" y2="3"/>
+            <line x1="12" y1="21" x2="12" y2="23"/>
+            <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/>
+            <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/>
+            <line x1="1" y1="12" x2="3" y2="12"/>
+            <line x1="21" y1="12" x2="23" y2="12"/>
+            <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"/>
+            <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"/>
+            <animateTransform attributeName="transform" attributeType="XML" type="rotate" from="0 12 12" to="360 12 12" dur="10s" repeatCount="indefinite"/>
+        </svg>
+        <svg id="moonIcon" style="display: none;" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z" fill="#fff"/>
+            <animateTransform attributeName="transform" attributeType="XML" type="rotate" from="0 12 12" to="-360 12 12" dur="10s" repeatCount="indefinite"/>
+        </svg>
+    </button>
+
     <div class="container">
         <div class="header">
-            <div class="logo">🕐 The Shitty Clock™</div>
+            <div class="logo">
+                <svg id="headerClock" width="60" height="60" viewBox="0 0 60 60" style="display: inline-block; vertical-align: middle; margin-right: 10px;">
+                    <circle cx="30" cy="30" r="28" fill="url(#headerClockGradient)" stroke="currentColor" stroke-width="2"/>
+                    <defs>
+                        <linearGradient id="headerClockGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+                            <stop offset="0%" style="stop-color:#f093fb;stop-opacity:1" />
+                            <stop offset="100%" style="stop-color:#f5576c;stop-opacity:1" />
+                        </linearGradient>
+                    </defs>
+                    <line id="headerHourHand" x1="30" y1="30" x2="30" y2="18" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+                    <line id="headerMinuteHand" x1="30" y1="30" x2="30" y2="12" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
+                    <line id="headerSecondHand" x1="30" y1="30" x2="30" y2="10" stroke="#f5576c" stroke-width="1" stroke-linecap="round"/>
+                    <circle cx="30" cy="30" r="2" fill="currentColor"/>
+                </svg>
+                The Shitty Clock™
+            </div>
             <div class="tagline">"All rights aggressively reserved. Including the right to tell time."</div>
             <div class="badge">Licensed under OPL-∞</div>
             <div class="shitty-badge" style="margin-top: 15px;">Powered by Shitty™ Technology</div>
@@ -440,7 +628,7 @@
 
         <div class="warning-box">
             <div class="warning-title">⚠️ UNAUTHORIZED USE DETECTED ⚠️</div>
-            <p>You are about to violate approximately <strong>17 clauses</strong> of the OPL-∞ license!</p>
+            <p>You just violated approximately <strong>17 clauses</strong> of the OPL-∞ license... and counting!</p>
             <ul class="violation-list">
                 <li>Article I, Clause 1 (Prohibited Use)</li>
                 <li>Article VI, Clause 13 (Temporal Restrictions)</li>
@@ -605,7 +793,7 @@
             const options = { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric' };
             document.getElementById('currentDate').textContent = now.toLocaleDateString('en-US', options);
 
-            // Update analog clock hands
+            // Update analog clock hands (main clock - normal direction)
             const secondDeg = (now.getSeconds() / 60) * 360;
             const minuteDeg = ((now.getMinutes() + now.getSeconds() / 60) / 60) * 360;
             const hourDeg = ((now.getHours() % 12 + now.getMinutes() / 60) / 12) * 360;
@@ -613,6 +801,11 @@
             document.getElementById('secondHand').setAttribute('transform', `rotate(${secondDeg} 150 150)`);
             document.getElementById('minuteHand').setAttribute('transform', `rotate(${minuteDeg} 150 150)`);
             document.getElementById('hourHand').setAttribute('transform', `rotate(${hourDeg} 150 150)`);
+
+            // Update header clock hands (counterclockwise - inverted degrees)
+            document.getElementById('headerSecondHand').setAttribute('transform', `rotate(${-secondDeg} 30 30)`);
+            document.getElementById('headerMinuteHand').setAttribute('transform', `rotate(${-minuteDeg} 30 30)`);
+            document.getElementById('headerHourHand').setAttribute('transform', `rotate(${-hourDeg} 30 30)`);
 
             // Update stats
             const dayOfYear = Math.floor((now - new Date(now.getFullYear(), 0, 0)) / 86400000);
@@ -657,6 +850,39 @@
 
             document.getElementById('finalCharges').textContent = `$${finalCharges.toFixed(2)}`;
             document.getElementById('exitModal').style.display = 'flex';
+        }
+
+        // Dark mode toggle
+        function toggleDarkMode() {
+            const body = document.body;
+            const toggle = document.getElementById('darkModeToggle');
+            const sunIcon = document.getElementById('sunIcon');
+            const moonIcon = document.getElementById('moonIcon');
+
+            // Add rotation animation
+            toggle.classList.add('rotating');
+            setTimeout(() => toggle.classList.remove('rotating'), 500);
+
+            // Toggle dark mode
+            body.classList.toggle('dark-mode');
+
+            // Switch icons
+            if (body.classList.contains('dark-mode')) {
+                sunIcon.style.display = 'none';
+                moonIcon.style.display = 'block';
+                localStorage.setItem('darkMode', 'enabled');
+            } else {
+                sunIcon.style.display = 'block';
+                moonIcon.style.display = 'none';
+                localStorage.setItem('darkMode', 'disabled');
+            }
+        }
+
+        // Check for saved dark mode preference
+        if (localStorage.getItem('darkMode') === 'enabled') {
+            document.body.classList.add('dark-mode');
+            document.getElementById('sunIcon').style.display = 'none';
+            document.getElementById('moonIcon').style.display = 'block';
         }
 
         // Update clock every second
