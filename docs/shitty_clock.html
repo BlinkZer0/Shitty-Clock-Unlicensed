@@ -2170,12 +2170,30 @@
         }
 
         function spawnBouncySparkFromClock() {
-            // Origin: center of sentience widget dial
-            const widget = document.getElementById('sentienceWidgetSvg');
-            if (widget) {
-                const rect = widget.getBoundingClientRect();
-                const originX = rect.left + rect.width / 2;
-                const originY = rect.top + rect.height / 2;
+            // Origin: center of sentience widget dial, or collapsed icon if minimized
+            const container = document.querySelector('.sentience-widget-container');
+            const isCollapsed = container && container.classList.contains('collapsed');
+
+            let originX, originY;
+            if (isCollapsed) {
+                // Spawn from collapsed icon (brain emoji)
+                const icon = document.getElementById('sentienceCollapsedIcon');
+                if (icon) {
+                    const rect = icon.getBoundingClientRect();
+                    originX = rect.left + rect.width / 2;
+                    originY = rect.top + rect.height / 2;
+                }
+            } else {
+                // Spawn from widget dial center
+                const widget = document.getElementById('sentienceWidgetSvg');
+                if (widget) {
+                    const rect = widget.getBoundingClientRect();
+                    originX = rect.left + rect.width / 2;
+                    originY = rect.top + rect.height / 2;
+                }
+            }
+
+            if (originX !== undefined && originY !== undefined) {
                 createBouncySpark(originX, originY);
             }
         }
