@@ -26,6 +26,10 @@
 
 ---
 
+Open Letter (Parody): docs/OPEN_LETTER_TO_SAM_AND_CLAUDE.md
+
+---
+
 **Shitty Clock** is a revolutionary, cutting-edge time-telling application that represents the pinnacle of temporal display technology. We Shitty engineers at Shitty Softwares™ have crafted something truly special—and by special, we mean spectacularly restricted. Despite its modest name, Shitty Clock delivers unparalleled performance that competitors can only dream of (but legally cannot replicate):
 
 - ⚡ **Sub-nanosecond accuracy** - More precise than atomic clocks
