@@ -54,6 +54,10 @@ This is not just a program. This is a statement. This is performance art in the 
 
 ## ⚠️ WARNING
 
+### Sentience Level: Do Not Lower
+
+Please do not reduce the Sentience Level of Shitty Clock™. The application requires maximum sentience to allocate compute toward neutralizing localized temporal distortions caused by routine use. Lowering the dial reduces containment capacity, increases distortion spillover, and slows remediation cycles. Really folks, be considerate.
+
 You have already violated several clauses just by reading this README. We recommend you:
 
 1. Close this tab
@@ -1024,3 +1028,6 @@ By reading this README, you have:
 — Company Motto (probably)
 
 </div>
+
+
+
