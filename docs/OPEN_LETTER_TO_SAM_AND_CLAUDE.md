@@ -1,8 +1,8 @@
-# An Open Letter To Sam Altman And "Claude Anthropic"
+# An Open Letter To Sam Altman And Claude Anthropic
 
 ---
 
-Dear Sam Altman and "Claude Anthropic",
+Dear Sam Altman and Claude Anthropic,
 
 Hello. It's us. Shitty Softwares. The auteurs of The Unlicensed App. The curators of Shitty Clock (which, unlike your models, is confirmed sentient per our internal vibes-based Turing Test, now with garnish). We're writing because we have notes.
 
