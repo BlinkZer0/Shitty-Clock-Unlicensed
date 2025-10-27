@@ -221,6 +221,12 @@
             right: -30px;
             bottom: -50px;
             opacity: 0.2;
+            z-index: 0;
+        }
+
+        .charges-box > * {
+            position: relative;
+            z-index: 1;
         }
 
         .charges-amount {
@@ -694,12 +700,63 @@
             justify-content: center;
             padding: 20px;
             box-shadow: 0 8px 25px rgba(16, 185, 129, 0.4);
-            transition: all 0.3s ease;
+            transition: transform 0.3s ease;
+            /* Prevent any underlying element from bleeding through during GPU compositing */
+            isolation: isolate;
+        }
+
+        .virtual-therapist-overlay::before {
+            content: '';
+            position: absolute;
+            inset: 0;
+            border-radius: 12px;
+            background: linear-gradient(135deg, rgba(255,255,255,0.2) 0%, rgba(255,255,255,0) 100%);
+            opacity: 0.38;
+            /* Base: no animation to avoid light-mode flashing; dark mode overrides below */
+            animation: none;
+            pointer-events: none;
+        }
+
+        @keyframes therapistShimmer {
+            0%, 100% {
+                opacity: 0.34;
+            }
+            50% {
+                opacity: 0.42;
+            }
+        }
+
+        /* Disable attract shimmer in light mode to prevent flashing */
+        body:not(.dark-mode) .virtual-therapist-overlay::before {
+            /* Remove the overlay layer entirely in light mode to avoid any flicker */
+            content: none !important;
+            animation: none !important;
+        }
+
+        /* In light mode, make the card completely static (no hover/active deltas) */
+        body:not(.dark-mode) .virtual-therapist-overlay { transition: none; }
+        body:not(.dark-mode) .virtual-therapist-overlay:hover { box-shadow: 0 8px 25px rgba(16, 185, 129, 0.4); }
+        body:not(.dark-mode) .virtual-therapist-overlay:active { transform: none; }
+
+        /* Subtle attract shimmer in dark mode only */
+        body.dark-mode .virtual-therapist-overlay::before {
+            animation: therapistShimmer 8s ease-in-out infinite;
+            opacity: 0.38;
         }
 
         .virtual-therapist-overlay:hover {
-            transform: scale(1.05);
-            box-shadow: 0 12px 35px rgba(16, 185, 129, 0.6);
+            animation: none;
+            box-shadow: 0 10px 30px rgba(16, 185, 129, 0.6);
+        }
+
+        /* Pause the subtle shimmer when hovered to avoid any flicker */
+        .virtual-therapist-overlay:hover::before {
+            animation-play-state: paused;
+        }
+
+        .virtual-therapist-overlay:active {
+            transform: scale(0.98);
+            animation: none;
         }
 
         .virtual-therapist-overlay .emoji {
@@ -757,6 +814,15 @@
             padding: 15px;
             box-shadow: 0 10px 40px rgba(0, 0, 0, 0.5);
             transition: all 0.3s ease;
+            /* Keep fully hidden until overlay is dismissed to avoid visible dark layer */
+            opacity: 0;
+            pointer-events: none;
+        }
+
+        /* Reveal the widget only after overlay is hidden */
+        .virtual-therapist-overlay.hidden + .anxiety-widget {
+            opacity: 1;
+            pointer-events: auto;
         }
 
         .virtual-therapist-overlay.hidden {
@@ -1413,6 +1479,149 @@
             updateWarningForDarkMode(true);
         }
 
+        // Physics-based money bag drop with collision detection
+        function createMoneyBagDrop(clickX, clickY) {
+            const moneyBag = document.createElement('div');
+            moneyBag.innerHTML = '💰';
+            moneyBag.style.position = 'fixed';
+            moneyBag.style.fontSize = '2rem';
+            moneyBag.style.pointerEvents = 'none';
+            moneyBag.style.zIndex = '99999';
+            document.body.appendChild(moneyBag);
+
+            // Physics variables
+            let x = clickX - 16; // Center the emoji (half of bagSize)
+            let y = clickY - 16;
+            let velocityY = 0;
+            let velocityX = (Math.random() - 0.5) * 2; // Reduced horizontal drift
+            const gravity = 0.6;
+            const damping = 0.6; // Bounce energy loss
+            let rotationSpeed = (Math.random() - 0.5) * 15;
+            let currentRotation = 0;
+
+            const bagSize = 32; // Approximate size of emoji
+            let bounceCount = 0;
+            const maxBounces = 2;
+            const startTime = Date.now();
+            const maxLifetime = 2500; // 2.5 seconds max
+
+            // Get UI elements to collide with
+            const container = document.querySelector('.container');
+            const containerRect = container ? container.getBoundingClientRect() : null;
+
+            // Get all boxes (warning, charges, stats, etc.)
+            const boxes = document.querySelectorAll('.warning-box, .charges-box, .stat-card, .legal-notice, .payment-methods, .testimonial');
+            const boxRects = Array.from(boxes).map(box => box.getBoundingClientRect());
+
+            function animate() {
+                // Apply gravity
+                velocityY += gravity;
+
+                // Remember previous position for collision side detection
+                const prevX = x;
+                const prevY = y;
+
+                // Update position
+                x += velocityX;
+                y += velocityY;
+                currentRotation += rotationSpeed;
+
+                // Check collision with bottom
+                if (y + bagSize >= window.innerHeight - 5) {
+                    y = window.innerHeight - bagSize - 5;
+                    velocityY = -velocityY * damping;
+                    velocityX *= 0.9; // Friction
+                    rotationSpeed *= damping;
+                    bounceCount++;
+
+                    // Stop if velocity is too low
+                    if (Math.abs(velocityY) < 1) {
+                        velocityY = 0;
+                        velocityX *= 0.5;
+                    }
+                }
+
+                // Robust AABB collision: bounce off all box sides
+                let collided = false;
+                const bagRect = { left: x, top: y, right: x + bagSize, bottom: y + bagSize };
+
+                for (let i = 0; i < boxRects.length && !collided; i++) {
+                    const b = boxRects[i];
+
+                    // AABB intersect
+                    if (bagRect.right > b.left && bagRect.left < b.right && bagRect.bottom > b.top && bagRect.top < b.bottom) {
+                        // Determine collision side using previous position first
+                        const prevRight = prevX + bagSize;
+                        const prevBottom = prevY + bagSize;
+
+                        const fromTop = prevBottom <= b.top && y + bagSize >= b.top;
+                        const fromBottom = prevY >= b.bottom && y <= b.bottom;
+                        const fromLeft = prevRight <= b.left && x + bagSize >= b.left;
+                        const fromRight = prevX >= b.right && x <= b.right;
+
+                        // Fallback: minimal overlap if ambiguous
+                        const overlapLeft = bagRect.right - b.left;
+                        const overlapRight = b.right - bagRect.left;
+                        const overlapTop = bagRect.bottom - b.top;
+                        const overlapBottom = b.bottom - bagRect.top;
+
+                        if (fromTop || (overlapTop <= overlapBottom && overlapTop <= overlapLeft && overlapTop <= overlapRight)) {
+                            // Top collision
+                            y = b.top - bagSize;
+                            velocityY = -Math.abs(velocityY) * damping;
+                            velocityX *= 0.9; // friction
+                        } else if (fromBottom || (overlapBottom <= overlapTop && overlapBottom <= overlapLeft && overlapBottom <= overlapRight)) {
+                            // Bottom collision
+                            y = b.bottom;
+                            velocityY = Math.abs(velocityY) * damping;
+                            velocityX *= 0.9;
+                        } else if (fromLeft || (overlapLeft <= overlapRight && overlapLeft <= overlapTop && overlapLeft <= overlapBottom)) {
+                            // Left collision
+                            x = b.left - bagSize;
+                            velocityX = -Math.abs(velocityX) * damping;
+                            velocityY *= 0.95;
+                        } else {
+                            // Right collision
+                            x = b.right;
+                            velocityX = Math.abs(velocityX) * damping;
+                            velocityY *= 0.95;
+                        }
+
+                        currentRotation *= damping;
+                        bounceCount++;
+                        collided = true;
+
+                        // Update bagRect after resolution for subsequent checks
+                        bagRect.left = x;
+                        bagRect.top = y;
+                        bagRect.right = x + bagSize;
+                        bagRect.bottom = y + bagSize;
+                    }
+                }
+
+                // Update visual position
+                moneyBag.style.left = x + 'px';
+                moneyBag.style.top = y + 'px';
+                moneyBag.style.transform = `rotate(${currentRotation}deg)`;
+
+                // Check if animation should continue
+                const elapsed = Date.now() - startTime;
+                const shouldContinue = elapsed < maxLifetime &&
+                                       (Math.abs(velocityY) > 0.3 || Math.abs(velocityX) > 0.3 || y < window.innerHeight - bagSize - 5);
+
+                if (shouldContinue) {
+                    requestAnimationFrame(animate);
+                } else {
+                    // Final resting position, fade out
+                    moneyBag.style.transition = 'opacity 0.5s';
+                    moneyBag.style.opacity = '0';
+                    setTimeout(() => moneyBag.remove(), 500);
+                }
+            }
+
+            animate();
+        }
+
         // Track mouse clicks and add fees
         document.addEventListener('click', function(e) {
             clickCount++;
@@ -1420,9 +1629,12 @@
             // Update click counter display
             document.getElementById('clickCounter').textContent = clickCount;
 
-            // Create visual feedback for click charge
+            // Create physics-based money bag drop
+            createMoneyBagDrop(e.clientX, e.clientY);
+
+            // Create text feedback
             const clickFeedback = document.createElement('div');
-            clickFeedback.textContent = '+$10.00';
+            clickFeedback.innerHTML = '+$10.00';
             clickFeedback.style.position = 'fixed';
             clickFeedback.style.left = e.clientX + 'px';
             clickFeedback.style.top = e.clientY + 'px';
@@ -1430,9 +1642,10 @@
             clickFeedback.style.fontWeight = '900';
             clickFeedback.style.fontSize = '1.2rem';
             clickFeedback.style.pointerEvents = 'none';
-            clickFeedback.style.zIndex = '9999';
+            clickFeedback.style.zIndex = '99999';
             clickFeedback.style.animation = 'clickFeedback 1s ease-out forwards';
             clickFeedback.style.textShadow = '0 0 10px rgba(211, 47, 47, 0.8)';
+            clickFeedback.style.transform = 'translate(-50%, -50%)';
 
             document.body.appendChild(clickFeedback);
 
@@ -1445,11 +1658,36 @@
             @keyframes clickFeedback {
                 0% {
                     opacity: 1;
-                    transform: translateY(0);
+                    transform: translate(-50%, -50%) translateY(0);
                 }
                 100% {
                     opacity: 0;
-                    transform: translateY(-50px);
+                    transform: translate(-50%, -50%) translateY(-50px);
+                }
+            }
+
+            @keyframes moneyDrop {
+                0% {
+                    transform: translateY(0) rotate(0deg);
+                }
+                70% {
+                    transform: translateY(calc(100vh - 100px)) rotate(360deg);
+                }
+                80% {
+                    transform: translateY(calc(100vh - 150px)) rotate(380deg);
+                }
+                85% {
+                    transform: translateY(calc(100vh - 100px)) rotate(400deg);
+                }
+                92% {
+                    transform: translateY(calc(100vh - 120px)) rotate(420deg);
+                }
+                96% {
+                    transform: translateY(calc(100vh - 100px)) rotate(440deg);
+                }
+                100% {
+                    transform: translateY(calc(100vh - 100px)) rotate(450deg);
+                    opacity: 0.3;
                 }
             }
         `;
