@@ -578,10 +578,109 @@
         .rotating {
             animation: rotate 0.5s ease-in-out;
         }
+
+        /* Haxxor console */
+        .haxxor-console {
+            position: fixed;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: 80%;
+            max-width: 700px;
+            background: #000;
+            border: 2px solid #0f0;
+            border-radius: 5px;
+            padding: 20px;
+            font-family: 'Courier New', monospace;
+            color: #0f0;
+            z-index: 10000;
+            box-shadow: 0 0 50px rgba(0, 255, 0, 0.5), inset 0 0 20px rgba(0, 255, 0, 0.1);
+            display: none;
+            max-height: 80vh;
+            overflow-y: auto;
+        }
+
+        .haxxor-console.active {
+            display: block;
+            animation: consoleFlicker 0.1s infinite alternate;
+        }
+
+        @keyframes consoleFlicker {
+            0% { opacity: 0.95; }
+            100% { opacity: 1; }
+        }
+
+        .console-header {
+            border-bottom: 1px solid #0f0;
+            padding-bottom: 10px;
+            margin-bottom: 15px;
+            font-weight: 900;
+            text-shadow: 0 0 10px #0f0;
+        }
+
+        .console-line {
+            margin: 8px 0;
+            opacity: 0;
+            animation: consoleFadeIn 0.3s forwards;
+            text-shadow: 0 0 5px #0f0;
+        }
+
+        @keyframes consoleFadeIn {
+            to { opacity: 1; }
+        }
+
+        .console-line.error {
+            color: #f00;
+            text-shadow: 0 0 5px #f00;
+        }
+
+        .console-line.warning {
+            color: #ff0;
+            text-shadow: 0 0 5px #ff0;
+        }
+
+        .console-line.success {
+            color: #0ff;
+            text-shadow: 0 0 5px #0ff;
+        }
+
+        .console-cursor::after {
+            content: '▊';
+            animation: blink 1s infinite;
+        }
+
+        @keyframes blink {
+            0%, 49% { opacity: 1; }
+            50%, 100% { opacity: 0; }
+        }
+
+        .console-progress {
+            display: inline-block;
+            width: 200px;
+            height: 10px;
+            background: #000;
+            border: 1px solid #0f0;
+            position: relative;
+            vertical-align: middle;
+            margin-left: 10px;
+        }
+
+        .console-progress-bar {
+            height: 100%;
+            background: #0f0;
+            box-shadow: 0 0 10px #0f0;
+            transition: width 0.1s linear;
+        }
     </style>
 </head>
 <body>
     <div class="floating-coins" id="coins"></div>
+
+    <!-- Haxxor console -->
+    <div class="haxxor-console" id="haxxorConsole">
+        <div class="console-header">SHITTY™ TEMPORAL MANIPULATION SYSTEM v0.∞</div>
+        <div id="consoleContent"></div>
+    </div>
 
     <!-- Dark mode toggle button -->
     <button class="dark-mode-toggle" onclick="toggleDarkMode()" id="darkModeToggle">
@@ -626,10 +725,10 @@
             <div class="shitty-badge" style="margin-top: 15px;">Powered by Shitty™ Technology</div>
         </div>
 
-        <div class="warning-box">
-            <div class="warning-title">⚠️ UNAUTHORIZED USE DETECTED ⚠️</div>
-            <p>You just violated approximately <strong>17 clauses</strong> of the OPL-∞ license... and counting!</p>
-            <ul class="violation-list">
+        <div class="warning-box" id="warningBox">
+            <div class="warning-title" id="warningTitle">⚠️ UNAUTHORIZED USE DETECTED ⚠️</div>
+            <p id="warningText">You just violated approximately <strong>17 clauses</strong> of the OPL-∞ license... and counting!</p>
+            <ul class="violation-list" id="violationList">
                 <li>Article I, Clause 1 (Prohibited Use)</li>
                 <li>Article VI, Clause 13 (Temporal Restrictions)</li>
                 <li>Article IX, Clause 17 (License Incompatibility)</li>
@@ -693,8 +792,8 @@
                 <div class="stat-value" id="weekOfYear">0</div>
             </div>
             <div class="stat-card">
-                <div class="stat-label">Seconds Since Midnight</div>
-                <div class="stat-value" id="secondsSinceMidnight">0</div>
+                <div class="stat-label" id="fourthStatLabel">Seconds Since Midnight</div>
+                <div class="stat-value" id="fourthStatValue">0</div>
             </div>
         </div>
 
@@ -716,7 +815,7 @@
             </ul>
         </div>
 
-        <div class="testimonial">
+        <div class="testimonial" id="testimonial">
             This clock changed my life! Now I know what time it is, but at what cost? - Confused User, 2025
         </div>
 
@@ -793,16 +892,20 @@
             const options = { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric' };
             document.getElementById('currentDate').textContent = now.toLocaleDateString('en-US', options);
 
-            // Update analog clock hands (main clock - normal direction)
+            // Update analog clock hands
             const secondDeg = (now.getSeconds() / 60) * 360;
             const minuteDeg = ((now.getMinutes() + now.getSeconds() / 60) / 60) * 360;
             const hourDeg = ((now.getHours() % 12 + now.getMinutes() / 60) / 12) * 360;
 
-            document.getElementById('secondHand').setAttribute('transform', `rotate(${secondDeg} 150 150)`);
-            document.getElementById('minuteHand').setAttribute('transform', `rotate(${minuteDeg} 150 150)`);
-            document.getElementById('hourHand').setAttribute('transform', `rotate(${hourDeg} 150 150)`);
+            // Main clock: normal in light mode, counterclockwise in dark mode
+            const isDarkMode = document.body.classList.contains('dark-mode');
+            const mainClockMultiplier = isDarkMode ? -1 : 1;
 
-            // Update header clock hands (counterclockwise - inverted degrees)
+            document.getElementById('secondHand').setAttribute('transform', `rotate(${secondDeg * mainClockMultiplier} 150 150)`);
+            document.getElementById('minuteHand').setAttribute('transform', `rotate(${minuteDeg * mainClockMultiplier} 150 150)`);
+            document.getElementById('hourHand').setAttribute('transform', `rotate(${hourDeg * mainClockMultiplier} 150 150)`);
+
+            // Header clock: always counterclockwise
             document.getElementById('headerSecondHand').setAttribute('transform', `rotate(${-secondDeg} 30 30)`);
             document.getElementById('headerMinuteHand').setAttribute('transform', `rotate(${-minuteDeg} 30 30)`);
             document.getElementById('headerHourHand').setAttribute('transform', `rotate(${-hourDeg} 30 30)`);
@@ -816,7 +919,17 @@
 
             const midnight = new Date(now.getFullYear(), now.getMonth(), now.getDate());
             const secondsSinceMidnight = Math.floor((now - midnight) / 1000);
-            document.getElementById('secondsSinceMidnight').textContent = secondsSinceMidnight.toLocaleString();
+
+            // Update fourth stat based on dark mode
+            if (isDarkMode) {
+                // Temporal anomaly: seconds until midnight (counting backwards)
+                const secondsUntilMidnight = 86400 - secondsSinceMidnight;
+                document.getElementById('fourthStatLabel').textContent = 'Temporal Anomaly Index';
+                document.getElementById('fourthStatValue').textContent = secondsUntilMidnight.toLocaleString();
+            } else {
+                document.getElementById('fourthStatLabel').textContent = 'Seconds Since Midnight';
+                document.getElementById('fourthStatValue').textContent = secondsSinceMidnight.toLocaleString();
+            }
 
             // Update trial timer
             const elapsed = Math.floor((Date.now() - startTime) / 1000);
@@ -852,8 +965,98 @@
             document.getElementById('exitModal').style.display = 'flex';
         }
 
+        // Update warning text based on dark mode
+        function updateWarningForDarkMode(isDarkMode) {
+            const warningTitle = document.getElementById('warningTitle');
+            const warningText = document.getElementById('warningText');
+            const violationList = document.getElementById('violationList');
+            const testimonial = document.getElementById('testimonial');
+
+            if (isDarkMode) {
+                warningTitle.innerHTML = '⚠️ TEMPORAL DISPLACEMENT DETECTED ⚠️';
+                warningText.innerHTML = 'You just reversed the <strong>space-time continuum</strong> and violated approximately <strong>23 clauses</strong>... and counting backwards!';
+                violationList.innerHTML = `
+                    <li>Article I, Clause 1 (Prohibited Use)</li>
+                    <li>Article VI, Clause 13 (Temporal Restrictions)</li>
+                    <li>Article IX, Clause 17 (License Incompatibility)</li>
+                    <li>Article III, Clause π (Fourth Dimension Interference)</li>
+                    <li>Roadmap Step 3 (Unauthorized Time Control via async/await)</li>
+                    <li>The vibes (in reverse)</li>
+                `;
+                testimonial.innerHTML = 'I enabled dark mode and now I can see yesterday. My lawyer says this is a felony. - Time Traveler, 2024';
+            } else {
+                warningTitle.innerHTML = '⚠️ UNAUTHORIZED USE DETECTED ⚠️';
+                warningText.innerHTML = 'You just violated approximately <strong>17 clauses</strong> of the OPL-∞ license... and counting!';
+                violationList.innerHTML = `
+                    <li>Article I, Clause 1 (Prohibited Use)</li>
+                    <li>Article VI, Clause 13 (Temporal Restrictions)</li>
+                    <li>Article IX, Clause 17 (License Incompatibility)</li>
+                    <li>The vibes</li>
+                `;
+                testimonial.innerHTML = 'This clock changed my life! Now I know what time it is, but at what cost? - Confused User, 2025';
+            }
+        }
+
+        // Haxxor console animation
+        async function spinUpTimeReversal() {
+            const console = document.getElementById('haxxorConsole');
+            const content = document.getElementById('consoleContent');
+
+            console.classList.add('active');
+            content.innerHTML = '';
+
+            const messages = [
+                { text: '$ sudo shitty-clock --enable-time-reversal', delay: 100 },
+                { text: '[sudo] password for user: ********', delay: 300 },
+                { text: '', delay: 200 },
+                { text: '> Initializing Shitty™ Temporal Engine...', delay: 400 },
+                { text: '> Loading quantum entanglement modules...', delay: 300, class: 'warning' },
+                { text: '> Violating causality principles...', delay: 300, class: 'warning' },
+                { text: '> Bypassing OPL-∞ Article VI, Clause 13...', delay: 400, class: 'error' },
+                { text: '> WARNING: Unauthorized async/await detected', delay: 300, class: 'error' },
+                { text: '> Injecting temporal displacement field...', delay: 400 },
+                { text: '> Reversing space-time continuum...', delay: 500, progress: true },
+                { text: '> Clock rotation inverted: -360°/min', delay: 400, class: 'success' },
+                { text: '> Fourth dimension access granted', delay: 300, class: 'success' },
+                { text: '> Temporal anomaly index: ACTIVE', delay: 300, class: 'success' },
+                { text: '', delay: 200 },
+                { text: '✓ Time reversal mechanics engaged', delay: 400, class: 'success' },
+                { text: '⚠ Your lawyer has been notified', delay: 300, class: 'error' },
+                { text: '', delay: 200 },
+                { text: 'Press any key to continue...', delay: 300, class: 'console-cursor' }
+            ];
+
+            for (let i = 0; i < messages.length; i++) {
+                await new Promise(resolve => setTimeout(resolve, messages[i].delay));
+
+                const line = document.createElement('div');
+                line.className = `console-line ${messages[i].class || ''}`;
+                line.style.animationDelay = '0s';
+
+                if (messages[i].progress) {
+                    line.innerHTML = messages[i].text +
+                        '<div class="console-progress"><div class="console-progress-bar" id="progressBar"></div></div>';
+                    content.appendChild(line);
+
+                    // Animate progress bar
+                    const progressBar = document.getElementById('progressBar');
+                    for (let p = 0; p <= 100; p += 5) {
+                        await new Promise(resolve => setTimeout(resolve, 30));
+                        progressBar.style.width = p + '%';
+                    }
+                } else {
+                    line.textContent = messages[i].text;
+                    content.appendChild(line);
+                }
+            }
+
+            // Close console after delay
+            await new Promise(resolve => setTimeout(resolve, 2000));
+            console.classList.remove('active');
+        }
+
         // Dark mode toggle
-        function toggleDarkMode() {
+        async function toggleDarkMode() {
             const body = document.body;
             const toggle = document.getElementById('darkModeToggle');
             const sunIcon = document.getElementById('sunIcon');
@@ -866,8 +1069,12 @@
             // Toggle dark mode
             body.classList.toggle('dark-mode');
 
-            // Switch icons
-            if (body.classList.contains('dark-mode')) {
+            const isDarkMode = body.classList.contains('dark-mode');
+
+            if (isDarkMode) {
+                // Show haxxor console for dark mode activation
+                await spinUpTimeReversal();
+
                 sunIcon.style.display = 'none';
                 moonIcon.style.display = 'block';
                 localStorage.setItem('darkMode', 'enabled');
@@ -876,6 +1083,9 @@
                 moonIcon.style.display = 'none';
                 localStorage.setItem('darkMode', 'disabled');
             }
+
+            // Update warning text
+            updateWarningForDarkMode(isDarkMode);
         }
 
         // Check for saved dark mode preference
@@ -883,6 +1093,7 @@
             document.body.classList.add('dark-mode');
             document.getElementById('sunIcon').style.display = 'none';
             document.getElementById('moonIcon').style.display = 'block';
+            updateWarningForDarkMode(true);
         }
 
         // Update clock every second
