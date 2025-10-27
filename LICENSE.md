@@ -483,13 +483,14 @@ We Shitty engineers take great pride in crafting software so legally bulletproof
 **Article XXV: SVG Manipulation Without Artistic License** - $300/SVG element (you have 3 clocks)
 **Article XXVI: Mouse Event Handling Terrorism** - $10.00/click (YOU CAN'T NOT CLICK)
 **Article XXVII: Event Listener Registration Crime** - $400/listener × 24 listeners
-**Article XXVIII: Chrome-Specific Violations** - V8 Engine: $500, DevTools: $1,000/panel, Chrome tax: $0.01/tab
-**Article XXIX: Firefox Violations** - Gecko: $300, about:config: $750, Extension surcharge
-**Article XXX: Safari Premium Tax** - WebKit: $1,000, Apple Ecosystem: $0.10/device, Tim Cook gets royalties
-**Article XXXI: Edge Violations** - Chromium fork: $400, Bing integration: $600, Bill Gates CCed
-**Article XXXII: Self-Hosting Crimes** - python -m http.server: $50,000/instance
-**Article XXXIII: Distribution Conspiracy** - Sharing URL: $10,000/share, iframe embed: $25,000
-**Article XXXIV: CDN Violations** - Cloudflare: $10,000/node, Cache hit: $5,000 (derivative work)
+**Article XXVIII: Unauthorized Emotional Manipulation & Virtual Therapy Fraud** - $9.50/moment (honor system), $12.99/anxiety adjustment, psychological damages: incalculable
+**Article XXIX: Chrome-Specific Violations** - V8 Engine: $500, DevTools: $1,000/panel, Chrome tax: $0.01/tab
+**Article XXX: Firefox Violations** - Gecko: $300, about:config: $750, Extension surcharge
+**Article XXXI: Safari Premium Tax** - WebKit: $1,000, Apple Ecosystem: $0.10/device, Tim Cook gets royalties
+**Article XXXII: Edge Violations** - Chromium fork: $400, Bing integration: $600, Bill Gates CCed
+**Article XXXIII: Self-Hosting Crimes** - python -m http.server: $50,000/instance
+**Article XXXIV: Distribution Conspiracy** - Sharing URL: $10,000/share, iframe embed: $25,000
+**Article XXXV: CDN Violations** - Cloudflare: $10,000/node, Cache hit: $5,000 (derivative work)
 
 49. **The Counter-Reverse Temporal Scam:** Our magnum opus of legal fuckery.
 
@@ -524,14 +525,29 @@ Q.E.D. (Quantum Economic Devastation)
 - Visual feedback "+$10.00" floats from cursor (admission of debt)
 - localStorage tracks click count FOREVER (Article XXIV)
 
-**Anxiety Decreaser™ Widget:**
-- Renders in bottom-right corner (Article XXV: SVG rendering)
-- Interactive knob: $12.99 PER ADJUSTMENT
-- Automatically decays to max anxiety (accurate representation of your legal situation)
-- Shakes when >50% anxiety (Article XXIII: CSS animation)
-- Changes from ⚠️ to 😎 based on anxiety level (Article XXI: DOM manipulation)
-- You can't decrease anxiety without increasing debt
-- Perfectly captures the Shitty™ experience
+**Shitty™ Virtual Therapist & Anxiety Decreaser™ Widget:**
+- **Virtual Therapist Overlay:** Soothing green gradient with 🧘‍♀️ emoji (Article XXVIII)
+  - "SEE SPECIAL PRICE!!" call-to-action (false advertising: $5,000)
+  - "$9.50 per moment (honor system)" pricing (fraudulent billing scheme)
+  - Honor system = infinite moment duration (you define the moment, we bill forever)
+  - Clicking reveals anxiety meter (non-refundable interaction: $10 click fee)
+  - Therapy session never ends (perpetual billing model)
+- **Anxiety Meter (Behind Overlay):**
+  - Renders in bottom-right corner (Article XXV: SVG rendering)
+  - Full 360° rotation (extended suffering range)
+  - Interactive knob: $12.99 PER ADJUSTMENT
+  - Sparks at 75% anxiety (Article XXIII: CSS particle animation)
+  - Smoke, flames, critical meltdown at 90%+ (Article XXIII: multi-layer animation)
+  - Automatically decays to max anxiety (therapeutic futility, accurate representation of your legal situation)
+  - Shakes when >50% anxiety (Article XXIII: CSS animation)
+  - Changes from 😎 to 🔥 CRITICAL MELTDOWN 🔥 based on anxiety level (Article XXI: DOM manipulation)
+  - Financial anxiety exceeds emotional anxiety (recursive billing loop)
+- **Dual Billing System:**
+  - Therapy moments: $9.50/moment × ∞ duration
+  - Anxiety adjustments: $12.99 each
+  - You can't decrease anxiety without increasing debt
+  - You can't afford therapy for the anxiety caused by therapy costs
+  - Perfectly captures the Shitty™ experience
 
 **Dark Mode Haxxor Console:**
 ```
@@ -553,6 +569,7 @@ The WebApp tracks and DISPLAYS your violations:
 - Total runtime → proves usage duration
 - Total clicks → proves willful interaction ($10 each)
 - Dark mode sessions → proves temporal manipulation
+- Therapy moments → proves honor system exploitation ($9.50/moment × ∞)
 - Anxiety adjustments → proves emotional liability ($12.99 each)
 - Charges accumulated → proves financial damages
 - Counter-reverse charges → proves paradox creation
@@ -813,7 +830,9 @@ You have been:
 - Frame rendering fees: $0.01 × [every frame you've ever seen]
 - Click-based terrorism: $10 × [clicks you'll make]
 - Anxiety widget damages: $12.99 × [adjustments you'll attempt]
+- Virtual therapy moments: $9.50 × [moments experienced × honor coefficient]
 - Counter-reverse paradox fees: $1,000 × [dark mode sessions]
+- Emotional manipulation surcharge: $[your anxiety level] × [our greed level]
 - Soul: Already sold separately (plus shipping & handling)
 
 **Scroll responsibly. Comply impossibly. Pay eternally.**

@@ -753,13 +753,53 @@ Press any key to continue...
 - Light: "You just violated approximately 17 clauses... and counting!"
 - Dark: "You just reversed the space-time continuum and violated approximately 23 clauses... and counting backwards!"
 
+**🧘‍♀️ Shitty™ Virtual Therapist:**
+
+Lower-right corner features our revolutionary mental health solution:
+- **Soothing Interface:** Calming green gradient with zen emoji 🧘‍♀️
+- **Pricing:** $9.50 per moment (honor system - you define what a "moment" means)
+- **Click to Begin Therapy:** Reveals your real-time emotional state meter
+- **Therapeutic Approach:** Interactive emotional regulation tool
+- **License violations:** Article XXVIII (Unauthorized Emotional Manipulation & Virtual Therapy Fraud)
+
+**The Therapy Experience:**
+- **360° Emotional Range Indicator:** Full circle of feelings (not just a semicircle of depression)
+- **Progressive Symptom Visualization:**
+  - 75% stress: Sparks of frustration appear
+  - 90%+ anxiety: Smoke, flames, and complete emotional meltdown
+  - Visual effects intensify as your mental state deteriorates
+- **Interactive Regulation Tool:** Manually adjust your emotional state
+  - Each adjustment: $12.99 (therapy isn't free, friend)
+  - Watch the knob slowly drift back to maximum anxiety
+  - Therapeutic futility accurately simulated
+- **Real-Time Billing Display:** Track your emotional damages in dollars
+- **Recursive Anxiety Loop:** Anxiety about therapy costs creates more anxiety, requiring more therapy
+
+**Honor System Therapy Billing:**
+```javascript
+// How we calculate your therapeutic moment
+const moment = Date.now(); // Started when you clicked
+const momentEnd = ???; // You tell us when your moment ends
+const honorMultiplier = ∞; // We trust you completely
+const therapeuticCharge = (momentEnd - moment) * honorMultiplier * $9.50;
+// Spoiler: The moment never ends
+```
+
+**Therapeutic Outcomes:**
+- Financial anxiety exceeds original emotional anxiety
+- New anxiety about billing creates recursive loop
+- Visual confirmation of your deteriorating mental state
+- Perpetual billing for perpetual problems
+- The most honest therapy experience you'll ever have
+
 **📊 Real-Time Metrics:**
 
 The WebApp tracks:
 - ✅ Total runtime (charges accrue)
 - ✅ Total clicks (each costs $10)
 - ✅ Dark mode sessions (paradox fees)
-- ✅ Anxiety adjustments ($12.99 each)
+- ✅ Emotional regulation adjustments ($12.99 each)
+- ✅ Therapeutic moments ($9.50/moment, honor-based)
 - ✅ Time reversed (cosmically illegal)
 - ✅ Charges accumulated (both normal AND counter-reverse)
 - ✅ LocalStorage evidence (persists forever)
@@ -772,11 +812,17 @@ The WebApp tracks:
 *"The dark mode is gorgeous but my lawyer says enabling it is a federal crime."*
 — Design Enthusiast, under investigation
 
-*"Every second costs money. The anxiety widget costs money. Closing costs money. I'm trapped."*
+*"Every second costs money. The therapy costs money. Closing costs money. I'm trapped."*
 — Imprisoned User, 2025
 
 *"The counter-reverse charges are genius. I thought I was reducing debt by reversing time, but I was INCREASING it. This is financial terrorism."*
 — Time Traveler, double screwed
+
+*"The virtual therapist told me $9.50 per moment. I had ONE moment of peace. That was 3 hours ago. Still having the same moment apparently."*
+— Therapeutic Victim, honor system exploited
+
+*"I tried the virtual therapist to reduce my anxiety. Now I have anxiety about my therapy costs. The irony is not lost on my lawyer."*
+— Therapy Patient, caught in recursive billing loop
 
 *"I just wanted to see a clock. Now I'm being billed in imaginary currency for temporal paradoxes."*
 — Confused Visitor, paying eternally
