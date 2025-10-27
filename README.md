@@ -26,7 +26,7 @@
 
 ---
 
-Open Letter (Parody): docs/OPEN_LETTER_TO_SAM_AND_CLAUDE.md
+Open Letter: docs/OPEN_LETTER_TO_SAM_AND_CLAUDE.md
 
 ---
 
@@ -80,6 +80,8 @@ Reverse engineering our shitty code is prohibited under Article I, Clause 3.1415
 **Shitty EXE files are NOT available upon request.**
 
 However, they do exist. Somewhere. In some form. Perhaps.
+
+Note: For our strongly worded requests about “give us the EXE,” faster PR merges, and SHITTY token recognition, see the Open Letter: docs/OPEN_LETTER_TO_SAM_AND_CLAUDE.md.
 
 - ❌ **Cannot be requested**
 - ❌ **Will not be provided**
