@@ -478,7 +478,11 @@
         }
 
         body.dark-mode .charges-box {
-            background: linear-gradient(135deg, #d97706 0%, #b45309 100%);
+            background: linear-gradient(135deg, #065f46 0%, #047857 100%);
+        }
+
+        body.dark-mode .charges-box .charges-amount {
+            color: #10b981;
         }
 
         body.dark-mode .legal-notice {
@@ -798,9 +802,16 @@
         </div>
 
         <div class="charges-box" id="chargesBox">
-            <h3 style="margin-bottom: 15px; color: #333;">💸 UNAUTHORIZED USE CHARGES 💸</h3>
+            <h3 id="chargesTitle" style="margin-bottom: 15px; color: #333;">💸 UNAUTHORIZED USE CHARGES 💸</h3>
             <div class="charges-amount" id="charges">$0.00</div>
-            <p style="margin-top: 15px; color: #555; font-weight: 600;">(Charges accumulate every second)</p>
+            <p id="chargesSubtext" style="margin-top: 15px; color: #555; font-weight: 600;">(Charges accumulate every second + $10.00 per click)</p>
+            <p style="margin-top: 5px; color: #777; font-size: 0.9rem;">Clicks: <span id="clickCounter" style="font-weight: 900;">0</span></p>
+        </div>
+
+        <div class="charges-box" id="counterReverseBox" style="display: none; background: linear-gradient(135deg, #dc2626 0%, #991b1b 100%);">
+            <h3 style="margin-bottom: 15px; color: #fff;">⚠️ COUNTER-REVERSE TEMPORAL CHARGES ⚠️</h3>
+            <div class="charges-amount" id="counterReverseCharges" style="color: #fff;">$0.00</div>
+            <p style="margin-top: 15px; color: #fecaca; font-weight: 600;">(Paradox fees for reversing time while accruing debt)</p>
         </div>
 
         <div class="payment-methods" id="paymentMethods" style="display: none;">
@@ -860,8 +871,14 @@
         const TRIAL_DURATION = 300; // 5 minutes in seconds
         const BASE_PRICE = 999.99;
         const HOURLY_RATE = 49.99;
+        const CLICK_FEE = 10.00;
+        const PARADOX_MULTIPLIER = 2.5; // Counter-reverse charges are 2.5x normal
 
         let trialExpired = false;
+        let clickCount = 0;
+        let darkModeStartTime = null;
+        let chargesWhenDarkModeStarted = 0;
+        let totalDarkModeTime = 0; // Track cumulative time spent in dark mode
 
         // Create falling coins animation
         function createCoin() {
@@ -939,9 +956,27 @@
             document.getElementById('trialTimer').textContent =
                 `${String(trialMinutes).padStart(2, '0')}:${String(trialSeconds).padStart(2, '0')}`;
 
-            // Update charges
+            // Update charges (accumulate properly like Python version)
             const hoursUsed = elapsed / 3600;
-            const charges = BASE_PRICE + (hoursUsed * HOURLY_RATE) + Math.random() * 100;
+
+            // Calculate current dark mode time if active
+            let currentDarkModeTime = totalDarkModeTime;
+            if (isDarkMode && darkModeStartTime) {
+                currentDarkModeTime += Math.floor((Date.now() - darkModeStartTime) / 1000);
+            }
+
+            // Base charges calculation (accounting for total time in dark mode)
+            const darkModeHoursUsed = currentDarkModeTime / 3600;
+            const effectiveHoursUsed = hoursUsed - (darkModeHoursUsed * 2); // Subtract dark mode time twice (once for normal, once for reversal)
+            let charges = BASE_PRICE + (effectiveHoursUsed * HOURLY_RATE) + (clickCount * CLICK_FEE);
+
+            // In dark mode, show counter-reverse charges
+            if (isDarkMode) {
+                // Counter-reverse charges always accumulate normally (no reversal effect)
+                const counterReverseCharges = (BASE_PRICE + (hoursUsed * HOURLY_RATE) + (clickCount * CLICK_FEE)) * PARADOX_MULTIPLIER;
+                document.getElementById('counterReverseCharges').textContent = `$${counterReverseCharges.toFixed(2)}`;
+            }
+
             document.getElementById('charges').textContent = `$${charges.toFixed(2)}`;
 
             // Show payment methods if trial expired
@@ -959,7 +994,17 @@
         function exitApp() {
             const elapsed = Math.floor((Date.now() - startTime) / 1000);
             const hoursUsed = elapsed / 3600;
-            const finalCharges = BASE_PRICE + (hoursUsed * HOURLY_RATE) + Math.random() * 100;
+
+            // Calculate total dark mode time including current session
+            let finalDarkModeTime = totalDarkModeTime;
+            if (darkModeStartTime) {
+                finalDarkModeTime += Math.floor((Date.now() - darkModeStartTime) / 1000);
+            }
+
+            // Calculate final charges accounting for dark mode reversal
+            const darkModeHoursUsed = finalDarkModeTime / 3600;
+            const effectiveHoursUsed = hoursUsed - (darkModeHoursUsed * 2);
+            const finalCharges = BASE_PRICE + (effectiveHoursUsed * HOURLY_RATE) + (clickCount * CLICK_FEE);
 
             document.getElementById('finalCharges').textContent = `$${finalCharges.toFixed(2)}`;
             document.getElementById('exitModal').style.display = 'flex';
@@ -1061,6 +1106,8 @@
             const toggle = document.getElementById('darkModeToggle');
             const sunIcon = document.getElementById('sunIcon');
             const moonIcon = document.getElementById('moonIcon');
+            const counterReverseBox = document.getElementById('counterReverseBox');
+            const chargesBox = document.getElementById('chargesBox');
 
             // Add rotation animation
             toggle.classList.add('rotating');
@@ -1075,10 +1122,34 @@
                 // Show haxxor console for dark mode activation
                 await spinUpTimeReversal();
 
+                // Track when dark mode starts
+                darkModeStartTime = Date.now();
+
+                // Show counter-reverse charges box
+                counterReverseBox.style.display = 'block';
+
+                // Update charges box styling for dark mode
+                document.getElementById('chargesTitle').textContent = '💸 REVERSING UNAUTHORIZED USE CHARGES 💸';
+                document.getElementById('chargesSubtext').textContent = '(Charges decreasing due to time reversal)';
+
                 sunIcon.style.display = 'none';
                 moonIcon.style.display = 'block';
                 localStorage.setItem('darkMode', 'enabled');
             } else {
+                // Add dark mode time to cumulative total when exiting dark mode
+                if (darkModeStartTime) {
+                    const darkModeSession = Math.floor((Date.now() - darkModeStartTime) / 1000);
+                    totalDarkModeTime += darkModeSession;
+                    darkModeStartTime = null;
+                }
+
+                // Hide counter-reverse charges box
+                counterReverseBox.style.display = 'none';
+
+                // Reset charges box styling
+                document.getElementById('chargesTitle').textContent = '💸 UNAUTHORIZED USE CHARGES 💸';
+                document.getElementById('chargesSubtext').textContent = '(Charges accumulate every second + $10.00 per click)';
+
                 sunIcon.style.display = 'block';
                 moonIcon.style.display = 'none';
                 localStorage.setItem('darkMode', 'disabled');
@@ -1095,6 +1166,48 @@
             document.getElementById('moonIcon').style.display = 'block';
             updateWarningForDarkMode(true);
         }
+
+        // Track mouse clicks and add fees
+        document.addEventListener('click', function(e) {
+            clickCount++;
+
+            // Update click counter display
+            document.getElementById('clickCounter').textContent = clickCount;
+
+            // Create visual feedback for click charge
+            const clickFeedback = document.createElement('div');
+            clickFeedback.textContent = '+$10.00';
+            clickFeedback.style.position = 'fixed';
+            clickFeedback.style.left = e.clientX + 'px';
+            clickFeedback.style.top = e.clientY + 'px';
+            clickFeedback.style.color = '#d32f2f';
+            clickFeedback.style.fontWeight = '900';
+            clickFeedback.style.fontSize = '1.2rem';
+            clickFeedback.style.pointerEvents = 'none';
+            clickFeedback.style.zIndex = '9999';
+            clickFeedback.style.animation = 'clickFeedback 1s ease-out forwards';
+            clickFeedback.style.textShadow = '0 0 10px rgba(211, 47, 47, 0.8)';
+
+            document.body.appendChild(clickFeedback);
+
+            setTimeout(() => clickFeedback.remove(), 1000);
+        });
+
+        // Add CSS animation for click feedback
+        const style = document.createElement('style');
+        style.textContent = `
+            @keyframes clickFeedback {
+                0% {
+                    opacity: 1;
+                    transform: translateY(0);
+                }
+                100% {
+                    opacity: 0;
+                    transform: translateY(-50px);
+                }
+            }
+        `;
+        document.head.appendChild(style);
 
         // Update clock every second
         setInterval(updateClock, 1000);
