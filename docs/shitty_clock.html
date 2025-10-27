@@ -676,20 +676,91 @@
             transition: width 0.1s linear;
         }
 
-        /* Anxiety Knob Widget */
-        .anxiety-widget {
+        /* Virtual Therapist Overlay */
+        .virtual-therapist-overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(135deg, #a7f3d0 0%, #6ee7b7 100%);
+            border: 3px solid #10b981;
+            border-radius: 15px;
+            cursor: pointer;
+            z-index: 1;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            padding: 20px;
+            box-shadow: 0 8px 25px rgba(16, 185, 129, 0.4);
+            transition: all 0.3s ease;
+        }
+
+        .virtual-therapist-overlay:hover {
+            transform: scale(1.05);
+            box-shadow: 0 12px 35px rgba(16, 185, 129, 0.6);
+        }
+
+        .virtual-therapist-overlay .emoji {
+            font-size: 48px;
+            margin-bottom: 10px;
+        }
+
+        .virtual-therapist-overlay .title {
+            font-family: 'Inter', sans-serif;
+            font-weight: 900;
+            font-size: 13px;
+            color: #065f46;
+            text-align: center;
+            margin-bottom: 8px;
+            line-height: 1.2;
+        }
+
+        .virtual-therapist-overlay .cta {
+            font-family: 'Inter', sans-serif;
+            font-weight: 700;
+            font-size: 12px;
+            color: #047857;
+            text-align: center;
+            margin-bottom: 5px;
+        }
+
+        .virtual-therapist-overlay .price-tooltip {
+            font-family: 'Courier New', monospace;
+            font-size: 9px;
+            color: #064e3b;
+            text-align: center;
+            font-style: italic;
+            line-height: 1.3;
+        }
+
+        .anxiety-widget-container {
             position: fixed;
             bottom: 20px;
             right: 20px;
             width: 180px;
             height: 180px;
+            z-index: 1002;
+        }
+
+        /* Anxiety Knob Widget */
+        .anxiety-widget {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
             background: rgba(10, 10, 10, 0.95);
             border: 2px solid #333;
             border-radius: 15px;
             padding: 15px;
-            z-index: 1002;
             box-shadow: 0 10px 40px rgba(0, 0, 0, 0.5);
             transition: all 0.3s ease;
+        }
+
+        .virtual-therapist-overlay.hidden {
+            display: none;
         }
 
         .anxiety-widget:hover {
@@ -816,8 +887,18 @@
 <body>
     <div class="floating-coins" id="coins"></div>
 
-    <!-- Anxiety Knob Widget -->
-    <div class="anxiety-widget">
+    <!-- Anxiety Widget Container -->
+    <div class="anxiety-widget-container">
+        <!-- Virtual Therapist Overlay (shows first) -->
+        <div class="virtual-therapist-overlay" id="therapistOverlay" onclick="toggleAnxietyWidget()">
+            <span class="emoji">🧘‍♀️</span>
+            <div class="title">Shitty™ Virtual<br>Therapist</div>
+            <div class="cta">SEE SPECIAL PRICE!!</div>
+            <div class="price-tooltip">$9.50 per moment<br>(honor system)</div>
+        </div>
+
+        <!-- Anxiety Knob Widget (hidden behind overlay) -->
+        <div class="anxiety-widget">
         <div class="anxiety-widget-title" id="anxietyTitle">⚠️ ANXIETY METER ⚠️</div>
         <svg id="anxietyWidgetSvg" width="150" height="150" viewBox="0 0 150 150">
             <!-- Background circle -->
@@ -841,6 +922,7 @@
         <div class="anxiety-stats">
             <div>Level: <span class="anxiety-stat-value" id="anxietyLevelWidget">100%</span></div>
             <div>Damages: <span class="anxiety-stat-value" id="anxietyDamages">$0</span></div>
+        </div>
         </div>
     </div>
 
@@ -1480,11 +1562,10 @@
                     // Rare flames (5% chance)
                     if (Math.random() < 0.05) createFlameParticle();
                 }, 200);
-            } else if (anxietyLevel > 70) {
-                // High anxiety: smoke and occasional sparks
+            } else if (anxietyLevel > 75) {
+                // 3/4 anxiety: sparks start appearing
                 anxietyEffectsInterval = setInterval(() => {
-                    if (Math.random() < 0.2) createSmokeParticle();
-                    if (Math.random() < 0.15) createSparkParticle();
+                    if (Math.random() < 0.3) createSparkParticle();
                 }, 300);
             }
         }
@@ -1600,6 +1681,12 @@
         document.addEventListener('touchmove', dragAnxiety);
         document.addEventListener('mouseup', stopAnxietyDrag);
         document.addEventListener('touchend', stopAnxietyDrag);
+
+        // Toggle anxiety widget visibility (hide overlay to reveal widget)
+        function toggleAnxietyWidget() {
+            const overlay = document.getElementById('therapistOverlay');
+            overlay.classList.add('hidden');
+        }
 
         // Initialize anxiety knob
         updateAnxietyKnobPosition();
