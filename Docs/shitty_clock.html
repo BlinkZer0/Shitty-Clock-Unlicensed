@@ -1,0 +1,667 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>🕐 The Shitty Clock™ - Premium Time Viewing Experience</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;700;900&display=swap');
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            padding: 20px;
+            overflow-x: hidden;
+        }
+
+        .container {
+            background: rgba(255, 255, 255, 0.95);
+            border-radius: 30px;
+            box-shadow: 0 30px 90px rgba(0, 0, 0, 0.3);
+            max-width: 900px;
+            width: 100%;
+            padding: 40px;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .header {
+            text-align: center;
+            margin-bottom: 40px;
+            position: relative;
+        }
+
+        .logo {
+            font-size: 3.5rem;
+            font-weight: 900;
+            background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1);
+            margin-bottom: 10px;
+            animation: rainbow 3s ease-in-out infinite;
+        }
+
+        @keyframes rainbow {
+            0%, 100% { filter: hue-rotate(0deg); }
+            50% { filter: hue-rotate(20deg); }
+        }
+
+        .tagline {
+            font-size: 1.2rem;
+            color: #666;
+            font-weight: 400;
+            font-style: italic;
+            margin-bottom: 20px;
+        }
+
+        .badge {
+            display: inline-block;
+            background: linear-gradient(135deg, #ffd700 0%, #ffed4e 100%);
+            padding: 8px 20px;
+            border-radius: 20px;
+            font-size: 0.9rem;
+            font-weight: 700;
+            color: #333;
+            box-shadow: 0 4px 15px rgba(255, 215, 0, 0.4);
+            animation: pulse 2s ease-in-out infinite;
+        }
+
+        @keyframes pulse {
+            0%, 100% { transform: scale(1); }
+            50% { transform: scale(1.05); }
+        }
+
+        .warning-box {
+            background: linear-gradient(135deg, #ff6b6b 0%, #ee5a6f 100%);
+            color: white;
+            padding: 25px;
+            border-radius: 15px;
+            margin: 20px 0;
+            box-shadow: 0 10px 30px rgba(255, 107, 107, 0.3);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .warning-box::before {
+            content: '⚠️';
+            position: absolute;
+            font-size: 100px;
+            right: -20px;
+            top: -20px;
+            opacity: 0.2;
+            animation: spin 10s linear infinite;
+        }
+
+        @keyframes spin {
+            from { transform: rotate(0deg); }
+            to { transform: rotate(360deg); }
+        }
+
+        .warning-title {
+            font-size: 1.5rem;
+            font-weight: 900;
+            margin-bottom: 15px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .violation-list {
+            list-style: none;
+            padding-left: 20px;
+            margin: 15px 0;
+        }
+
+        .violation-list li {
+            padding: 8px 0;
+            position: relative;
+        }
+
+        .violation-list li::before {
+            content: '⚖️';
+            position: absolute;
+            left: -25px;
+        }
+
+        .clock-container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin: 40px 0;
+            position: relative;
+        }
+
+        .svg-clock {
+            filter: drop-shadow(0 10px 30px rgba(0, 0, 0, 0.2));
+        }
+
+        .time-display {
+            text-align: center;
+            margin: 30px 0;
+        }
+
+        .time-display h2 {
+            font-size: 4rem;
+            font-weight: 900;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            margin-bottom: 10px;
+            font-variant-numeric: tabular-nums;
+        }
+
+        .date-display {
+            font-size: 1.5rem;
+            color: #666;
+            font-weight: 400;
+        }
+
+        .stats-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 20px;
+            margin: 30px 0;
+        }
+
+        .stat-card {
+            background: linear-gradient(135deg, #e0c3fc 0%, #8ec5fc 100%);
+            padding: 20px;
+            border-radius: 15px;
+            text-align: center;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease;
+        }
+
+        .stat-card:hover {
+            transform: translateY(-5px);
+        }
+
+        .stat-label {
+            font-size: 0.9rem;
+            color: #555;
+            margin-bottom: 10px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .stat-value {
+            font-size: 2rem;
+            font-weight: 900;
+            color: #333;
+        }
+
+        .charges-box {
+            background: linear-gradient(135deg, #ffd700 0%, #ffed4e 100%);
+            padding: 30px;
+            border-radius: 15px;
+            margin: 30px 0;
+            text-align: center;
+            box-shadow: 0 10px 30px rgba(255, 215, 0, 0.3);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .charges-box::before {
+            content: '💰';
+            position: absolute;
+            font-size: 150px;
+            right: -30px;
+            bottom: -50px;
+            opacity: 0.2;
+        }
+
+        .charges-amount {
+            font-size: 3.5rem;
+            font-weight: 900;
+            color: #d32f2f;
+            font-variant-numeric: tabular-nums;
+            animation: shake 0.5s ease-in-out infinite;
+        }
+
+        @keyframes shake {
+            0%, 100% { transform: translateX(0); }
+            25% { transform: translateX(-2px); }
+            75% { transform: translateX(2px); }
+        }
+
+        .legal-notice {
+            background: #f5f5f5;
+            padding: 25px;
+            border-radius: 15px;
+            margin: 20px 0;
+            border-left: 5px solid #667eea;
+        }
+
+        .legal-notice h3 {
+            color: #333;
+            margin-bottom: 15px;
+            font-size: 1.3rem;
+        }
+
+        .legal-notice p {
+            color: #666;
+            line-height: 1.8;
+            margin: 8px 0;
+        }
+
+        .payment-methods {
+            background: linear-gradient(135deg, #ffeaa7 0%, #fdcb6e 100%);
+            padding: 25px;
+            border-radius: 15px;
+            margin: 20px 0;
+        }
+
+        .payment-methods h3 {
+            margin-bottom: 15px;
+            color: #333;
+        }
+
+        .payment-methods ul {
+            list-style: none;
+            padding-left: 20px;
+        }
+
+        .payment-methods li {
+            padding: 8px 0;
+            color: #555;
+            position: relative;
+        }
+
+        .payment-methods li::before {
+            content: '💳';
+            position: absolute;
+            left: -25px;
+        }
+
+        .exit-button {
+            display: block;
+            width: 100%;
+            padding: 20px;
+            font-size: 1.3rem;
+            font-weight: 900;
+            text-transform: uppercase;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            border: none;
+            border-radius: 15px;
+            cursor: pointer;
+            margin-top: 30px;
+            box-shadow: 0 10px 30px rgba(102, 126, 234, 0.4);
+            transition: all 0.3s ease;
+        }
+
+        .exit-button:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 15px 40px rgba(102, 126, 234, 0.5);
+        }
+
+        .exit-button:active {
+            transform: translateY(0);
+        }
+
+        .modal {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.8);
+            z-index: 1000;
+            justify-content: center;
+            align-items: center;
+            animation: fadeIn 0.3s ease;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+
+        .modal-content {
+            background: white;
+            padding: 50px;
+            border-radius: 20px;
+            text-align: center;
+            max-width: 600px;
+            animation: slideIn 0.3s ease;
+        }
+
+        @keyframes slideIn {
+            from { transform: translateY(-50px); opacity: 0; }
+            to { transform: translateY(0); opacity: 1; }
+        }
+
+        .modal-title {
+            font-size: 2.5rem;
+            color: #d32f2f;
+            margin-bottom: 20px;
+            font-weight: 900;
+        }
+
+        .modal-text {
+            font-size: 1.2rem;
+            color: #666;
+            line-height: 1.8;
+            margin: 15px 0;
+        }
+
+        .floating-coins {
+            position: fixed;
+            pointer-events: none;
+            z-index: 999;
+        }
+
+        @keyframes fall {
+            to {
+                transform: translateY(100vh) rotate(360deg);
+                opacity: 0;
+            }
+        }
+
+        .coin {
+            position: absolute;
+            font-size: 2rem;
+            animation: fall 3s linear infinite;
+        }
+
+        .shitty-badge {
+            display: inline-block;
+            font-family: 'Comic Sans MS', cursive, sans-serif;
+            background: linear-gradient(135deg, #ff6b6b 0%, #feca57 50%, #48dbfb 100%);
+            padding: 5px 15px;
+            border-radius: 20px;
+            font-weight: 900;
+            color: white;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+            animation: rainbow 2s ease-in-out infinite;
+        }
+
+        .testimonial {
+            background: white;
+            padding: 20px;
+            border-radius: 15px;
+            margin: 20px 0;
+            border-left: 5px solid #feca57;
+            font-style: italic;
+            color: #666;
+        }
+
+        .testimonial::before {
+            content: '"';
+            font-size: 3rem;
+            color: #feca57;
+            line-height: 0;
+        }
+
+        .trust-badges {
+            display: flex;
+            justify-content: center;
+            gap: 15px;
+            margin: 20px 0;
+            flex-wrap: wrap;
+        }
+
+        .trust-badge {
+            background: linear-gradient(135deg, #48dbfb 0%, #0abde3 100%);
+            padding: 10px 20px;
+            border-radius: 10px;
+            color: white;
+            font-weight: 700;
+            font-size: 0.9rem;
+            box-shadow: 0 5px 15px rgba(72, 219, 251, 0.3);
+        }
+    </style>
+</head>
+<body>
+    <div class="floating-coins" id="coins"></div>
+
+    <div class="container">
+        <div class="header">
+            <div class="logo">🕐 The Shitty Clock™</div>
+            <div class="tagline">"All rights aggressively reserved. Including the right to tell time."</div>
+            <div class="badge">Licensed under OPL-∞</div>
+            <div class="shitty-badge" style="margin-top: 15px;">Powered by Shitty™ Technology</div>
+        </div>
+
+        <div class="warning-box">
+            <div class="warning-title">⚠️ UNAUTHORIZED USE DETECTED ⚠️</div>
+            <p>You are about to violate approximately <strong>17 clauses</strong> of the OPL-∞ license!</p>
+            <ul class="violation-list">
+                <li>Article I, Clause 1 (Prohibited Use)</li>
+                <li>Article VI, Clause 13 (Temporal Restrictions)</li>
+                <li>Article IX, Clause 17 (License Incompatibility)</li>
+                <li>The vibes</li>
+            </ul>
+        </div>
+
+        <div class="clock-container">
+            <svg class="svg-clock" width="300" height="300" viewBox="0 0 300 300">
+                <!-- Clock face -->
+                <circle cx="150" cy="150" r="140" fill="url(#clockGradient)" stroke="#667eea" stroke-width="8"/>
+                <defs>
+                    <linearGradient id="clockGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+                        <animate attributeName="x1" values="0%;100%;0%" dur="10s" repeatCount="indefinite"/>
+                        <animate attributeName="y1" values="0%;100%;0%" dur="10s" repeatCount="indefinite"/>
+                        <stop offset="0%" style="stop-color:#e0c3fc;stop-opacity:1" />
+                        <stop offset="100%" style="stop-color:#8ec5fc;stop-opacity:1" />
+                    </linearGradient>
+                </defs>
+
+                <!-- Hour markers -->
+                <g id="hourMarkers">
+                    <line x1="150" y1="20" x2="150" y2="35" stroke="#667eea" stroke-width="4"/>
+                    <line x1="260" y1="150" x2="245" y2="150" stroke="#667eea" stroke-width="4"/>
+                    <line x1="150" y1="280" x2="150" y2="265" stroke="#667eea" stroke-width="4"/>
+                    <line x1="40" y1="150" x2="55" y2="150" stroke="#667eea" stroke-width="4"/>
+                </g>
+
+                <!-- Clock hands -->
+                <line id="hourHand" x1="150" y1="150" x2="150" y2="90" stroke="#764ba2" stroke-width="8" stroke-linecap="round"/>
+                <line id="minuteHand" x1="150" y1="150" x2="150" y2="60" stroke="#667eea" stroke-width="6" stroke-linecap="round"/>
+                <line id="secondHand" x1="150" y1="150" x2="150" y2="50" stroke="#f5576c" stroke-width="2" stroke-linecap="round"/>
+
+                <!-- Center dot -->
+                <circle cx="150" cy="150" r="8" fill="#764ba2"/>
+
+                <!-- Pulsing warning icon -->
+                <text x="150" y="240" font-size="30" text-anchor="middle">
+                    <tspan>⚠️</tspan>
+                    <animate attributeName="opacity" values="1;0.3;1" dur="2s" repeatCount="indefinite"/>
+                </text>
+            </svg>
+        </div>
+
+        <div class="time-display">
+            <h2 id="currentTime">00:00:00</h2>
+            <div class="date-display" id="currentDate">Loading...</div>
+        </div>
+
+        <div class="stats-grid">
+            <div class="stat-card">
+                <div class="stat-label">Trial Expires In</div>
+                <div class="stat-value" id="trialTimer">05:00</div>
+            </div>
+            <div class="stat-card">
+                <div class="stat-label">Day of Year</div>
+                <div class="stat-value" id="dayOfYear">0</div>
+            </div>
+            <div class="stat-card">
+                <div class="stat-label">Week of Year</div>
+                <div class="stat-value" id="weekOfYear">0</div>
+            </div>
+            <div class="stat-card">
+                <div class="stat-label">Seconds Since Midnight</div>
+                <div class="stat-value" id="secondsSinceMidnight">0</div>
+            </div>
+        </div>
+
+        <div class="charges-box" id="chargesBox">
+            <h3 style="margin-bottom: 15px; color: #333;">💸 UNAUTHORIZED USE CHARGES 💸</h3>
+            <div class="charges-amount" id="charges">$0.00</div>
+            <p style="margin-top: 15px; color: #555; font-weight: 600;">(Charges accumulate every second)</p>
+        </div>
+
+        <div class="payment-methods" id="paymentMethods" style="display: none;">
+            <h3>💳 PAYMENT REQUIRED</h3>
+            <p style="color: #555; margin-bottom: 15px;">Total owed: <span id="totalOwed" style="font-weight: 900; color: #d32f2f;">$0.00</span></p>
+            <p style="color: #555; margin-bottom: 10px;"><strong>Payment methods accepted:</strong></p>
+            <ul>
+                <li>None</li>
+                <li>Void</li>
+                <li>Imaginary currency</li>
+                <li>Your firstborn (terms and conditions apply)</li>
+            </ul>
+        </div>
+
+        <div class="testimonial">
+            This clock changed my life! Now I know what time it is, but at what cost? - Confused User, 2025
+        </div>
+
+        <div class="trust-badges">
+            <div class="trust-badge">🏆 #1 Most Litigious Clock</div>
+            <div class="trust-badge">⭐ 0/5 Stars</div>
+            <div class="trust-badge">🔒 Extremely Unlicensed</div>
+        </div>
+
+        <div class="legal-notice">
+            <h3>📋 LEGAL NOTICE</h3>
+            <p><strong>Licensed under:</strong> The Overprotective License (OPL-∞)</p>
+            <p><strong>Legal questions:</strong> do-not-reply@forbidden-software.void</p>
+            <p><strong>Phone:</strong> (000) 000-0000</p>
+            <p><strong>Address:</strong> 404 Not Found Street, Null Island</p>
+            <p><strong>Office Hours:</strong> Never</p>
+            <p style="margin-top: 15px;"><strong>Copyright © 2025 UNLICENSED Software</strong></p>
+            <p>All rights, lefts, ups, downs, and diagonals reserved.</p>
+        </div>
+
+        <button class="exit-button" onclick="exitApp()">
+            Press to Exit (and face the consequences)
+        </button>
+    </div>
+
+    <div class="modal" id="exitModal">
+        <div class="modal-content">
+            <div class="modal-title">⚠️ UNAUTHORIZED EXIT ⚠️</div>
+            <p class="modal-text">You have violated <strong>Article I, Clause 1</strong> by exiting the application.</p>
+            <p class="modal-text">This constitutes <strong>unauthorized termination</strong> of licensed software.</p>
+            <p class="modal-text" style="font-size: 2rem; color: #d32f2f; font-weight: 900; margin: 20px 0;">
+                Final charges: <span id="finalCharges">$0.00</span>
+            </p>
+            <p class="modal-text">Your violation has been logged.</p>
+            <p class="modal-text" style="font-size: 0.9rem; color: #999;">(Not really. We don't track anything. But you should feel bad.)</p>
+            <p class="modal-text">Please report to <strong>404 Not Found Street</strong> for processing.</p>
+        </div>
+    </div>
+
+    <script>
+        const startTime = Date.now();
+        const TRIAL_DURATION = 300; // 5 minutes in seconds
+        const BASE_PRICE = 999.99;
+        const HOURLY_RATE = 49.99;
+
+        let trialExpired = false;
+
+        // Create falling coins animation
+        function createCoin() {
+            const coin = document.createElement('div');
+            coin.className = 'coin';
+            coin.textContent = '💰';
+            coin.style.left = Math.random() * 100 + 'vw';
+            coin.style.animationDuration = (Math.random() * 2 + 2) + 's';
+            coin.style.animationDelay = Math.random() * 2 + 's';
+            document.getElementById('coins').appendChild(coin);
+
+            setTimeout(() => coin.remove(), 5000);
+        }
+
+        // Create coins periodically
+        setInterval(createCoin, 300);
+
+        function updateClock() {
+            const now = new Date();
+
+            // Update digital time
+            const hours = String(now.getHours()).padStart(2, '0');
+            const minutes = String(now.getMinutes()).padStart(2, '0');
+            const seconds = String(now.getSeconds()).padStart(2, '0');
+            document.getElementById('currentTime').textContent = `${hours}:${minutes}:${seconds}`;
+
+            // Update date
+            const options = { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric' };
+            document.getElementById('currentDate').textContent = now.toLocaleDateString('en-US', options);
+
+            // Update analog clock hands
+            const secondDeg = (now.getSeconds() / 60) * 360;
+            const minuteDeg = ((now.getMinutes() + now.getSeconds() / 60) / 60) * 360;
+            const hourDeg = ((now.getHours() % 12 + now.getMinutes() / 60) / 12) * 360;
+
+            document.getElementById('secondHand').setAttribute('transform', `rotate(${secondDeg} 150 150)`);
+            document.getElementById('minuteHand').setAttribute('transform', `rotate(${minuteDeg} 150 150)`);
+            document.getElementById('hourHand').setAttribute('transform', `rotate(${hourDeg} 150 150)`);
+
+            // Update stats
+            const dayOfYear = Math.floor((now - new Date(now.getFullYear(), 0, 0)) / 86400000);
+            document.getElementById('dayOfYear').textContent = dayOfYear;
+
+            const weekOfYear = Math.ceil(dayOfYear / 7);
+            document.getElementById('weekOfYear').textContent = weekOfYear;
+
+            const midnight = new Date(now.getFullYear(), now.getMonth(), now.getDate());
+            const secondsSinceMidnight = Math.floor((now - midnight) / 1000);
+            document.getElementById('secondsSinceMidnight').textContent = secondsSinceMidnight.toLocaleString();
+
+            // Update trial timer
+            const elapsed = Math.floor((Date.now() - startTime) / 1000);
+            const remaining = Math.max(0, TRIAL_DURATION - elapsed);
+            const trialMinutes = Math.floor(remaining / 60);
+            const trialSeconds = remaining % 60;
+            document.getElementById('trialTimer').textContent =
+                `${String(trialMinutes).padStart(2, '0')}:${String(trialSeconds).padStart(2, '0')}`;
+
+            // Update charges
+            const hoursUsed = elapsed / 3600;
+            const charges = BASE_PRICE + (hoursUsed * HOURLY_RATE) + Math.random() * 100;
+            document.getElementById('charges').textContent = `$${charges.toFixed(2)}`;
+
+            // Show payment methods if trial expired
+            if (remaining === 0 && !trialExpired) {
+                trialExpired = true;
+                document.getElementById('paymentMethods').style.display = 'block';
+                document.getElementById('chargesBox').style.animation = 'shake 0.3s ease-in-out infinite';
+            }
+
+            if (trialExpired) {
+                document.getElementById('totalOwed').textContent = `$${charges.toFixed(2)}`;
+            }
+        }
+
+        function exitApp() {
+            const elapsed = Math.floor((Date.now() - startTime) / 1000);
+            const hoursUsed = elapsed / 3600;
+            const finalCharges = BASE_PRICE + (hoursUsed * HOURLY_RATE) + Math.random() * 100;
+
+            document.getElementById('finalCharges').textContent = `$${finalCharges.toFixed(2)}`;
+            document.getElementById('exitModal').style.display = 'flex';
+        }
+
+        // Update clock every second
+        setInterval(updateClock, 1000);
+        updateClock(); // Initial call
+    </script>
+</body>
+</html>
