@@ -237,6 +237,15 @@ We Shitty engineers take great pride in crafting software so legally bulletproof
     - Rock-paper-scissors (best of 1,000)
     - Mutual agreement to give up
 
+### Article XIV½: Mandatory Absurd Arbitration (Annex DADA‑1)
+
+In addition to the above silly options, all disputes, disagreements, squabbles, kerfuffles, and eyebrow raises are subject to our hilariously unfair arbitration regime. Civil court remedies are waived, superseded, and placed on a nice shelf where they can’t hurt anyone.
+
+- Binding and exclusive process: See Annex DADA‑1 → [docs/ARBITRATION_CLAUSE.md](docs/ARBITRATION_CLAUSE.md)
+- We serve as the arbitrator, hold the proceeding, and invoice everyone (especially you).
+- Outcomes are final, dramatic, and retroactively correct. Class actions are not a thing here.
+
+
 ### Article XV: Acceptance
 
 30. By having read this far, you have violated approximately 17 clauses. Congratulations.

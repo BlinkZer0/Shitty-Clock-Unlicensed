@@ -315,6 +315,8 @@ This repository is licensed under the **Overprotective License (OPL-∞)**.
 
 **Full License:** See [LICENSE.md](LICENSE.md) (if you dare)
 
+- New: Mandatory Absurd Arbitration (Annex DADA‑1) supersedes civil court remedies and channels all disputes into our one‑stop unfairness shop. We arbitrate, we host, and you pay: see [docs/ARBITRATION_CLAUSE.md](docs/ARBITRATION_CLAUSE.md).
+
 **Word Count:** 74,832 words (and growing)
 **Lawyers Consulted:** 0
 **Logic Applied:** -7
