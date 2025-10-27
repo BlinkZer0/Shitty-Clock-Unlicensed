@@ -993,7 +993,43 @@
 
         /* Slider styling */
         .sentience-slider-row { margin-top: 8px; text-align: center; }
-        .sentience-slider-row input[type="range"] { width: 160px; accent-color: #00e6b8; }
+        .sentience-slider-row input[type="range"] {
+            width: 180px;
+            appearance: none;
+            -webkit-appearance: none;
+            background: transparent;
+            transform: scaleX(-1); /* left side is max visually */
+        }
+        .sentience-slider-row input[type="range"]:focus { outline: none; }
+        /* Chrome/Edge/WebKit track fill using CSS var --pct (updated via JS) */
+        .sentience-slider-row input[type="range"]::-webkit-slider-runnable-track {
+            height: 6px;
+            border-radius: 4px;
+            background: linear-gradient(to left,
+                #00e6b8 0%,
+                #00e6b8 var(--pct, 100%),
+                #2b2b2b var(--pct, 100%),
+                #2b2b2b 100%);
+        }
+        .sentience-slider-row input[type="range"]::-webkit-slider-thumb {
+            -webkit-appearance: none;
+            width: 16px; height: 16px;
+            margin-top: -5px; /* center thumb on 6px track */
+            background: #00e6b8;
+            border: 2px solid #7fffe6;
+            border-radius: 50%;
+            box-shadow: 0 0 8px rgba(0,230,184,0.6);
+        }
+        /* Firefox */
+        .sentience-slider-row input[type="range"]::-moz-range-track {
+            height: 6px; border-radius: 4px; background: #2b2b2b;
+        }
+        .sentience-slider-row input[type="range"]::-moz-range-progress {
+            height: 6px; border-radius: 4px; background: #00e6b8;
+        }
+        .sentience-slider-row input[type="range"]::-moz-range-thumb {
+            width: 16px; height: 16px; background: #00e6b8; border: 2px solid #7fffe6; border-radius: 50%;
+        }
 
         /* Collapsed state */
         .sentience-collapsed-icon {
@@ -1077,7 +1113,7 @@
     </div>
 
     <!-- Sentience Widget Container -->
-    <div class="sentience-widget-container">
+    <div class="sentience-widget-container collapsed">
         <div class="sentience-widget">
             <div class="sentience-collapse-btn" id="sentienceCollapseBtn">−</div>
             <div class="sentience-widget-title" id="sentienceTitle">SENTIENCE LEVEL (0 … 11)</div>
@@ -2102,8 +2138,8 @@
         }
 
         function getSentienceFraction() {
-            // Map angle so top (0deg) = 1.0, clockwise increases value
-            let frac = (sentienceAngle % 360) / 360;
+            // Map angle: 0deg (top) = 1.0 (11/11), clockwise decreases
+            let frac = 1 - ((sentienceAngle % 360) / 360);
             if (frac < 0) frac += 1;
             return Math.max(0, Math.min(1, frac));
         }
@@ -2136,16 +2172,28 @@
         const sentienceCircumference = 2 * Math.PI * 60; // r=60
         function updateSentienceVisuals() {
             const frac = getSentienceFraction();
-            // Arc fill based on fraction
+            // Arc fill based on fraction and aligned to knob end
             if (sentienceArc) {
-                sentienceArc.style.strokeDasharray = `${sentienceCircumference}`;
-                sentienceArc.style.strokeDashoffset = `${(1 - frac) * sentienceCircumference}`;
+                // Proper fill CCW from 12 o'clock (leftward from the top)
+                // so the short segment between 12 and the knob (counter‑clockwise) is filled.
+                const visibleLen = Math.max(0.0001, frac * sentienceCircumference);
+                const gapLen = Math.max(0.0001, sentienceCircumference - visibleLen);
+                sentienceArc.style.strokeDasharray = `${visibleLen} ${gapLen}`;
+                // Offset by visibleLen so the filled segment sits before the 12 o'clock mark
+                // (counter‑clockwise side), matching the desired direction.
+                sentienceArc.style.strokeDashoffset = `${visibleLen}`;
             }
             // Numeric readout
             sentienceLevelWidget.textContent = getSentienceDisplay();
             // Sync slider to current fraction
             if (sentienceSlider) {
-                sentienceSlider.value = (frac * 11).toFixed(1);
+                // Slider is visually flipped; left = max
+                sentienceSlider.value = (11 - frac * 11).toFixed(1);
+            }
+            // Update slider fill percentage for WebKit via CSS var
+            if (sentienceSlider) {
+                const pct = Math.round(frac * 100);
+                sentienceSlider.style.setProperty('--pct', pct + '%');
             }
             // Containment glow: lower sentience => higher orange glow
             const containment = 1 - frac; // 1 at low sentience, 0 at max
@@ -2163,7 +2211,7 @@
 
         function setSentienceFromFraction(frac) {
             const clamped = Math.max(0, Math.min(1, frac));
-            sentienceAngle = clamped * 360;
+            sentienceAngle = (1 - clamped) * 360;
             updateSentienceKnobPosition();
             updateSentienceVisuals();
             scheduleNextSentienceSpark();
@@ -2313,7 +2361,8 @@
         if (sentienceSlider) {
             sentienceSlider.addEventListener('input', (e) => {
                 const val = parseFloat(e.target.value || '0');
-                const frac = val / 11;
+                // Slider is visually flipped; interpret left as higher value
+                const frac = (11 - val) / 11;
                 setSentienceFromFraction(frac);
             });
         }
