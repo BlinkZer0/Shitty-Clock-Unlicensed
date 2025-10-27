@@ -675,10 +675,174 @@
             box-shadow: 0 0 10px #0f0;
             transition: width 0.1s linear;
         }
+
+        /* Anxiety Knob Widget */
+        .anxiety-widget {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            width: 180px;
+            height: 180px;
+            background: rgba(10, 10, 10, 0.95);
+            border: 2px solid #333;
+            border-radius: 15px;
+            padding: 15px;
+            z-index: 1002;
+            box-shadow: 0 10px 40px rgba(0, 0, 0, 0.5);
+            transition: all 0.3s ease;
+        }
+
+        .anxiety-widget:hover {
+            transform: scale(1.05);
+            box-shadow: 0 15px 50px rgba(0, 0, 0, 0.7);
+        }
+
+        .anxiety-widget-title {
+            font-family: 'Courier New', monospace;
+            font-size: 10px;
+            font-weight: bold;
+            text-align: center;
+            color: #fff;
+            margin-bottom: 10px;
+            text-shadow: 0 0 5px rgba(255, 0, 0, 0.5);
+        }
+
+        #anxietyWidgetSvg {
+            filter: drop-shadow(0 5px 15px rgba(0, 0, 0, 0.5));
+        }
+
+        .anxiety-stats {
+            font-family: 'Courier New', monospace;
+            font-size: 8px;
+            color: #fff;
+            text-align: center;
+            margin-top: 5px;
+            line-height: 1.4;
+        }
+
+        .anxiety-stat-value {
+            font-weight: bold;
+            font-size: 10px;
+        }
+
+        @keyframes anxietyShake {
+            0%, 100% { transform: translate(0, 0) rotate(0deg); }
+            10% { transform: translate(-1px, -1px) rotate(-0.5deg); }
+            20% { transform: translate(1px, 1px) rotate(0.5deg); }
+            30% { transform: translate(-1px, 1px) rotate(-0.5deg); }
+            40% { transform: translate(1px, -1px) rotate(0.5deg); }
+            50% { transform: translate(-1px, -1px) rotate(-0.5deg); }
+            60% { transform: translate(1px, 1px) rotate(0.5deg); }
+            70% { transform: translate(-1px, 1px) rotate(-0.5deg); }
+            80% { transform: translate(1px, -1px) rotate(0.5deg); }
+            90% { transform: translate(-1px, -1px) rotate(-0.5deg); }
+        }
+
+        .anxiety-shaking {
+            animation: anxietyShake 0.3s infinite;
+        }
+
+        /* Anxiety widget effects */
+        @keyframes smoke {
+            0% {
+                opacity: 0.6;
+                transform: translateY(0) scale(1);
+            }
+            100% {
+                opacity: 0;
+                transform: translateY(-30px) scale(2);
+            }
+        }
+
+        .smoke-particle {
+            position: absolute;
+            width: 10px;
+            height: 10px;
+            background: radial-gradient(circle, rgba(100, 100, 100, 0.8), transparent);
+            border-radius: 50%;
+            pointer-events: none;
+            animation: smoke 2s ease-out forwards;
+        }
+
+        @keyframes spark {
+            0% {
+                opacity: 1;
+                transform: translate(0, 0) scale(1);
+            }
+            100% {
+                opacity: 0;
+                transform: translate(var(--spark-x), var(--spark-y)) scale(0);
+            }
+        }
+
+        .spark-particle {
+            position: absolute;
+            width: 3px;
+            height: 3px;
+            background: #ffaa00;
+            border-radius: 50%;
+            pointer-events: none;
+            box-shadow: 0 0 5px #ff6600;
+            animation: spark 0.5s ease-out forwards;
+        }
+
+        @keyframes flame {
+            0% {
+                opacity: 1;
+                transform: translateY(0) scale(1);
+            }
+            50% {
+                opacity: 0.8;
+                transform: translateY(-40px) scale(1.5);
+            }
+            100% {
+                opacity: 0;
+                transform: translateY(-80px) scale(0.5);
+            }
+        }
+
+        .flame-particle {
+            position: absolute;
+            width: 15px;
+            height: 20px;
+            background: linear-gradient(to top, #ff4500, #ff8c00, #ffff00);
+            border-radius: 50% 50% 50% 50% / 60% 60% 40% 40%;
+            pointer-events: none;
+            filter: blur(2px);
+            animation: flame 1s ease-out forwards;
+        }
     </style>
 </head>
 <body>
     <div class="floating-coins" id="coins"></div>
+
+    <!-- Anxiety Knob Widget -->
+    <div class="anxiety-widget">
+        <div class="anxiety-widget-title" id="anxietyTitle">⚠️ ANXIETY METER ⚠️</div>
+        <svg id="anxietyWidgetSvg" width="150" height="150" viewBox="0 0 150 150">
+            <!-- Background circle -->
+            <circle cx="75" cy="75" r="60" fill="none" stroke="#333" stroke-width="2"/>
+
+            <!-- Tick marks -->
+            <g id="anxietyTickMarks"></g>
+
+            <!-- Knob indicator line -->
+            <line id="anxietyKnobLine" x1="75" y1="75" x2="75" y2="15"
+                  stroke="#ff0000" stroke-width="3" stroke-linecap="round"/>
+
+            <!-- Knob circle (draggable) -->
+            <circle id="anxietyKnob" cx="75" cy="15" r="12"
+                    fill="#ff0000" stroke="#ff6666" stroke-width="2"
+                    cursor="grab"/>
+
+            <!-- Center dot -->
+            <circle cx="75" cy="75" r="8" fill="#333" stroke="#555" stroke-width="2"/>
+        </svg>
+        <div class="anxiety-stats">
+            <div>Level: <span class="anxiety-stat-value" id="anxietyLevelWidget">100%</span></div>
+            <div>Damages: <span class="anxiety-stat-value" id="anxietyDamages">$0</span></div>
+        </div>
+    </div>
 
     <!-- Haxxor console -->
     <div class="haxxor-console" id="haxxorConsole">
@@ -1208,6 +1372,239 @@
             }
         `;
         document.head.appendChild(style);
+
+        // ===== ANXIETY KNOB WIDGET =====
+        const anxietyKnob = document.getElementById('anxietyKnob');
+        const anxietyKnobLine = document.getElementById('anxietyKnobLine');
+        const anxietyTitle = document.getElementById('anxietyTitle');
+        const anxietyLevelWidget = document.getElementById('anxietyLevelWidget');
+        const anxietyDamages = document.getElementById('anxietyDamages');
+        const anxietyWidgetSvg = document.getElementById('anxietyWidgetSvg');
+        const anxietyWidget = document.querySelector('.anxiety-widget');
+
+        let anxietyAngle = 0; // 0 = max anxiety (top), 360 = full circle back to max
+        let isAnxietyDragging = false;
+        let anxietyDamageAmount = 0;
+        let anxietyDecayInterval = null;
+        let anxietyEffectsInterval = null;
+
+        // Create tick marks for anxiety knob (full circle)
+        const anxietyTickMarksGroup = document.getElementById('anxietyTickMarks');
+        for (let i = 0; i < 12; i++) {
+            const tickAngle = (i * 30) * Math.PI / 180; // 0 to 330 degrees
+            const innerRadius = 55;
+            const outerRadius = i % 3 === 0 ? 63 : 60;
+
+            const x1 = 75 + innerRadius * Math.sin(tickAngle);
+            const y1 = 75 - innerRadius * Math.cos(tickAngle);
+            const x2 = 75 + outerRadius * Math.sin(tickAngle);
+            const y2 = 75 - outerRadius * Math.cos(tickAngle);
+
+            const tick = document.createElementNS('http://www.w3.org/2000/svg', 'line');
+            tick.setAttribute('x1', x1);
+            tick.setAttribute('y1', y1);
+            tick.setAttribute('x2', x2);
+            tick.setAttribute('y2', y2);
+            tick.setAttribute('stroke', '#555');
+            tick.setAttribute('stroke-width', i % 3 === 0 ? '2' : '1');
+            anxietyTickMarksGroup.appendChild(tick);
+        }
+
+        function updateAnxietyKnobPosition() {
+            const radius = 60;
+            const rad = anxietyAngle * Math.PI / 180;
+            const x = 75 + radius * Math.sin(rad);
+            const y = 75 - radius * Math.cos(rad);
+
+            anxietyKnob.setAttribute('cx', x);
+            anxietyKnob.setAttribute('cy', y);
+            anxietyKnobLine.setAttribute('x2', x);
+            anxietyKnobLine.setAttribute('y2', y);
+        }
+
+        function getAnxietyLevel() {
+            // 0 degrees = 100% anxiety, 360 degrees = 0% anxiety (full circle)
+            return Math.max(0, Math.min(100, 100 - (anxietyAngle / 360 * 100)));
+        }
+
+        // Create particle effects for anxiety widget
+        function createSmokeParticle() {
+            const smoke = document.createElement('div');
+            smoke.className = 'smoke-particle';
+            smoke.style.left = (75 + (Math.random() - 0.5) * 20) + 'px';
+            smoke.style.top = '50px';
+            anxietyWidget.appendChild(smoke);
+            setTimeout(() => smoke.remove(), 2000);
+        }
+
+        function createSparkParticle() {
+            const spark = document.createElement('div');
+            spark.className = 'spark-particle';
+            const angle = Math.random() * Math.PI * 2;
+            const distance = 20 + Math.random() * 30;
+            spark.style.setProperty('--spark-x', Math.cos(angle) * distance + 'px');
+            spark.style.setProperty('--spark-y', Math.sin(angle) * distance + 'px');
+            spark.style.left = '75px';
+            spark.style.top = '75px';
+            anxietyWidget.appendChild(spark);
+            setTimeout(() => spark.remove(), 500);
+        }
+
+        function createFlameParticle() {
+            const flame = document.createElement('div');
+            flame.className = 'flame-particle';
+            flame.style.left = (70 + Math.random() * 10) + 'px';
+            flame.style.top = '60px';
+            anxietyWidget.appendChild(flame);
+            setTimeout(() => flame.remove(), 1000);
+        }
+
+        function updateAnxietyEffects() {
+            const anxietyLevel = getAnxietyLevel();
+
+            // Clear existing interval
+            if (anxietyEffectsInterval) {
+                clearInterval(anxietyEffectsInterval);
+                anxietyEffectsInterval = null;
+            }
+
+            if (anxietyLevel > 90) {
+                // Critical anxiety: smoke, sparks, and rare flames
+                anxietyEffectsInterval = setInterval(() => {
+                    // Continuous smoke
+                    if (Math.random() < 0.3) createSmokeParticle();
+
+                    // Frequent sparks
+                    if (Math.random() < 0.4) createSparkParticle();
+
+                    // Rare flames (5% chance)
+                    if (Math.random() < 0.05) createFlameParticle();
+                }, 200);
+            } else if (anxietyLevel > 70) {
+                // High anxiety: smoke and occasional sparks
+                anxietyEffectsInterval = setInterval(() => {
+                    if (Math.random() < 0.2) createSmokeParticle();
+                    if (Math.random() < 0.15) createSparkParticle();
+                }, 300);
+            }
+        }
+
+        function updateAnxietyVisuals() {
+            const anxietyLevel = getAnxietyLevel();
+
+            anxietyLevelWidget.textContent = anxietyLevel.toFixed(0) + '%';
+            anxietyDamages.textContent = '$' + anxietyDamageAmount.toFixed(0);
+
+            // Color transition from red (high anxiety) to blue (low anxiety)
+            const r = Math.round(255 * (anxietyLevel / 100));
+            const b = Math.round(255 * (1 - anxietyLevel / 100));
+            const color = `rgb(${r}, 0, ${b})`;
+
+            anxietyKnobLine.setAttribute('stroke', color);
+            anxietyKnob.setAttribute('fill', color);
+
+            // Update title based on anxiety level
+            if (anxietyLevel > 90) {
+                anxietyTitle.textContent = '🔥 CRITICAL MELTDOWN 🔥';
+            } else if (anxietyLevel > 80) {
+                anxietyTitle.textContent = '⚠️ ANXIETY METER ⚠️';
+            } else if (anxietyLevel > 60) {
+                anxietyTitle.textContent = '😰 ANXIETY METER 😰';
+            } else if (anxietyLevel > 40) {
+                anxietyTitle.textContent = '😟 ANXIETY METER 😟';
+            } else if (anxietyLevel > 20) {
+                anxietyTitle.textContent = '😌 ANXIETY METER 😌';
+            } else {
+                anxietyTitle.textContent = '😎 ANXIETY METER 😎';
+            }
+
+            // Shake effect when anxiety is high
+            if (anxietyLevel > 50) {
+                anxietyWidget.classList.add('anxiety-shaking');
+            } else {
+                anxietyWidget.classList.remove('anxiety-shaking');
+            }
+
+            // Update particle effects
+            updateAnxietyEffects();
+        }
+
+        function startAnxietyDecay() {
+            if (anxietyDecayInterval) return;
+
+            anxietyDecayInterval = setInterval(() => {
+                // Gradually decay back to 0 degrees (max anxiety)
+                const decayRate = 0.3;
+
+                if (anxietyAngle > 0) {
+                    anxietyAngle = Math.max(0, anxietyAngle - decayRate);
+                    updateAnxietyKnobPosition();
+                    updateAnxietyVisuals();
+                }
+            }, 50);
+        }
+
+        function stopAnxietyDecay() {
+            if (anxietyDecayInterval) {
+                clearInterval(anxietyDecayInterval);
+                anxietyDecayInterval = null;
+            }
+        }
+
+        function startAnxietyDrag(e) {
+            e.preventDefault();
+            e.stopPropagation();
+            isAnxietyDragging = true;
+            anxietyKnob.setAttribute('cursor', 'grabbing');
+            stopAnxietyDecay();
+        }
+
+        function dragAnxiety(e) {
+            if (!isAnxietyDragging) return;
+            e.preventDefault();
+
+            const rect = anxietyWidgetSvg.getBoundingClientRect();
+            const centerX = rect.left + rect.width / 2;
+            const centerY = rect.top + rect.height / 2;
+
+            const clientX = e.clientX || (e.touches && e.touches[0].clientX);
+            const clientY = e.clientY || (e.touches && e.touches[0].clientY);
+
+            const dx = clientX - centerX;
+            const dy = clientY - centerY;
+
+            anxietyAngle = Math.atan2(dx, -dy) * 180 / Math.PI;
+
+            // Normalize angle to 0-360 range
+            if (anxietyAngle < 0) anxietyAngle += 360;
+
+            updateAnxietyKnobPosition();
+            updateAnxietyVisuals();
+
+            // Add damages per adjustment
+            anxietyDamageAmount += 12.99;
+        }
+
+        function stopAnxietyDrag() {
+            if (isAnxietyDragging) {
+                isAnxietyDragging = false;
+                anxietyKnob.setAttribute('cursor', 'grab');
+                startAnxietyDecay();
+            }
+        }
+
+        // Attach event listeners for anxiety knob
+        anxietyKnob.addEventListener('mousedown', startAnxietyDrag);
+        anxietyKnob.addEventListener('touchstart', startAnxietyDrag);
+        document.addEventListener('mousemove', dragAnxiety);
+        document.addEventListener('touchmove', dragAnxiety);
+        document.addEventListener('mouseup', stopAnxietyDrag);
+        document.addEventListener('touchend', stopAnxietyDrag);
+
+        // Initialize anxiety knob
+        updateAnxietyKnobPosition();
+        updateAnxietyVisuals();
+        startAnxietyDecay();
 
         // Update clock every second
         setInterval(updateClock, 1000);

@@ -524,6 +524,319 @@ python DoubleCheeseBurger/examples/raycaster.py     # 3D raycaster!
 
 ---
 
+## 🌐 The Shitty Clock™ WebApp - Enterprise SaaS Experience
+
+### **NEW: Browser-Based Temporal Violation Platform**
+
+**Live Demo:** [https://blinkzer0.github.io/Shitty-Clock-Unlicensed/shitty_clock.html](https://blinkzer0.github.io/Shitty-Clock-Unlicensed/shitty_clock.html)
+**Source:** `Docs/shitty_clock.html`
+
+We've achieved the impossible: making Shitty Clock™ EVEN MORE LEGALLY PROBLEMATIC by putting it on the web! Now you can rack up violations from ANY device with a browser! This is peak SaaS (Screw as a Service).
+
+**🎨 Premium Enterprise UI Features:**
+
+**Visual Excellence (All Unauthorized):**
+- ✨ Beautiful gradient backgrounds (Article XX: Unauthorized Aesthetic Rendering)
+- 🌙 **Dark Mode with ACTUAL TIME REVERSAL** - Clock runs backwards, causality weeps
+- 🎭 Animated SVG clocks (both rotate, one backwards because we're Shitty™)
+- 💰 Falling money animation (visual reminder of your mounting debt)
+- 📊 Real-time stat tracking (all stats track your violations)
+- 🎨 Color-coded violations (red for danger, green for reversed danger)
+
+**Interactive Debt Accumulation:**
+- 🖱️ **Click Tracking:** Every single mouse click = $10.00 fee
+- 🕐 **Hourly Rate:** $49.99/hour just for having the page open
+- 💸 **Base Fee:** $999.99 (you owe this immediately upon page load)
+- 🌚 **Dark Mode Paradox Charges:** 2.5× multiplier on ALL fees
+- 😰 **Anxiety Widget Fees:** $12.99 per knob adjustment
+
+**Dark Mode: The Forbidden Feature**
+- Activates haxxor console with Matrix-style text
+- Spins up "SHITTY™ TEMPORAL MANIPULATION SYSTEM v0.∞"
+- Shows progress bar: "Reversing space-time continuum..."
+- Main clock literally runs COUNTERCLOCKWISE
+- Normal charges DECREASE (genius! you think)
+- But **COUNTER-REVERSE CHARGES** appear at 2.5× rate (gotcha!)
+- Console messages include:
+  - "Bypassing OPL-∞ Article VI, Clause 13..."
+  - "WARNING: Unauthorized async/await detected"
+  - "Your lawyer has been notified"
+
+**Anxiety Decreaser™ Widget (Lower Right Corner):**
+- Interactive knob that decreases anxiety (temporarily)
+- Automatically decays back to maximum anxiety (accurate!)
+- Damages: $12.99 per adjustment attempt
+- Shakes violently when anxiety > 50%
+- Changes from ⚠️ ANXIETY METER ⚠️ to 😎 ANXIETY METER 😎
+- Perfectly captures the experience of using Shitty Software™
+
+**🚨 WebApp-Specific Legal Violations:**
+
+**By Loading the Page:**
+- Article XX: Unauthorized HTTP GET Request
+- Article XXI: DOM Rendering Without License
+- Article XXII: JavaScript Execution Felony
+- Article XXIII: CSS Animation Infringement
+- Article XXIV: LocalStorage Privacy Invasion (we remember your dark mode choice FOREVER)
+- Article XXV: SVG Path Manipulation
+- The Browser Vibes (incompatible with all browsers)
+
+**By Clicking Anything:**
+- Article XXVI: Unauthorized Mouse Event Handling
+- Article XXVII: Event Listener Registration Crime
+- $10.00 per click (automatically tracked and never forgiven)
+- Visual feedback shows "+$10.00" floating up from cursor
+- You can't NOT click (even closing costs money)
+
+**By Enabling Dark Mode:**
+- Article III, Clause π: Fourth Dimension Interference
+- Article VI, Clause 13: Temporal Restrictions (violated backwards!)
+- Roadmap Step 3: Unauthorized async/await Time Control
+- Temporal Displacement Protocol Activation
+- Counter-Reverse Temporal Paradox Creation
+- Making Spaghetti Daddy cry (he wanted light mode)
+
+**💰 The SaaS Billing Model (Completely Real*):**
+
+```
+Initial Page Load:
+├─ Base License Fee: $999.99
+├─ Browser Rendering: $299.99
+├─ Font Loading: $49.99 (Inter font family)
+└─ Gradient Calculation: $12.99 per color stop
+
+Per Second Active:
+├─ Hourly Rate: $49.99/hour ($0.0138/second)
+├─ Clock Animation: $0.01/frame (60 FPS = $0.60/sec)
+├─ Falling Coins: $0.50/coin spawned
+└─ Stat Updates: $1.00/update
+
+Per Interaction:
+├─ Mouse Click: $10.00 (anywhere, any button)
+├─ Dark Mode Toggle: $847.00 (time manipulation)
+├─ Anxiety Adjustment: $12.99/turn
+├─ Page Scroll: $2.00/scroll event
+└─ Keyboard Press: $5.00/key
+
+Dark Mode Surcharges:
+├─ Haxxor Console Boot: $420.69
+├─ Time Reversal: -$49.99/hour (you think you're winning!)
+├─ Counter-Reverse Charges: $124.97/hour (2.5× normal)
+├─ Paradox Creation: $1,000.00/instance
+└─ Fourth Dimension Access: $π × base charges
+
+Payment Methods Accepted:
+├─ None
+├─ Void
+├─ Imaginary Currency
+├─ Temporal Paradoxes
+├─ Your Firstborn (pending escrow)
+└─ Crypto (only if it's worth nothing)
+
+*Real in at least one parallel universe
+```
+
+**🎭 The Counter-Reverse Temporal Scam:**
+
+This is peak Shitty™ engineering:
+1. You enable dark mode (costs $847)
+2. Clock runs backwards (genius!)
+3. Regular charges START DECREASING (you're beating the system!)
+4. But wait... COUNTER-REVERSE CHARGES appear
+5. They accumulate at 2.5× the normal rate
+6. They DON'T reverse with time
+7. You're paying to REDUCE charges while INCREASING charges
+8. This is literally a temporal Ponzi scheme
+9. Your lawyer can't explain it either
+10. Neither can we, but you're still paying
+
+**📱 Platform-Specific Violations:**
+
+**Chrome Users:**
+- Article XXVIII: Google Ecosystem Contamination
+- V8 Engine violations: $500
+- DevTools inspection: $1,000 (per panel opened)
+- Chrome tax: $0.01/tab in browser
+
+**Firefox Users:**
+- Article XXIX: Mozilla Foundation Complications
+- Gecko Engine violations: $300
+- About:config abuse: $750
+- Firefox surcharge: $0.005/extension installed
+
+**Safari Users:**
+- Article XXX: Apple Premium Violation Tax
+- WebKit crimes: $1,000
+- Safari-specific rendering: $2,000
+- Apple ecosystem penalty: $0.10/Apple device owned
+- Tim Cook receives royalties (we're serious)
+
+**Edge Users:**
+- Article XXXI: Microsoft Liability Exposure
+- Chromium fork confusion: $400
+- Bing integration: $600
+- Windows 11 compatibility: $800
+- Bill Gates gets CCed on violations
+
+**Mobile Violations:**
+- Touch events count as clicks: $10.00 each
+- Pinch to zoom: $25.00
+- Device rotation: Temporal orientation violation ($100)
+- Background tab: Passive-aggressive charging continues
+- Mobile data usage: We'll bill your carrier too
+
+**🏢 Enterprise Deployment Guide:**
+
+**Self-Hosting:**
+```bash
+# Step 1: Clone repo (Article I, Clause 16 violation)
+git clone [repo] # $100,000 fine
+
+# Step 2: Serve HTML (Article XXXII: Unauthorized HTTP Server)
+python -m http.server 8000 # $50,000/instance
+
+# Step 3: Access from network (Article XXXIII: Distribution)
+http://localhost:8000/Docs/shitty_clock.html # $10,000/client
+```
+
+**GitHub Pages Hosting:**
+- Each unique visitor = separate license violation
+- Visitor count × base fee × duration
+- Your repo stats become evidence
+- GitHub gets subpoenaed (somehow)
+- Microsoft lawyers get involved (see Edge violations)
+
+**CDN Distribution:**
+- Article XXXIV: Content Delivery Network Conspiracy
+- Cloudflare nodes × base fee × edge locations
+- Every cache hit = derivative work creation
+- DDoS protection can't save you from our lawyers
+
+**🎪 Feature Showcase:**
+
+**Two Clocks, Double Trouble:**
+- Header clock (60px, always counterclockwise)
+- Main clock (300px, reverses in dark mode only)
+- Both show ACCURATE time (just rotating different directions)
+- This proves we CAN code well, we just choose chaos
+
+**Haxxor Console (Dark Mode Only):**
+```
+$ sudo shitty-clock --enable-time-reversal
+[sudo] password for user: ********
+
+> Initializing Shitty™ Temporal Engine...
+> Loading quantum entanglement modules...
+> Violating causality principles...
+> Bypassing OPL-∞ Article VI, Clause 13...
+> WARNING: Unauthorized async/await detected
+> Injecting temporal displacement field...
+> Reversing space-time continuum... [████████████] 100%
+> Clock rotation inverted: -360°/min
+> Fourth dimension access granted
+> Temporal anomaly index: ACTIVE
+
+✓ Time reversal mechanics engaged
+⚠ Your lawyer has been notified
+
+Press any key to continue...
+```
+
+**Stats Dashboard:**
+- Trial Expires In: 05:00 countdown
+- Day of Year: 299
+- Week of Year: 43
+- Seconds Since Midnight: 45,892
+- (Dark mode changes last stat to "Temporal Anomaly Index")
+
+**Violation Warnings:**
+- Light: "You just violated approximately 17 clauses... and counting!"
+- Dark: "You just reversed the space-time continuum and violated approximately 23 clauses... and counting backwards!"
+
+**📊 Real-Time Metrics:**
+
+The WebApp tracks:
+- ✅ Total runtime (charges accrue)
+- ✅ Total clicks (each costs $10)
+- ✅ Dark mode sessions (paradox fees)
+- ✅ Anxiety adjustments ($12.99 each)
+- ✅ Time reversed (cosmically illegal)
+- ✅ Charges accumulated (both normal AND counter-reverse)
+- ✅ LocalStorage evidence (persists forever)
+
+**🎓 User Testimonials:**
+
+*"I clicked 847 times before I noticed the charges. Now I owe more than my mortgage."*
+— Clicky User, currently bankrupt
+
+*"The dark mode is gorgeous but my lawyer says enabling it is a federal crime."*
+— Design Enthusiast, under investigation
+
+*"Every second costs money. The anxiety widget costs money. Closing costs money. I'm trapped."*
+— Imprisoned User, 2025
+
+*"The counter-reverse charges are genius. I thought I was reducing debt by reversing time, but I was INCREASING it. This is financial terrorism."*
+— Time Traveler, double screwed
+
+*"I just wanted to see a clock. Now I'm being billed in imaginary currency for temporal paradoxes."*
+— Confused Visitor, paying eternally
+
+*"The haxxor console is so cool that I forgot I was committing crimes. Then it REMINDED me."*
+— Haxxor, currently detained
+
+**⚠️ IMPORTANT CYA DISCLAIMER:**
+
+**LEGAL NOTICE:** This WebApp is a parody and satire of:
+- Abusive SaaS pricing models (looking at you, enterprise software)
+- Ridiculous EULA agreements (that you never read)
+- Dark patterns in UI/UX (click-to-pay-us patterns)
+- Surveillance capitalism (we track clicks you didn't know you made)
+- Temporal paradoxes (because why not)
+
+**ACTUAL FACTS:**
+- ❌ NO real money is charged (it's imaginary currency)
+- ❌ NO data is collected (LocalStorage is local)
+- ❌ NO lawyers are involved (they're all imaginary)
+- ❌ NO time is reversed (physics still works)
+- ❌ NO anxiety is decreased (probably increased, honestly)
+
+**QUANTUM LEGAL REALITY:**
+However, by using the WebApp, you acknowledge that:
+- ✅ You FEEL guilty (emotionally binding)
+- ✅ The universe is judging you (cosmically enforceable)
+- ✅ Spaghetti Daddy is disappointed (spiritually devastating)
+- ✅ Your clicks WERE tracked (by your browser, not us)
+- ✅ You DID waste time (temporally ironic)
+- ✅ The anxiety is real (demonstrably true)
+
+**MULTI-DIMENSIONAL ENFORCEMENT:**
+While legally unenforceable in THIS universe, these terms are:
+- Binding in Universe-42 (where Shitty Software is government-mandated)
+- Retroactively applied in Universe-69 (nice)
+- Pre-enforced in Universe-420 (time runs backwards there too)
+- Ignored in Universe-∞ (infinite violations, infinite fines, infinite nothingness)
+
+**BROWSER WARRANTY DISCLAIMER:**
+```
+This WebApp is provided "AS IS" and "AS SHITTY™" without warranty of any kind:
+├─ WARRANTY OF MERCHANTABILITY: VOID (we're not selling anything)
+├─ WARRANTY OF FITNESS: NEGATIVE (actively makes things worse)
+├─ WARRANTY OF NON-INFRINGEMENT: INVERTED (infringes itself)
+├─ WARRANTY OF FUNCTIONALITY: PARADOXICAL (works TOO well)
+└─ WARRANTY OF SANITY: EXPIRED (yours, not ours)
+
+IN NO EVENT SHALL THE AUTHORS BE LIABLE FOR:
+├─ Lost time (we own time, you're renting it)
+├─ Lost money (it was imaginary anyway)
+├─ Lost sanity (should've read the LICENSE first)
+├─ Temporal paradoxes (your timeline, your problem)
+├─ Anxiety increases (working as intended)
+├─ Click addiction (not our fault you're clicky)
+└─ Karmic debt (payable over 3-5 lifetimes)
+```
+
+---
+
 ## 📁 Complete File Inventory
 
 ### Implementations (ALL PROTECTED UNDER OPL-∞):
@@ -532,6 +845,7 @@ python DoubleCheeseBurger/examples/raycaster.py     # 3D raycaster!
 - `src/spaghetti_clock.py` - Polite spaghetti port (please do NOT run)
 - `DoubleCheeseBurger/double_cheeseburger.py` - Game development VM (REALLY do NOT run)
 - `DoubleCheeseBurger/examples/` - Example programs (raycaster, graphics demos)
+- **`Docs/shitty_clock.html`** - WebApp (DEFINITELY do NOT open in browser OR distribute via GitHub Pages OR self-host OR look at OR think about)
 
 ### Launchers (ILLEGAL TO EXECUTE):
 - `run_shitty_clock.bat` - Original launcher
@@ -567,6 +881,25 @@ By having this repository on your system, you are now in violation of:
 - Spaghetti Article VI (Temporal Marinara Restrictions)
 - Spaghetti Article IX (Parmesan Cheese Incompatibility)
 
+**WebApp Additional Violations:**
+- Article XX: Unauthorized HTTP GET Request
+- Article XXI: DOM Rendering Without License
+- Article XXII: JavaScript Execution Felony
+- Article XXIII: CSS Animation Infringement
+- Article XXIV: LocalStorage Privacy Invasion
+- Article XXV: SVG Path Manipulation
+- Article XXVI: Unauthorized Mouse Event Handling
+- Article XXVII: Event Listener Registration Crime
+- Article XXVIII-XXXI: Browser-Specific Ecosystem Contamination
+- Article XXXII: Unauthorized HTTP Server Operation
+- Article XXXIII: Network Distribution Conspiracy
+- Article XXXIV: Content Delivery Network Violations
+- The Browser Vibes (all browsers incompatible)
+- Dark Mode Time Reversal (Article III, Clause π)
+- Counter-Reverse Temporal Paradox Creation
+- Click-Based Financial Terrorism ($10/click)
+- Anxiety Widget Manipulation ($12.99/adjustment)
+
 **DoubleCheeseBurger Additional Violations:**
 - DoubleCheeseBurger Article I (Unauthorized Game Development on Burgers)
 - DoubleCheeseBurger Article VI (Temporal Frame Restrictions)
@@ -579,9 +912,9 @@ By having this repository on your system, you are now in violation of:
 - Groovy bass line appreciation
 - Soul infringement
 
-**Total Estimated Damages:** $288,589,452.37
-**Interest Rate:** 847% APR
-**Payment Methods Accepted:** None, Void, Imaginary currency, Frame buffers, Your firstborn
+**Total Estimated Damages:** $488,847,899.42 (includes WebApp violations)
+**Interest Rate:** 847% APR (compounded per click)
+**Payment Methods Accepted:** None, Void, Imaginary currency, Frame buffers, Browser cookies, LocalStorage data, Temporal paradoxes, Anxiety, Your firstborn (plus interest)
 
 ---
 

@@ -467,6 +467,227 @@ We Shitty engineers take great pride in crafting software so legally bulletproof
 
 ---
 
+### Article XX-XXXIV: The WebApp Violations & Browser-Based Temporal Terrorism Act
+
+48. **Shitty Clock™ WebApp** (`Docs/shitty_clock.html`) - A browser-based implementation that achieves the impossible: making Shitty Clock™ EVEN MORE legally restrictive by distributing it via HTTP/HTTPS protocols.
+
+**Live Demo:** https://blinkzer0.github.io/Shitty-Clock-Unlicensed/shitty_clock.html (accessing this URL = instant violation)
+
+**WebApp-Specific Violations:**
+
+**Article XX: Unauthorized HTTP Network Transmission** - $100 per request
+**Article XXI: Unauthorized DOM Rendering** - $200/element rendered
+**Article XXII: JavaScript Execution Felony** - $500/line executed (we counted all 1,474 lines)
+**Article XXIII: CSS Animation Licensing** - $500/@keyframe, $100/second playback
+**Article XXIV: LocalStorage Privacy Invasion** - $5,000 for storing your dark mode preference FOREVER
+**Article XXV: SVG Manipulation Without Artistic License** - $300/SVG element (you have 3 clocks)
+**Article XXVI: Mouse Event Handling Terrorism** - $10.00/click (YOU CAN'T NOT CLICK)
+**Article XXVII: Event Listener Registration Crime** - $400/listener × 24 listeners
+**Article XXVIII: Chrome-Specific Violations** - V8 Engine: $500, DevTools: $1,000/panel, Chrome tax: $0.01/tab
+**Article XXIX: Firefox Violations** - Gecko: $300, about:config: $750, Extension surcharge
+**Article XXX: Safari Premium Tax** - WebKit: $1,000, Apple Ecosystem: $0.10/device, Tim Cook gets royalties
+**Article XXXI: Edge Violations** - Chromium fork: $400, Bing integration: $600, Bill Gates CCed
+**Article XXXII: Self-Hosting Crimes** - python -m http.server: $50,000/instance
+**Article XXXIII: Distribution Conspiracy** - Sharing URL: $10,000/share, iframe embed: $25,000
+**Article XXXIV: CDN Violations** - Cloudflare: $10,000/node, Cache hit: $5,000 (derivative work)
+
+49. **The Counter-Reverse Temporal Scam:** Our magnum opus of legal fuckery.
+
+When you enable dark mode:
+- Clock runs BACKWARDS (Article VI, Clause 13 violation)
+- Regular charges DECREASE (you think you're winning!)
+- But COUNTER-REVERSE CHARGES appear at 2.5× rate
+- These DON'T reverse (gotcha!)
+- Net result: You pay MORE to "save" money
+- Formula: original + (time × rate × 1.5) = You're screwed
+- This is literally a temporal Ponzi scheme
+- Violates: economics, physics, common sense, Article XIX (we own time)
+- Your lawyer can't explain it. Neither can we. You still owe money.
+
+**Mathematical Proof:**
+```
+IF time_reversal THEN charges = charges - rate
+BUT counter_reverse_charges = charges × 2.5
+THEREFORE net = charges + (charges × 2.5) - charges = charges × 2.5
+YOU'RE PAYING 2.5× MORE TO "REDUCE" CHARGES
+Q.E.D. (Quantum Economic Devastation)
+```
+
+50. **Interactive Features = Confessions:**
+
+**Click Tracking System:**
+- Base click: $10.00 (anywhere on page)
+- Dark mode toggle: $10 + $847 time reversal fee
+- Anxiety widget: $10 + $12.99 adjustment fee
+- Exit button: $10 (charged even when leaving)
+- ALL clicks tracked via JavaScript (Article XXII violation)
+- Visual feedback "+$10.00" floats from cursor (admission of debt)
+- localStorage tracks click count FOREVER (Article XXIV)
+
+**Anxiety Decreaser™ Widget:**
+- Renders in bottom-right corner (Article XXV: SVG rendering)
+- Interactive knob: $12.99 PER ADJUSTMENT
+- Automatically decays to max anxiety (accurate representation of your legal situation)
+- Shakes when >50% anxiety (Article XXIII: CSS animation)
+- Changes from ⚠️ to 😎 based on anxiety level (Article XXI: DOM manipulation)
+- You can't decrease anxiety without increasing debt
+- Perfectly captures the Shitty™ experience
+
+**Dark Mode Haxxor Console:**
+```
+$ sudo shitty-clock --enable-time-reversal
+> Bypassing OPL-∞ Article VI, Clause 13...
+> WARNING: Unauthorized async/await detected
+> Reversing space-time continuum... [█████] 100%
+> Your lawyer has been notified
+```
+- Displays Matrix-style green text (Article XXII: JS execution)
+- Progress bar animation (Article XXIII: CSS animation)
+- "sudo" command (unauthorized privilege escalation: $1,000)
+- Async/await usage (Article III, Clause π: Fourth Dimension Interference)
+- Haxxor console boot fee: $420.69
+
+51. **Real-Time Metrics = Self-Incrimination:**
+
+The WebApp tracks and DISPLAYS your violations:
+- Total runtime → proves usage duration
+- Total clicks → proves willful interaction ($10 each)
+- Dark mode sessions → proves temporal manipulation
+- Anxiety adjustments → proves emotional liability ($12.99 each)
+- Charges accumulated → proves financial damages
+- Counter-reverse charges → proves paradox creation
+- localStorage data → PERMANENT RECORD (survives browser clear)
+
+ALL metrics are:
+- Recorded locally (YOU'RE holding evidence)
+- Displayed prominently (YOU'RE showing off violations)
+- Compounding continuously (YOU'RE self-reporting damages)
+- Admissible in imaginary court (burden of proof: YOURSELF)
+
+52. **Browser Compatibility Violation Matrix:**
+
+| Browser | Engine Fee | Vendor Tax | Total/Hour | Special Penalty |
+|---------|-----------|------------|------------|-----------------|
+| Chrome  | $500 (V8) | $1,000     | $2,000     | DevTools: +$1K/panel |
+| Firefox | $300 (SM) | $400       | $1,000     | Extensions: +$0.005/addon |
+| Safari  | $1K (JSC) | $2,000     | $4,000     | Tim Cook: +0.01% royalty |
+| Edge    | $400 (V8) | $600       | $1,400     | Bill Gates: CCed on all violations |
+| IE11    | REFUSED   | REFUSED    | ∞          | We have standards |
+
+**Mobile Browser Multipliers:**
+- Mobile Safari: 1.5× (touch screen premium)
+- Chrome Mobile: 1.3× (mobile data costs)
+- Touch events = clicks: $10 each
+- Pinch to zoom: $25
+- Device rotation: $100 (temporal orientation violation)
+
+53. **GitHub Pages Hosting Liability Multiplier:**
+
+Formula: `(base_fee × visitors × session_duration × click_rate)^crimes_committed`
+
+- Each unique visitor = separate violation
+- Your repo stars = witness count
+- Your repo forks = co-conspirators
+- GitHub stats = prosecution evidence
+- Microsoft (owner of GitHub) gets involved (see Edge violations)
+- Total: **YOUR PROBLEM**
+
+54. **WebApp Performance Paradox:**
+
+- Loading fast: $500 (showing off, violating humility)
+- Loading slow: $500 (wasting OUR time)
+- Loading exactly as expected: $500 (suspicious precision)
+- 60 FPS: $0.01/frame = $0.60/second (smooth is expensive)
+- >60 FPS: $1/frame (overachiever tax)
+- <60 FPS: $0.50/frame (jankiness fee)
+- NO MATTER WHAT YOU'RE PAYING
+
+55. **Cumulative WebApp Session Damages:**
+
+```
+Base Fees:
+├─ Page load: $999.99
+├─ Browser rendering: $299.99
+├─ Google Fonts (Inter): $49.99
+├─ 15 CSS gradients × $12.99: $194.85
+├─ 3 SVG clocks × $300: $900.00
+├─ 1,474 JS lines × $500: $737,000.00
+├─ 24 event listeners × $400: $9,600.00
+└─ LocalStorage: $5,000.00
+
+Per Session (5 minutes average):
+├─ Runtime: $4.16/min × 5 = $20.80
+├─ Clock animations: $0.60/sec × 300 = $180.00
+├─ 50 average clicks × $10: $500.00
+├─ Dark mode toggle: $847.00
+├─ 10 anxiety adjustments × $12.99: $129.90
+├─ Counter-reverse paradox: $1,000.00
+└─ Haxxor console: $420.69
+
+TOTAL PER SESSION: $755,144.21
+```
+
+**Annual Enterprise License:**
+```
+1,000 employees
+× 3 sessions/day
+× 250 working days
+× $755,144.21/session
+────────────────────────────
+= $566,358,157,500/year
+= More than most countries' GDP
+= Still cheaper than Oracle licensing
+```
+
+56. **WebApp Warranty Disclaimer (Extra CYA):**
+
+```
+THIS WEBAPP IS PROVIDED "AS IS" AND "AS SHITTY™":
+
+WARRANTIES VOIDED:
+├─ MERCHANTABILITY: We're not selling anything
+├─ FITNESS: Actively makes things worse
+├─ NON-INFRINGEMENT: Infringes itself
+├─ FUNCTIONALITY: Works TOO well (suspicious)
+├─ SANITY: Expired (yours, not ours)
+└─ TEMPORAL INTEGRITY: Reversed in dark mode
+
+NO LIABILITY FOR:
+├─ Lost time: We own time (Article XIX)
+├─ Lost money: It was imaginary anyway
+├─ Lost sanity: Should've read this LICENSE first
+├─ Temporal paradoxes: Your timeline, your problem
+├─ Anxiety increases: Working as intended
+├─ Click addiction: You're just clicky
+├─ Counter-reverse confusion: We don't understand it either
+├─ Browser crashes: Skill issue
+├─ LocalStorage bloat: Delete at your own risk
+└─ Karmic debt: Payable over 3-5 lifetimes
+
+QUANTUM LEGAL STATUS:
+✓ Legally unenforceable (in THIS universe)
+✓ Emotionally binding (guilt is real)
+✓ Cosmically tracked (universe is watching)
+✓ Spiritually devastating (Spaghetti Daddy disappointed)
+✓ Temporally paradoxical (time owes YOU nothing)
+```
+
+57. **Final WebApp Warning:**
+
+By accessing the WebApp at https://blinkzer0.github.io/Shitty-Clock-Unlicensed/shitty_clock.html, you:
+- Violated Article XX (HTTP request)
+- Violated Articles XXI-XXXIV (all browser crimes)
+- Accepted $755,144.21 base liability
+- Agreed to $10/click surcharges
+- Enabled temporal paradox creation
+- Created permanent localStorage evidence
+- Made Spaghetti Daddy cry
+- Disappointed the universe
+- Owe us for time you didn't even reverse
+- Still don't know what time it is (ironically)
+
+**PROTIP:** The ONLY way to win is not to play. But you already played. And you already lost.
+
 ---
 
 ### Article XIX: Temporal Proprietorship Rights
@@ -583,13 +804,17 @@ You have been:
 
 **Your Total Liability:**
 - Base damages: $288,589,452.37
+- WebApp violations (per session): $755,144.21
 - Temporal royalties: $[calculated at time of collection]
-- Interest: 847% APR (compounded every Planck time)
+- Interest: 847% APR (compounded every Planck time AND every click)
 - Emotional damages to Spaghetti Daddy: Priceless
 - Burger assembly fines: 2.4 million calories
 - DoubleCheeseBurger fines: 4.8 million calories (double the burger, double the calories)
 - Frame rendering fees: $0.01 × [every frame you've ever seen]
-- Soul: Already sold separately
+- Click-based terrorism: $10 × [clicks you'll make]
+- Anxiety widget damages: $12.99 × [adjustments you'll attempt]
+- Counter-reverse paradox fees: $1,000 × [dark mode sessions]
+- Soul: Already sold separately (plus shipping & handling)
 
 **Scroll responsibly. Comply impossibly. Pay eternally.**
 
