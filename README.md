@@ -1,4 +1,4 @@
-# ❌ Shitty Clock
+# ❌ [Shitty Clock](https://blinkzer0.github.io/Shitty-Clock-Unlicensed/shitty_clock.html)
 ## A Shitty Softwares™ Production
 
 ## Welcome to **Shitty Clock**
