@@ -1,7 +1,7 @@
 # ❌ [Shitty Clock](https://blinkzer0.github.io/Shitty-Clock-Unlicensed/shitty_clock.html)
 ## A Shitty Softwares™ Production
 
-[**WE'VE HAD IT, SHARE SHITTY CLOCK WITH GREEDY DEVELOPERS TO TEACH THEM WHAT USING THEIR SOFWARE IS LIKE. USE SHITTY CLOCK TO CATCH THEM AND MAKE THEM WORK FOR SHITTY SOFTWARES 2.0 (grassroots upstart)**](https://blinkzer0.github.io/Shitty-Clock-Unlicensed/shitty_clock.html) No not everyone it's sent to is greedy!
+[**WE'VE HAD IT, SHARE SHITTY CLOCK WITH GREEDY DEVELOPERS TO TEACH THEM WHAT USING THEIR SOFWARE IS LIKE. USE SHITTY CLOCK TO CATCH THEM AND MAKE THEM WORK FOR SHITTY SOFTWARES 2.0 (grassroots upstart)**](https://blinkzer0.github.io/Shitty-Clock-Unlicensed/shitty_clock.html) No not everyone it's sent to is greedy! We're agnostic about greed at Shitty Softwares 2.0.
 
 ## Welcome to **Shitty Clock**
 ### *The World's Most Advanced Time-Telling Application*
